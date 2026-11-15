@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIOLEC Amazon — Visual Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0f14;--muted:#6b6f7b;--line:#e6e7eb;--bg:#f6f6f4;--card:#fff;--blue:#4a63ff;--blue-t:#eef0ff;--green:#127a46;--green-t:#e8f6ee;--amber:#9a6200;--amber-t:#fff5e0;--red:#b42318;--red-t:#fdeceb;--navy:#0b0d12}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:56px 0 40px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d93a5;font-weight:600}
+.hero h1{font-size:clamp(34px,5vw,56px);font-weight:500;letter-spacing:-.035em;line-height:1.02;margin:14px 0 14px}
+.hero h1 em{font-style:normal;color:#8798ff}
+.hero p{color:#b8bdc9;max-width:620px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+.stat{background:#151821;border:1px solid #232735;border-radius:14px;padding:16px}
+.stat b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em}
+.stat span{font-size:12px;color:#9aa0b2}
+/* nav */
+.nav{position:sticky;top:0;z-index:5;background:rgba(246,246,244,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:13px;font-weight:500;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.nav a:hover{border-color:var(--blue);color:var(--blue)}
+section{padding:56px 0 8px}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sh .n{font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.1em}
+h2{font-size:clamp(24px,3.2vw,32px);font-weight:600;letter-spacing:-.025em;margin:0}
+.lead{color:var(--muted);max-width:700px;margin:6px 0 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pill{display:inline-block;font-size:11px;font-weight:600;border-radius:999px;padding:3px 9px;letter-spacing:.02em}
+.p-you{background:var(--blue-t);color:var(--blue)}
+.p-bal{background:var(--amber-t);color:var(--amber)}
+.p-claude{background:#f1ecff;color:#6b3fd6}
+.p-out{background:#eef1f4;color:#4a5262}
+.p-good{background:var(--green-t);color:var(--green)}
+.p-fix{background:var(--red-t);color:var(--red)}
+.p-warn{background:var(--amber-t);color:var(--amber)}
+/* status track */
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.tstep{padding:18px 18px 18px 0;position:relative}
+.tstep .dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;margin-bottom:10px}
+.done .dot{background:var(--green);color:#fff}.appr .dot{background:var(--green-t);color:var(--green);border:2px solid var(--green)}.now .dot{background:var(--blue);color:#fff;box-shadow:0 0 0 6px var(--blue-t)}
+.tstep::after{content:"";position:absolute;top:31px;left:34px;right:6px;height:2px;background:var(--line)}
+.tstep:last-child::after{display:none}
+.tstep h4{margin:0 0 2px;font-size:15px}.tstep p{margin:0;color:var(--muted);font-size:13px}
+/* message analysis */
+.chat{background:#0f1a17;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{align-self:flex-end;max-width:92%}
+.bubble{background:#1f5c4a;color:#eaf4ef;border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:14px}
+.bubble small{display:block;text-align:right;color:#9cc4b5;font-size:11px;margin-top:3px}
+.verdict{background:#fff;border-radius:12px;padding:12px 14px;margin-top:6px;font-size:13.5px;border-left:4px solid var(--line)}
+.verdict.good{border-left-color:var(--green)}.verdict.fix{border-left-color:var(--red)}.verdict.warn{border-left-color:#e2a400}
+.verdict b{display:block;margin-bottom:2px}
+.verdict ul{margin:6px 0 0;padding-left:18px}.verdict ul b{display:inline;margin:0}
+.day{align-self:center;font-size:11px;color:#9fb3ab;background:#1a2622;border-radius:8px;padding:3px 10px}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.score .card h4{margin:6px 0 6px;font-size:15px}.score ul{margin:0;padding-left:18px;font-size:14px;color:#333}
+/* ready message */
+.draft{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:18px}
+.draft-h{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+.draft pre{margin:0;padding:16px;white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.6;background:#fbfbfa}
+button.copy{border:0;background:var(--ink);color:#fff;border-radius:999px;padding:8px 14px;font:600 12px Inter,sans-serif;cursor:pointer}
+/* needs checklist */
+.need-col h3{font-size:15px;margin:0 0 4px;display:flex;justify-content:space-between;align-items:center}
+.need-col .when{font-size:12px;color:var(--muted);margin-bottom:12px}
+.item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);cursor:pointer;user-select:none}
+.item:first-of-type{border-top:0}
+.box{flex:0 0 20px;height:20px;border:2px solid #c8cbd3;border-radius:6px;margin-top:1px;display:grid;place-items:center;transition:.15s}
+.item.on .box{background:var(--green);border-color:var(--green)}
+.item.on .box::after{content:"✓";color:#fff;font-size:12px;font-weight:700}
+.item.on .t{color:var(--muted);text-decoration:line-through}
+.item .t b{font-weight:600}
+.item .why{display:block;font-size:12.5px;color:var(--muted);text-decoration:none}
+.prog{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:var(--green);width:0;transition:.3s}
+.blocker{font-size:11px;font-weight:600;color:var(--red)}
+/* steps */
+.steps{position:relative;margin-left:18px;border-left:2px dashed #cfd3dc;padding-left:30px}
+.step{position:relative;margin-bottom:16px}
+.step .num{position:absolute;left:-49px;top:16px;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:14px}
+.step.key .num{background:var(--blue);border-color:var(--blue);color:#fff}
+.step .card{padding:18px 20px}
+.step-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.step h3{margin:0;font-size:17px;letter-spacing:-.01em}
+.wk{font-size:12px;font-weight:600;color:var(--muted);background:#f1f2f4;border-radius:8px;padding:3px 8px;white-space:nowrap}
+.step .who{display:flex;gap:6px;margin:8px 0 10px;flex-wrap:wrap}
+.step ul{margin:0;padding-left:18px;font-size:14px}
+.step ul li{margin-bottom:3px}
+.gate{margin:6px 0 22px;padding:12px 16px;border-radius:12px;background:var(--amber-t);border:1px dashed #e2a400;font-size:13.5px;color:#5c3d00}
+.gate b{color:var(--amber)}
+/* split */
+.who-col h3{display:flex;align-items:center;gap:8px;font-size:16px;margin:0 0 4px}
+.who-col p.s{margin:0 0 12px;color:var(--muted);font-size:13px}
+.who-col ul{list-style:none;padding:0;margin:0}
+.who-col li{padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+.who-col li small{display:block;color:var(--muted);font-size:12.5px}
+.ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:15px}
+/* money */
+.money .card{position:relative;overflow:hidden}
+.money .big{font-size:13px;color:var(--muted)}
+.money h4{margin:8px 0 4px;font-size:16px}
+.money p{margin:0;font-size:13.5px;color:#333}
+.money .bar{height:4px;border-radius:4px;margin-bottom:12px}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.fbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;position:relative}
+.fbox .d{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}
+.fbox h4{margin:4px 0 4px;font-size:14.5px}
+.fbox p{margin:0;font-size:12.5px;color:var(--muted)}
+.fbox:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translate(50%,-50%);color:#9aa0ad;font-size:16px}
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.route{border-radius:14px;padding:16px;border:1px solid var(--line);background:#fff}
+.route h4{margin:0 0 4px}
+.route.small{border-top:4px solid #ff9900}.route.bulk{border-top:4px solid var(--blue)}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th,table.t td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.tbl{overflow-x:auto}
+/* glossary */
+.gl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gl div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.gl b{display:block;font-size:14px;margin-bottom:2px}
+footer{padding:48px 0 60px;color:var(--muted);font-size:12.5px}
+footer a{color:var(--blue)}
+@media (max-width:900px){
+ .grid4,.stats{grid-template-columns:1fr 1fr}
+ .grid3,.score,.gl{grid-template-columns:1fr}
+ .flow{grid-template-columns:1fr}
+ .fbox:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-14px;transform:translate(50%,0)}
+}
+@media (max-width:640px){
+ .grid2,.split2,.track{grid-template-columns:1fr}
+ .tstep::after{display:none}
+ .grid4{grid-template-columns:1fr}
+ .steps{margin-left:10px;padding-left:24px}
+ .step .num{left:-41px;width:32px;height:32px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AIOLEC × Beyond Branding · Amazon UK · Internal playbook</div>
+    <h1>From proposal to <em>first bulk order.</em></h1>
+    <p>Everything in one place: what your messages to Bal did and didn't land, exactly what you need from him, the launch step by step, who does what, and how you get paid.</p>
+    <div class="stats">
+      <div class="stat"><b>5</b><span>ranges · CD1, HBV1, DSV1, OD1 + 1 TBC</span></div>
+      <div class="stat"><b>5 wks</b><span>sign-off to full brand on Amazon</span></div>
+      <div class="stat"><b>21</b><span>things to get from Bal</span></div>
+      <div class="stat"><b>4</b><span>ways you earn from this client</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav"><div class="wrap">
+  <a href="#status">1 · Where you are</a><a href="#messages">2 · Your messages</a><a href="#needs">3 · What you need</a><a href="#steps">4 · Step by step</a><a href="#split">5 · Who does what</a><a href="#money">6 · How you earn</a><a href="#bulk">7 · Bulk deals</a><a href="#terms">8 · Amazon terms</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- 1 STATUS -->
+<section id="status">
+  <div class="sh"><span class="n">01</span><h2>Where you are</h2></div>
+  <p class="lead">Website done, Instagram approved, Amazon proposal sent. The scope just grew from 3 to 5 products, but Bal hasn't signed off on the new scope or price yet.</p>
+  <div class="card">
+    <div class="track">
+      <div class="tstep done"><div class="dot">✓</div><h4>Website</h4><p>aiolec.com live with 4 ranges and the display advisor</p></div>
+      <div class="tstep appr"><div class="dot">✓</div><h4>Instagram launch</h4><p>12 posts + 3 films, approved</p></div>
+      <div class="tstep now"><div class="dot">3</div><h4>Amazon UK</h4><p>Proposal sent for 3 ranges at £1,650. <b>Now 5 products: needs a revised quote.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 MESSAGES -->
+<section id="messages">
+  <div class="sh"><span class="n">02</span><h2>Your messages to Bal, analysed</h2></div>
+  <p class="lead">You're asking the right questions. The problem is the format: five separate messages over two days, no numbered list and no deadline. And the biggest ask is missing: approval and the advance.</p>
+
+  <div class="grid2">
+    <div class="chat">
+      <div class="msg"><div class="bubble">Sure so we have 5 products now. Do share the deck from manufacturer and other images too<small>5:09 PM</small></div>
+        <div class="verdict warn"><b>Good ask, missing consequence</b>Asking for source material is right. But you didn't say that 5 products changes the price and timeline. He may assume £1,650 still covers everything.</div></div>
+      <div class="msg"><div class="bubble">[Instagram + Amazon proposal PDFs] This is for amazon launch, only content part.<small>5:30 PM</small></div>
+        <div class="verdict fix"><b>Undersells your scope</b>Your proposal includes the full listing setup and launch support, not just content. "Only content part" invites him to hire someone else for the setup, or to expect a lower price. There's also no ask to approve.</div></div>
+      <div class="day">Yesterday</div>
+      <div class="msg"><div class="bubble">Hi, pls share details<small>5:31 PM</small></div>
+        <div class="verdict fix"><b>Too vague, so it went unanswered</b>He doesn't know which details. A follow-up with no list gives him nothing to act on.</div></div>
+      <div class="day">Today</div>
+      <div class="msg"><div class="bubble">When you're planning for amazon launch a rough marketing budget you're willing to invest initially.<small>7:02 PM</small></div>
+        <div class="verdict good"><b>Right question, make it easy</b>Open questions get vague answers. Give him three options to pick from, and say it's ad spend paid to Amazon, separate from your fee.</div></div>
+      <div class="msg"><div class="bubble">I'll also need an idea of pricing of each. Also bandwidth if I manage to get bulk deal for you. Avg price and negotiation last rate. and fixed percentage you will offer or variable one if zi manage to get bulk order<small>7:05 PM</small></div>
+        <div class="verdict warn"><b>Four questions in one sentence</b>
+          <ul><li>"Bandwidth" is unclear. Say <b>units per month + lead time</b>.</li><li>"Negotiation last rate" → <b>lowest bulk price per size (floor)</b>.</li><li>Asking "fixed or variable?" lets him set the terms. <b>Propose your numbers</b> and let him react.</li><li>Typos ("zi") read rushed on a commercial ask.</li></ul></div></div>
+    </div>
+
+    <div>
+      <div class="score">
+        <div class="card" style="grid-column:1/-1"><span class="pill p-good">What worked</span><h4>You're asking the questions that make you money</h4><ul><li>Pricing per product, bulk floor price and commission: all essential</li><li>Ad budget early: Phase 2 depends on it</li><li>Asking for the manufacturer deck: needed for product 5</li></ul></div>
+        <div class="card" style="grid-column:1/-1"><span class="pill p-fix">What's missing</span><h4>The things that actually start the project</h4><ul><li>Approval of the revised Phase 1 + the 50% advance</li><li>The new price for 5 ranges</li><li>Name of the 5th product</li><li>Seller Central account + trademark status: week 1 blockers</li><li>A deadline</li></ul></div>
+        <div class="card" style="grid-column:1/-1"><span class="pill p-warn">The fix</span><h4>One numbered message, then a checklist</h4><ul><li>Lead with the scope change and the new fee</li><li>Number every ask so he can reply "1. yes, 2. …"</li><li>Split into "this week" and "later"</li><li>Propose your commission; don't ask him to invent one</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="draft">
+    <div class="draft-h"><span>Ready to send · edit the [brackets] first</span><button class="copy" data-copy="msg1">Copy</button></div>
+<pre id="msg1">Hi Bal, quick update on the Amazon launch and a few things I need from you to get started.
+
+Scope: with 5 products, Phase 1 now covers 5 ranges (all sizes, 35 listing images, 5 A+ pages and the Brand Store). Revised fee is [£2,450] + VAT over 5 weeks, 50% to start. I'll send the updated proposal today. To be clear, this includes the full listing setup and launch, not just the content.
+
+To start this week:
+1. Your OK on the revised Phase 1
+2. Name of the 5th product, plus the manufacturer deck and images
+3. Do you already have an Amazon Seller Central account? If not, I'll guide you to open one (Professional plan)
+4. Is the AIOLEC trademark filed in the UK? It's needed for Brand Registry, which unlocks A+ and the Brand Store
+
+For pricing and bulk deals:
+5. Retail price per size, and the lowest price you'd accept on bulk orders (5+ screens)
+6. How many units you can supply per month, and delivery lead time
+7. Rough monthly ad budget for the first 3 months: £500, £1,000 or £2,000?
+
+Commission: I'm proposing [x]% on Amazon sales and [y]% on bulk orders I bring in, paid monthly against the sales report. Open to discuss.
+
+Could you send 1–4 by [Wednesday]? The rest can follow by the end of the week.</pre>
+  </div>
+</section>
+
+<!-- 3 NEEDS -->
+<section id="needs">
+  <div class="sh"><span class="n">03</span><h2>What you need from Bal</h2></div>
+  <p class="lead">21 items in four groups, in the order they block work. Tap to tick them off as they arrive; your ticks are saved in this browser.</p>
+  <div class="grid2" id="needs-grid">
+    <div class="card need-col" data-group="a">
+      <h3>A · To start <span class="pill p-fix">this week</span></h3><div class="when">Nothing starts until these are in</div><div class="prog"><i></i></div><div style="height:10px"></div>
+      <div class="item" data-id="a1"><span class="box"></span><span class="t"><b>Approval of revised Phase 1 + 50% advance</b><span class="why">Starts week 1. Without it, everything else is free work.</span></span></div>
+      <div class="item" data-id="a2"><span class="box"></span><span class="t"><b>Name of product 5 + manufacturer deck and images</b><span class="why">Sets the final scope and the images for range 5</span></span></div>
+      <div class="item" data-id="a3"><span class="box"></span><span class="t"><b>Seller Central account (Professional, £25/mo) + add you as a user</b><span class="why">Must be in his name with his ID and bank. You never use his login.</span></span></div>
+      <div class="item" data-id="a4"><span class="box"></span><span class="t"><b>UK trademark status, or filing started via IP Accelerator</b><span class="why">Gate for Brand Registry: A+, Store, video, brand ads</span></span></div>
+      <div class="item" data-id="a5"><span class="box"></span><span class="t"><b>Signed commission terms</b><span class="why">Rates, how sales are tracked, monthly payment</span></span></div>
+    </div>
+    <div class="card need-col" data-group="b">
+      <h3>B · Product data <span class="pill p-warn">week 1</span></h3><div class="when">Needed to write listings and build images</div><div class="prog"><i></i></div><div style="height:10px"></div>
+      <div class="item" data-id="b1"><span class="box"></span><span class="t"><b>Spec sheet for every size, all 5 ranges</b><span class="why">The 4 existing ranges are in the repo; product 5 is missing</span></span></div>
+      <div class="item" data-id="b2"><span class="box"></span><span class="t"><b>Packed box dimensions + weights per size</b><span class="why">Required fields, and they decide delivery cost</span></span></div>
+      <div class="item" data-id="b3"><span class="box"></span><span class="t"><b>GS1 barcodes, one per size</b><span class="why">Each size needs its own barcode (GTIN) to list</span></span></div>
+      <div class="item" data-id="b4"><span class="box"></span><span class="t"><b>Product CAD or clean photos on plain background</b><span class="why">For the white main images. If none, budget a 3D artist.</span></span></div>
+      <div class="item" data-id="b5"><span class="box"></span><span class="t"><b>Warranty length + returns policy</b><span class="why">Shown in bullets and in the buy box</span></span></div>
+    </div>
+    <div class="card need-col" data-group="c">
+      <h3>C · Compliance <span class="pill p-warn">week 1–2</span></h3><div class="when">Amazon can block electronics listings without these</div><div class="prog"><i></i></div><div style="height:10px"></div>
+      <div class="item" data-id="c1"><span class="box"></span><span class="t"><b>UKCA / CE Declaration of Conformity per range</b><span class="why">From the manufacturer</span></span></div>
+      <div class="item" data-id="c2"><span class="box"></span><span class="t"><b>WEEE producer registration number</b><span class="why">Required to sell electrical equipment in the UK</span></span></div>
+      <div class="item" data-id="c3"><span class="box"></span><span class="t"><b>UK VAT number</b><span class="why">For VAT invoices and Amazon Business pricing</span></span></div>
+      <div class="item" data-id="c4"><span class="box"></span><span class="t"><b>UK business address + responsible person</b><span class="why">Shown on product safety info</span></span></div>
+    </div>
+    <div class="card need-col" data-group="d">
+      <h3>D · Pricing + sales <span class="pill p-good">before go-live</span></h3><div class="when">Decides your commission and bulk pitch</div><div class="prog"><i></i></div><div style="height:10px"></div>
+      <div class="item" data-id="d1"><span class="box"></span><span class="t"><b>Retail price per size</b><span class="why">What a single buyer pays on Amazon</span></span></div>
+      <div class="item" data-id="d2"><span class="box"></span><span class="t"><b>Business price + quantity tiers (2–4, 5–9, 10+)</b><span class="why">Shown only to business buyers on Amazon</span></span></div>
+      <div class="item" data-id="d3"><span class="box"></span><span class="t"><b>Floor price per size for bulk deals</b><span class="why">The lowest he'll accept. Your negotiating room.</span></span></div>
+      <div class="item" data-id="d4"><span class="box"></span><span class="t"><b>Supply: units per month + lead time</b><span class="why">What you meant by "bandwidth"</span></span></div>
+      <div class="item" data-id="d5"><span class="box"></span><span class="t"><b>Delivery for 55"+ and installation cost by region</b><span class="why">Needed to quote bulk orders</span></span></div>
+      <div class="item" data-id="d6"><span class="box"></span><span class="t"><b>Monthly ad budget, first 90 days</b><span class="why">Paid to Amazon, separate from your fee</span></span></div>
+      <div class="item" data-id="d7"><span class="box"></span><span class="t"><b>Read-only access to sales reports</b><span class="why">So commission is based on real numbers</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 STEPS -->
+<section id="steps">
+  <div class="sh"><span class="n">04</span><h2>The launch, step by step</h2></div>
+  <p class="lead">Nine steps from deal to selling. Blue steps are the ones that unlock everything after them.</p>
+  <div class="steps">
+    <div class="step key"><div class="num">0</div><div class="card"><div class="step-h"><h3>Lock the deal</h3><span class="wk">Now</span></div><div class="who"><span class="pill p-you">You</span><span class="pill p-bal">Bal</span></div><ul><li>Send the numbered message + revised proposal for 5 ranges</li><li>Get approval and the 50% advance</li><li>Agree commission in writing</li></ul></div></div>
+    <div class="step key"><div class="num">1</div><div class="card"><div class="step-h"><h3>Account + brand</h3><span class="wk">Week 1</span></div><div class="who"><span class="pill p-bal">Bal does</span><span class="pill p-you">You guide</span><span class="pill p-out">Trademark firm</span></div><ul><li>Bal opens Seller Central (Professional) and adds you as a user</li><li>Trademark filed through Amazon IP Accelerator</li><li>Bal buys GS1 barcodes</li></ul></div></div>
+    <div class="step"><div class="num">2</div><div class="card"><div class="step-h"><h3>Collect product data</h3><span class="wk">Week 1</span></div><div class="who"><span class="pill p-bal">Bal sends</span><span class="pill p-claude">Claude organises</span></div><ul><li>Specs, box sizes, weights, compliance documents, prices</li><li>Claude puts it all in one master sheet: one row per size</li><li>Founder confirms every number</li></ul></div></div>
+    <div class="step"><div class="num">3</div><div class="card"><div class="step-h"><h3>Write the listings</h3><span class="wk">Week 1–2</span></div><div class="who"><span class="pill p-claude">Claude drafts</span><span class="pill p-you">You edit</span><span class="pill p-bal">Bal approves</span></div><ul><li>Title, 5 bullets, description and search keywords per size</li><li>Keyword data from a one-month tool subscription</li></ul></div></div>
+    <div class="step"><div class="num">4</div><div class="card"><div class="step-h"><h3>Make the visuals</h3><span class="wk">Week 2–3</span></div><div class="who"><span class="pill p-you">You design</span><span class="pill p-claude">Claude helps</span><span class="pill p-out">3D artist if needed</span></div><ul><li>7 images per range: white main, in place, the one number, size chart, ports, where it works, UK team</li><li>Built on the approved Instagram style</li></ul></div></div>
+    <div class="step"><div class="num">5</div><div class="card"><div class="step-h"><h3>Upload</h3><span class="wk">Week 3</span></div><div class="who"><span class="pill p-you">You</span><span class="pill p-claude">Claude fills the sheet</span></div><ul><li>Bulk-upload spreadsheet: one parent per range, sizes as variations</li><li>Business prices and quantity tiers</li></ul></div></div>
+    <div class="step key"><div class="num">6</div><div class="card"><div class="step-h"><h3>Go live</h3><span class="wk">Week 4</span></div><div class="who"><span class="pill p-you">You</span><span class="pill p-bal">Bal ships orders</span></div><ul><li>All sizes live and buyable</li><li>Tracking links set up (proof for your commission)</li><li>First Sponsored Products ads with his budget</li><li>Bulk outreach starts</li></ul></div></div>
+    <div class="gate"><b>Gate · Brand Registry active.</b> Listings can sell without it. A+, the Store, video and brand ads wait for it. If the trademark slips, step 7 slips with it.</div>
+    <div class="step"><div class="num">7</div><div class="card"><div class="step-h"><h3>Full brand</h3><span class="wk">Week 5</span></div><div class="who"><span class="pill p-you">You</span><span class="pill p-claude">Claude</span></div><ul><li>5 A+ pages + Brand Story, Brand Store (6 pages), films uploaded</li><li>Phase 2 quoted from launch data</li><li>Second 50% invoiced</li></ul></div></div>
+    <div class="step key"><div class="num">8</div><div class="card"><div class="step-h"><h3>Sell</h3><span class="wk">Ongoing</span></div><div class="who"><span class="pill p-you">You</span><span class="pill p-claude">Claude</span><span class="pill p-out">E-com partner (ads)</span></div><ul><li>Weekly bulk-deal loop (section 7)</li><li>Monthly report and commission statement</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5 SPLIT -->
+<section id="split">
+  <div class="sh"><span class="n">05</span><h2>Who does what</h2></div>
+  <p class="lead">You and Claude handle the content and most of the setup. Outsource only what needs paid data, legal filing or daily ad management.</p>
+  <div class="grid3">
+    <div class="card who-col"><h3><span class="ic" style="background:#f1ecff">✦</span>You + Claude</h3><p class="s">Content, setup and sales</p><ul>
+      <li>Listing copy for every size<small>Claude drafts from the spec PDFs and checks every figure</small></li>
+      <li>Bulk-upload spreadsheet<small>Claude fills one row per size</small></li>
+      <li>35 images, A+, Brand Store<small>You design; Claude plans layout and copy</small></li>
+      <li>Film re-cuts<small>Your three films, re-edited for Amazon</small></li>
+      <li>Pricing + fee calculator<small>Amazon fees, business tiers, margins</small></li>
+      <li>Customer question replies<small>Templates, including installation quotes</small></li>
+      <li>Monthly report<small>From Seller Central exports</small></li>
+      <li>Bulk-deal outreach<small>Lead lists, mock-ups, email drafts</small></li></ul></div>
+    <div class="card who-col"><h3><span class="ic" style="background:#eef1f4">⇢</span>Outsource</h3><p class="s">Small, one-off or specialist</p><ul>
+      <li>UK trademark filing<small>An IP Accelerator law firm. Gets Brand Registry with a pending mark.</small></li>
+      <li>Keyword search volumes<small>Helium 10 or Data Dive for one month. Claude can't see Amazon search data.</small></li>
+      <li>3D product renders<small>Only if there's no CAD or clean product photos</small></li>
+      <li>Daily ad management<small>Your e-commerce partner, from Phase 2</small></li></ul></div>
+    <div class="card who-col"><h3><span class="ic" style="background:var(--amber-t)">◆</span>Bal (you guide)</h3><p class="s">Legal, money and physical</p><ul>
+      <li>Seller account, ID and bank</li><li>Trademark ownership</li><li>Barcodes (GS1)</li><li>Compliance documents</li><li>Prices and stock</li><li>Shipping, delivery, installation</li><li>Ad budget</li></ul></div>
+  </div>
+</section>
+
+<!-- 6 MONEY -->
+<section id="money">
+  <div class="sh"><span class="n">06</span><h2>How you earn</h2></div>
+  <p class="lead">Four separate income streams. Keep the setup fee and commission separate: commission is your upside, not a discount on the work.</p>
+  <div class="grid4 money">
+    <div class="card"><div class="bar" style="background:var(--ink)"></div><div class="big">One-off</div><h4>Phase 1 fee</h4><p>[£2,450] suggested for 5 ranges. 50% at start, 50% at go-live.</p></div>
+    <div class="card"><div class="bar" style="background:#ff9900"></div><div class="big">Monthly · % of sales</div><h4>Amazon commission</h4><p>Lower rate on all Amazon sales: you built the channel. Tracked with Amazon's free tracking links.</p></div>
+    <div class="card"><div class="bar" style="background:var(--blue)"></div><div class="big">Per deal · higher %</div><h4>Bulk-deal commission</h4><p>Leads you register are yours for 90 days, whichever way they buy.</p></div>
+    <div class="card"><div class="bar" style="background:var(--green)"></div><div class="big">Monthly · recurring</div><h4>Screen content</h4><p>Every screen sold needs menus, promos and window loops. Sell a monthly content pack to the buyer.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3 style="margin:0 0 10px;font-size:16px">Commission terms to lock in</h3>
+    <div class="tbl"><table class="t"><thead><tr><th>Term</th><th>Ask for</th></tr></thead><tbody>
+      <tr><td><b>Base</b></td><td>% of net sales (ex VAT, after returns), not profit. Profit is easy to dispute.</td></tr>
+      <tr><td><b>Two rates</b></td><td>Amazon sales: lower %. Bulk deals you source: higher %. There's no standard; test 3–10% against his margin.</td></tr>
+      <tr><td><b>Proof</b></td><td>Amazon tracking links + a shared lead register + read-only sales reports</td></tr>
+      <tr><td><b>Lead protection</b></td><td>90 days from registering a lead, any channel</td></tr>
+      <tr><td><b>Repeat orders</b></td><td>Commission on your accounts' repeat orders for 12 months</td></tr>
+      <tr><td><b>Payment</b></td><td>Monthly, within 15 days of month end</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- 7 BULK -->
+<section id="bulk">
+  <div class="sh"><span class="n">07</span><h2>The bulk-deal system</h2></div>
+  <p class="lead">One 10-site café chain is worth more than a month of single Amazon sales. Run this loop every week from week 4. Claude does the research, mock-ups and drafts; you send and close.</p>
+  <div class="flow">
+    <div class="fbox"><div class="d">Mon</div><h4>Pick + list</h4><p>One sector, one region. Claude builds 30–50 leads with Lusha.</p></div>
+    <div class="fbox"><div class="d">Tue</div><h4>Mock-up hook</h4><p>Their shopfront or menu wall with an AIOLEC screen in it, for the top 10.</p></div>
+    <div class="fbox"><div class="d">Wed</div><h4>Outreach</h4><p>Claude drafts personal emails in Gmail. You send, then LinkedIn.</p></div>
+    <div class="fbox"><div class="d">Thu</div><h4>Register</h4><p>Replies into the lead sheet: sites, sizes, value. 90-day protection starts.</p></div>
+    <div class="fbox"><div class="d">Fri</div><h4>Quote + report</h4><p>Claude builds quotes for Bal to confirm, plus a weekly summary.</p></div>
+  </div>
+  <div class="split2">
+    <div class="route small"><h4>1–4 screens → Amazon</h4><p style="margin:0;font-size:14px;color:#333">Send your tracked link to the Amazon listing with business pricing. Amazon handles payment; the tracking proves the sale is yours.</p></div>
+    <div class="route bulk"><h4>5+ screens or multi-site → direct</h4><p style="margin:0;font-size:14px;color:#333">Quote through AIOLEC's UK team, with survey and installation. Higher commission, plus a content-pack upsell.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="tbl"><table class="t"><thead><tr><th>Product</th><th>Who to target</th><th>Hook</th></tr></thead><tbody>
+    <tr><td><b>CD1</b> indoor</td><td>Café and QSR chains, gyms, office receptions</td><td>Menus that change by time of day</td></tr>
+    <tr><td><b>HBV1</b> window</td><td>Estate agents, opticians, boutiques, car showrooms</td><td>Readable in daylight; replaces printed posters</td></tr>
+    <tr><td><b>DSV1</b> double-sided</td><td>Pharmacies, eyewear, street-window coffee shops</td><td>One screen, two audiences</td></tr>
+    <tr><td><b>OD1</b> outdoor</td><td>Drive-thrus, forecourts, pub gardens, campuses</td><td>IP66, readable in direct sun</td></tr>
+    <tr><td><b>All</b></td><td>AV integrators and signage resellers</td><td>Trade price; they resell, you take a cut</td></tr>
+  </tbody></table></div></div>
+</section>
+
+<!-- 8 TERMS -->
+<section id="terms">
+  <div class="sh"><span class="n">08</span><h2>Amazon in 12 words</h2></div>
+  <p class="lead">The only terms you need to follow the conversation with Bal or the e-commerce partner.</p>
+  <div class="gl">
+    <div><b>Seller Central</b>Bal's seller account. He owns it and adds you as a user.</div>
+    <div><b>ASIN</b>Amazon's ID for one product page. Each size gets one.</div>
+    <div><b>Parent / child</b>One listing per range, sizes as options. Reviews pool together.</div>
+    <div><b>GTIN / GS1</b>The barcode each size needs. Bought from GS1 UK.</div>
+    <div><b>Brand Registry</b>Proves AIOLEC owns the brand. Needs a UK trademark.</div>
+    <div><b>A+ content</b>The rich image section lower on the page.</div>
+    <div><b>Brand Store</b>AIOLEC's mini website inside Amazon.</div>
+    <div><b>FBA / FBM</b>Amazon ships it / AIOLEC ships it. Start with FBM for big screens.</div>
+    <div><b>Referral fee</b>Amazon's cut per sale. Electronics is 7% in the UK.</div>
+    <div><b>Amazon Business</b>The B2B side: VAT-free prices, bulk tiers, quote requests.</div>
+    <div><b>Attribution</b>Free tracking links. Your proof for commission.</div>
+    <div><b>Sponsored Products</b>Pay-per-click ads in Amazon search results.</div>
+  </div>
+</section>
+
+<footer>
+  Prepared 15 Nov 2026 · Fees and programme details from
+  <a href="https://sell.amazon.co.uk/pricing">Amazon UK pricing</a>,
+  <a href="https://sell.amazon.co.uk/brand-registry/">Brand Registry</a>,
+  <a href="https://sell.amazon.co.uk/brand-registry/ip-accelerator">IP Accelerator</a> and
+  <a href="https://sell.amazon.co.uk/programmes/amazon-business">Amazon Business</a>. The [£2,450] fee and commission ranges are suggestions, not market rates.
+</footer>
+</main>
+
+<script>
+var KEY='aiolec-needs-v1',state={};
+try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function prog(){document.querySelectorAll('.need-col').forEach(function(c){var it=c.querySelectorAll('.item'),on=c.querySelectorAll('.item.on').length;c.querySelector('.prog i').style.width=(on/it.length*100)+'%';});}
+document.querySelectorAll('.item').forEach(function(el){if(state[el.dataset.id])el.classList.add('on');el.addEventListener('click',function(){el.classList.toggle('on');state[el.dataset.id]=el.classList.contains('on');save();prog();});});
+prog();
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).innerText;
+ var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel(t);b.textContent='Select + copy';});}else{sel(t);b.textContent='Select + copy';}});});
+function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('msg1'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+</script>
+</body>
+</html>
