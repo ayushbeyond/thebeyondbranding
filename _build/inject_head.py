@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Injects site-wide <head> snippets (Microsoft Clarity) into every HTML page.
+"""Injects site-wide <head> snippets (Google tag GTM-T6XNBKNC + Microsoft Clarity) into every HTML page.
 
 Runs automatically at the end of build.py, and covers hand-made pages too
 (stay/, pitch/, for/, showcase/). Safe to run any number of times.
@@ -20,6 +20,15 @@ CLARITY = MARK + """<script type="text/javascript">
 })(window, document, "clarity", "script", "%s");
 </script>""" % CLARITY_ID
 
+GTAG_ID = "GTM-T6XNBKNC"
+GMARK = "<!-- google-tag -->"
+GTAG = GMARK + """<script async src="https://www.googletagmanager.com/gtm.js?id=%s"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>""" % GTAG_ID
+
 SKIP_DIRS = {".git", "_build", "node_modules", "assets"}
 
 
@@ -32,13 +41,19 @@ def inject(root=ROOT):
                 continue
             path = os.path.join(dirpath, f)
             s = open(path, encoding="utf-8").read()
-            if MARK in s or "clarity.ms/tag" in s or "</head>" not in s:
+            orig = s
+            if "</head>" not in s:
                 continue
-            s = re.sub(r"</head>", CLARITY + "\n</head>", s, count=1, flags=re.I)
-            open(path, "w", encoding="utf-8").write(s)
-            n += 1
+            # Google tag: immediately after <head>, once per page
+            if GMARK not in s and GTAG_ID not in s:
+                s = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + "\n" + GTAG, s, count=1, flags=re.I)
+            if MARK not in s and "clarity.ms/tag" not in s:
+                s = re.sub(r"</head>", CLARITY + "\n</head>", s, count=1, flags=re.I)
+            if s != orig:
+                open(path, "w", encoding="utf-8").write(s)
+                n += 1
     return n
 
 
 if __name__ == "__main__":
-    print(f"clarity added to {inject()} pages")
+    print(f"head snippets added/updated on {inject()} pages")
