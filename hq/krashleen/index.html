@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- google-tag --><script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T6XNBKNC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Beyond HQ · Krashleen</title>
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;--tile:#F5F5F7;--dark:#000;--ink:#1D1D1F;--muted:#6E6E73;--line:#E5E5EA;
+  --red:#8A2B1F;--red-soft:#F6E7E3;--green:#1F9D55;--green-soft:#E8F6EE;--amber:#B26A00;--amber-soft:#FFF4E0;
+  --r:22px;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Inter Tight',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;font-size:16px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+section{padding:72px 0}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:10px 0 14px}
+h3{font-size:21px;letter-spacing:-.02em;font-weight:700;line-height:1.15}
+.lead{font-size:18px;color:var(--muted);max-width:640px}
+.red{color:var(--red)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:54px;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav b{font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+nav b i{font-style:normal;color:var(--red)}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{background:var(--dark);color:#fff;padding:84px 0 64px}
+.hero h1{font-size:clamp(44px,9vw,104px);line-height:.92;letter-spacing:-.045em;font-weight:800;margin:14px 0 22px}
+.hero h1 span{color:var(--red)}
+.hero .lead{color:#A1A1A6}
+.hero .mono{color:#A1A1A6}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+.kpi{background:#111;border:1px solid #222;border-radius:18px;padding:18px}
+.kpi .n{font-size:34px;font-weight:800;letter-spacing:-.03em}
+.kpi .l{font-size:13px;color:#A1A1A6}
+.bar{height:6px;background:#222;border-radius:9px;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);border-radius:9px;width:0;transition:width 1s}
+
+/* now card */
+.now{background:var(--tile);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.now .big{font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.three{display:grid;gap:10px}
+.three label{display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:10px 14px;border:1px solid var(--line)}
+.three input[type=text]{flex:1;border:0;outline:0;font:inherit;font-size:15px;background:transparent;min-width:0}
+.who{display:flex;gap:6px;margin-bottom:10px}
+.who button{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;cursor:pointer}
+.who button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* checkbox */
+.cb{appearance:none;-webkit-appearance:none;width:22px;height:22px;border-radius:7px;border:2px solid #C7C7CC;flex:none;cursor:pointer;display:grid;place-items:center;transition:.15s;background:#fff}
+.cb:checked{background:var(--red);border-color:var(--red)}
+.cb:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+
+/* missions */
+.missions{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+.m{border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;background:#fff;position:relative}
+.m .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.m .num{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:500}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:99px;background:var(--tile);color:var(--ink);white-space:nowrap}
+.tag.a{background:#111;color:#fff}
+.tag.r{background:var(--red-soft);color:var(--red)}
+.m p{color:var(--muted);font-size:15px}
+.steps{list-style:none;display:grid;gap:8px}
+.steps li label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:15px}
+.steps li label span{padding-top:1px}
+.steps li.done span{text-decoration:line-through;color:#AEAEB2}
+.who-s{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-left:4px;white-space:nowrap}
+.donewhen{font-size:13px;background:var(--green-soft);color:var(--green);border-radius:12px;padding:9px 12px;font-weight:500}
+.prog{height:4px;background:var(--tile);border-radius:9px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--red);width:0;transition:width .4s}
+
+/* lanes */
+.lanes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.lane{border-radius:var(--r);padding:26px}
+.lane.a{background:var(--dark);color:#fff}
+.lane.r{background:var(--tile)}
+.lane h3{font-size:26px;margin-bottom:4px}
+.lane .mono{margin-bottom:16px;display:block}
+.lane.a .mono{color:#A1A1A6}
+.lane ul{list-style:none;display:grid;gap:9px}
+.lane li{display:flex;gap:10px;font-size:15px}
+.lane li::before{content:"→";color:var(--red);font-weight:700}
+.handoff{margin-top:16px;border:1.5px dashed #C7C7CC;border-radius:var(--r);padding:18px 22px;font-size:15px}
+
+/* loop */
+.loop{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:34px;counter-reset:s}
+.st{background:var(--tile);border-radius:18px;padding:18px 16px;position:relative}
+.st::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:11px;color:var(--red)}
+.st h4{font-size:17px;margin:6px 0 6px;letter-spacing:-.01em}
+.st p{font-size:13.5px;color:var(--muted);line-height:1.4}
+.st .tool{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10.5px;background:#fff;border-radius:99px;padding:3px 8px}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.rule{border:1px solid var(--line);border-radius:18px;padding:18px}
+.rule b{display:block;font-size:16px;margin-bottom:4px;letter-spacing:-.01em}
+.rule span{font-size:14px;color:var(--muted)}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.tool-card{border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px}
+.tool-card .role{font-family:var(--mono);font-size:11px;color:var(--red);text-transform:uppercase;letter-spacing:.06em}
+.tool-card h3{font-size:20px}
+.tool-card p{font-size:14.5px;color:var(--muted)}
+.tool-card .alt{font-size:13px;color:var(--ink);background:var(--tile);border-radius:10px;padding:8px 10px;margin-top:auto}
+.verdict{margin-top:16px;background:var(--red-soft);border-radius:var(--r);padding:20px 24px;font-size:16px}
+.verdict b{color:var(--red)}
+
+/* math */
+.math{background:var(--dark);color:#fff;border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+.sl{margin-bottom:22px}
+.sl .row{display:flex;justify-content:space-between;font-size:14px;color:#A1A1A6;margin-bottom:8px}
+.sl .row b{color:#fff;font-size:16px}
+input[type=range]{width:100%;accent-color:var(--red)}
+.out .n{font-size:clamp(46px,7vw,72px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.out .l{color:#A1A1A6;font-size:14px;margin-top:6px}
+.out .gap{margin-top:20px;font-size:15px;padding:12px 14px;border-radius:12px;background:#111;border:1px solid #222}
+
+/* parking */
+.park-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.p{border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.p b{font-size:16px;letter-spacing:-.01em}
+.p span{font-size:13.5px;color:var(--muted)}
+.p .unlock{margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:11px;color:var(--amber)}
+.p.next{border-color:var(--amber);background:var(--amber-soft)}
+.addidea{display:flex;gap:8px;margin-top:20px}
+.addidea input{flex:1;font:inherit;border:1px solid var(--line);border-radius:14px;padding:12px 14px;outline:0;min-width:0}
+.addidea button,.btn{font:inherit;font-weight:600;background:var(--ink);color:#fff;border:0;border-radius:14px;padding:12px 18px;cursor:pointer;white-space:nowrap}
+#myParked{display:grid;gap:8px;margin-top:12px;list-style:none}
+#myParked li{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--tile);border-radius:12px;padding:10px 14px;font-size:14.5px}
+#myParked li em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--amber);white-space:nowrap}
+#myParked li em.ok{color:var(--green)}
+#myParked li button{background:none;border:0;color:var(--muted);cursor:pointer;font-size:16px}
+
+/* guardrails */
+.guards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px}
+.g{display:flex;gap:14px;padding:18px;border-radius:18px;background:var(--tile)}
+.g .ic{width:30px;height:30px;border-radius:9px;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.g b{display:block;margin-bottom:2px}
+.g span{font-size:14px;color:var(--muted)}
+
+/* app */
+.app{background:var(--dark);color:#fff}
+.app .lead{color:#A1A1A6}
+.app .mono{color:#A1A1A6}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.f{background:#111;border:1px solid #222;border-radius:18px;padding:20px}
+.f .e{font-size:22px}
+.f b{display:block;margin:8px 0 4px;font-size:16.5px}
+.f span{font-size:14px;color:#A1A1A6}
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.rd{border:1px solid #333;border-radius:18px;padding:20px}
+.rd .mono{color:var(--red)}
+.rd b{display:block;margin:6px 0 4px;font-size:17px}
+.rd span{font-size:14px;color:#A1A1A6}
+
+/* week */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:30px}
+.d{border-radius:16px;padding:14px 12px;background:var(--tile);min-height:120px}
+.d .mono{font-size:11px}
+.d b{display:block;margin:6px 0 4px;font-size:14.5px;letter-spacing:-.01em}
+.d span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block}
+.d.k{background:var(--red);color:#fff}
+.d.k .mono,.d.k span{color:#FFD8DB}
+
+footer{padding:40px 0 60px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reset{background:none;border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:6px 12px;font:inherit;font-size:12px;cursor:pointer}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .now,.math{grid-template-columns:1fr}
+  .missions,.lanes,.guards{grid-template-columns:1fr}
+  .loop{grid-template-columns:repeat(2,1fr)}
+  .rules,.stack,.park-grid,.feat,.road{grid-template-columns:1fr}
+  .week{grid-template-columns:1fr 1fr}
+  section{padding:56px 0}
+  .now{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+.gate{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;padding:20px}
+.gate[hidden]{display:none}
+.gate-card{width:100%;max-width:380px;background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.gate-logo{font-weight:800;letter-spacing:-.02em;font-size:22px}.gate-logo i{font-style:normal;color:var(--red)}
+.gate-field{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.gate-field input{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:0}
+.gate-field input:focus{border-color:var(--ink)}
+.gate-err{color:var(--red);font-size:14px}
+.gate-go{font:inherit;font-weight:700;font-size:16px;border:0;border-radius:14px;background:var(--ink);color:#fff;min-height:50px;cursor:pointer;margin-top:6px}
+.closes{margin-top:22px;padding-top:18px;border-top:1px solid #333;display:flex;flex-direction:column;gap:8px}
+.cl-row{display:flex;align-items:center;gap:14px}
+.cl-row b{font-size:34px;font-weight:800;min-width:40px;text-align:center}
+.cl-row button{width:44px;height:44px;border-radius:50%;border:1px solid #444;background:#111;color:#fff;font-size:20px;cursor:pointer}
+footer .wrap{flex-wrap:wrap;gap:10px}
+</style>
+<!-- clarity --><script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "z7a3izqphe");
+</script>
+</head>
+<body>
+
+<!-- DUMMY GATE: not security, just keeps a forwarded link from opening on first glance -->
+<div id="gate" class="gate" hidden>
+  <form class="gate-card" id="gateForm" autocomplete="off">
+    <b class="gate-logo">Beyond <i>HQ</i></b>
+    <span class="mono">Ayush × Krashleen · private board</span>
+    <h2 style="margin:18px 0 6px">Who's this?</h2>
+    <div class="who" id="gateWho">
+      <button type="button" data-p="krashleen" class="on">Krashleen</button>
+      <button type="button" data-p="ayush">Ayush</button>
+    </div>
+    <label class="gate-field"><span class="mono">Passcode</span><input id="gatePass" type="password" placeholder="Ask Ayush" inputmode="text"></label>
+    <p class="gate-err" id="gateErr" hidden>That's not it. Ask Ayush on WhatsApp.</p>
+    <button class="gate-go" type="submit">Open HQ →</button>
+  </form>
+</div>
+
+<nav><div class="wrap">
+  <b>Beyond <i>HQ</i> · Krashleen</b>
+  <a href="#now">Now</a><a href="#missions">Missions</a><a href="#plate">On your plate</a><a href="#lanes">Who</a><a href="#loop">Loop</a><a href="#stack">Tools</a><a href="#math">Math</a><a href="#park">Parking lot</a><a href="#guards">Rules</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="mono">Ayush × Krashleen · 90-day sprint · private</span>
+    <h1>69 ideas.<br><span>4 missions.</span></h1>
+    <p class="lead">Everything from our chat since 30 Oct, sorted. Four things count till February; everything else waits in the parking lot. Open it, do the next box, close it.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n" id="closesN">0 / 3</div><div class="l">leads closed → iPad</div><div class="bar"><i id="closesBar"></i></div></div>
+      <div class="kpi"><div class="n">4</div><div class="l">missions. Not 69.</div></div>
+      <div class="kpi"><div class="n">3</div><div class="l">tasks a day each, max</div></div>
+      <div class="kpi"><div class="n" id="dayN">Day 0</div><div class="l" id="dayL">of 90 · starts Mon 23 Nov</div><div class="bar"><i id="dayBar"></i></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- NOW -->
+<section id="now"><div class="wrap">
+  <span class="mono">Open this first, every day</span>
+  <h2>Right now, just this.</h2>
+  <div class="now reveal">
+    <div>
+      <div class="big" id="nextUp">Loading your next box…</div>
+      <p class="lead" style="margin-top:12px;font-size:16px">The first unchecked step from the missions below, picked for whoever is selected. Recovery week (till 22 Nov): only do the boxes that don't need talking.</p>
+    </div>
+    <div>
+      <div class="who" id="whoTabs" role="tablist">
+        <button data-p="krashleen" class="on">Krashleen</button>
+        <button data-p="ayush">Ayush</button>
+      </div>
+      <div class="three" id="today"></div>
+      <p class="mono" style="margin-top:10px;text-transform:none;letter-spacing:0">Today's 3. Write them, tick them, and you're done for the day.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- MISSIONS -->
+<section id="missions" style="padding-top:0"><div class="wrap">
+  <span class="mono">The only 4 things that count till February</span>
+  <h2>Four missions.</h2>
+  <p class="lead">Ranked by how close they are to money and how much you can lead them yourself. Each one has a finish line, so it can actually end.</p>
+  <div class="missions" id="missionGrid"></div>
+</div></section>
+
+<!-- ON YOUR PLATE -->
+<section id="plate" style="padding-top:0"><div class="wrap">
+  <span class="mono">Already committed, not missions</span>
+  <h2>On your plate.</h2>
+  <p class="lead">Paid work you're already doing. It keeps running alongside the missions, it just doesn't need planning here.</p>
+  <div class="park-grid">
+    <div class="p next reveal"><b>Nykaa × Kickstart event · ₹35k</b><span>Marketing, community registration and a before/after reel. Hire a proper cinematographer (₹10–15k) instead of skipping the reel: quality is the portfolio.</span><span class="unlock">NEXT → confirm deliverables and the cinematographer cost in writing</span></div>
+    <div class="p next reveal"><b>Pincode by Kunal Kapur</b><span>Ongoing. Every month here is a new case-study post for Mission 2.</span><span class="unlock">KEEP → log one result or photo a week for the content bank</span></div>
+    <div class="p next reveal"><b>One8 Commune</b><span>Ongoing community and events work, no daily presence needed.</span><span class="unlock">KEEP → same: one result or photo a week</span></div>
+  </div>
+</div></section>
+
+<!-- LANES -->
+<section id="lanes" style="background:#FBFBFD"><div class="wrap">
+  <span class="mono">Clear lanes, no control games</span>
+  <h2>Who owns what.</h2>
+  <p class="lead">You lead, Ayush backs you with strategy, pitches and tech. One owner per thing; the other helps but never blocks or takes over.</p>
+  <div class="lanes">
+    <div class="lane a reveal">
+      <h3>Krashleen</h3><span class="mono">Relationships · content · community</span>
+      <ul>
+        <li>Client calls and relationships: Overcmr, Nykaa event, Pincode, One8</li>
+        <li>LinkedIn and Instagram outreach, UK and Dubai first</li>
+        <li>Social plans, content calendars, shoot coordination</li>
+        <li>Your own content: you're on camera, the face of it</li>
+        <li>Indore network: vendors, printing, venues, cinematographers</li>
+      </ul>
+    </div>
+    <div class="lane r reveal">
+      <h3>Ayush</h3><span class="mono">Strategy · pitches · tech</span>
+      <ul>
+        <li>Proposals, pricing pages and pitch sites</li>
+        <li>Websites, motion, reel edits and Claude automations</li>
+        <li>Intros to his clients (AIOLEC, Overcmr) and strategy calls</li>
+        <li>Final review of anything client-facing in design</li>
+        <li>Pays for tools and the incentives when leads land</li>
+      </ul>
+    </div>
+  </div>
+  <div class="handoff reveal"><b>Handoff rule:</b> when work crosses lanes, send <b>one message</b> with the link, what "done" looks like, and a date. Voice notes are fine for briefs, but transcribe them (ChatGPT or Claude) before they become tasks.</div>
+</div></section>
+
+<!-- LOOP -->
+<section id="loop"><div class="wrap">
+  <span class="mono">The workflow</span>
+  <h2>One loop, every day.</h2>
+  <p class="lead">Same loop as the studio board, sized for a freelancer who's also running events.</p>
+  <div class="loop">
+    <div class="st reveal"><h4>Capture</h4><p>Client brief, idea or lead goes into the chat as a voice note. Don't decide anything yet.</p><span class="tool">voice note → transcript</span></div>
+    <div class="st reveal"><h4>Park</h4><p>A new idea waits 7 days before it can become a mission. Most die there, which is the point.</p><span class="tool">Parking lot ↓</span></div>
+    <div class="st reveal"><h4>Pick 3</h4><p>Each morning, 3 boxes from the missions. Not 4.</p><span class="tool">This page</span></div>
+    <div class="st reveal"><h4>Ship v1</h4><p>Send the first version. Working beats pretty; Ayush polishes the design side.</p><span class="tool">Claude · Canva</span></div>
+    <div class="st reveal"><h4>Auto-chase</h4><p>Claude drafts every follow-up so nothing depends on memory.</p><span class="tool">Claude</span></div>
+    <div class="st reveal"><h4>Sync</h4><p>Async in the chat by default. Meet at Dripco only when a decision needs both of you.</p><span class="tool">WhatsApp · Dripco</span></div>
+  </div>
+  <div class="rules">
+    <div class="rule reveal"><b>Status first</b><span>Unavailable? Say it in one line (wisdom teeth count). Nobody chases you on those days.</span></div>
+    <div class="rule reveal"><b>No new tools this sprint</b><span>Claude Pro, WhatsApp and this page. Notion waits until the app syncs.</span></div>
+    <div class="rule reveal"><b>Missed a day? Don't make it up</b><span>Pick 3 again tomorrow. No guilt spiral.</span></div>
+  </div>
+</div></section>
+
+<!-- STACK -->
+<section id="stack" style="background:#FBFBFD"><div class="wrap">
+  <span class="mono">Tools you already have</span>
+  <h2>Three tools. That's it.</h2>
+  <p class="lead">Both of you have Claude Pro now. Use it for the heavy lifting and keep everything else small.</p>
+  <div class="stack">
+    <div class="tool-card reveal"><span class="role">Talk</span><h3>WhatsApp, work only</h3><p>This group is for decisions and handoffs. One message per handoff, with the link and a date.</p><div class="alt">Later: a bot in the group that posts the nightly recap.</div></div>
+    <div class="tool-card reveal"><span class="role">Find</span><h3>Claude + Chrome</h3><p>Lead lists ranked by conversion chance, stakeholder lookups, proposal drafts. Lusha and ContactOut for emails, in small batches.</p><div class="alt">Give it thebeyondbranding.com and krashleen.in as context.</div></div>
+    <div class="tool-card reveal"><span class="role">Make</span><h3>Claude, ElevenLabs, Metricool</h3><p>Scripts, storyboards and voice-overs; Metricool to schedule and read results.</p><div class="alt">X for motion-graphic inspiration, not for posting yet.</div></div>
+  </div>
+  <div class="verdict reveal"><b>Verdict:</b> WhatsApp for talking, Claude for finding and making, this page for direction. If it doesn't fit those, we don't need it this sprint.</div>
+</div></section>
+
+<!-- MATH -->
+<section id="math"><div class="wrap">
+  <span class="mono">Is remote stability real?</span>
+  <h2>Your math.</h2>
+  <p class="lead">Set your number first: the monthly amount that makes this worth it on a bad day. Then move the sliders. International deals are split 50/50 by default, like the £1k deal Ayush offered.</p>
+  <div class="math reveal">
+    <div>
+      <div class="sl"><div class="row">Your number (₹ / month) <b id="vNum">₹60,000</b></div><input type="range" id="sNum" min="20000" max="200000" step="5000" value="60000"></div>
+      <div class="sl"><div class="row">International deal (£) <b id="vT">£1,000</b></div><input type="range" id="sT" min="300" max="5000" step="100" value="1000"></div>
+      <div class="sl"><div class="row">International deals / month <b id="vP">1</b></div><input type="range" id="sP" min="0" max="8" value="1"></div>
+      <div class="sl"><div class="row">Your share <b id="vS">50%</b></div><input type="range" id="sS" min="10" max="100" step="5" value="50"></div>
+      <div class="sl"><div class="row">India work (₹ / month) <b id="vI">₹35,000</b></div><input type="range" id="sI" min="0" max="200000" step="5000" value="35000"></div>
+    </div>
+    <div class="out">
+      <div class="mono" style="color:#A1A1A6">Your month (at ₹125 per £)</div>
+      <div class="n" id="vOut">₹97,500</div>
+      <div class="l" id="vPct">163% of your number</div>
+      <div class="gap" id="vGap"></div>
+      <div class="closes">
+        <span class="mono" style="color:#A1A1A6">Leads closed this sprint</span>
+        <div class="cl-row"><button id="clMinus" aria-label="One less">−</button><b id="clN">0</b><button id="clPlus" aria-label="One more">+</button></div>
+        <span class="l" id="clMsg">3 closes → iPad · 6 → iPad Pro with Pencil</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- PARKING -->
+<section id="park" style="background:#FBFBFD"><div class="wrap">
+  <span class="mono">Not "no". Just "not yet".</span>
+  <h2>The parking lot.</h2>
+  <p class="lead">Good ideas from the chat, each with an unlock condition. Until it's met, nobody works on it, however exciting it feels at 2 AM.</p>
+  <div class="park-grid">
+    <div class="p next reveal"><b>Rebranding by Beyond Branding</b><span>Rebrand one small Indore business for free: printing vendor from your network, digital display from Delhi, Arjun for sponsorship. Builds the local name and the portfolio.</span><span class="unlock">UNLOCK → once Mission 2's page is live, so the rebrand becomes its content</span></div>
+    <div class="p next reveal"><b>Hostel community gig</b><span>Community and events at a hostel in Vietnam or Bali; Ayush has the owner's contact. Travel paid, networking built in.</span><span class="unlock">UNLOCK → when remote work covers your number for 2 months</span></div>
+    <div class="p next reveal"><b>$20 feed previews</b><span>Fetch new businesses' Instagram, send a watermarked feed preview like yours, sell the full set for $20.</span><span class="unlock">UNLOCK → test on 10 businesses once your own feed is posted</span></div>
+    <div class="p reveal"><b>Stays and hotel shoots</b><span>Airbnb branding (Brand My Stay) plus hotel shoots with vloggers: content and distribution in one.</span><span class="unlock">UNLOCK → when Mission 3 runs on rhythm</span></div>
+    <div class="p reveal"><b>Pihoco</b><span>Menu engineering and F&amp;B advisory, sold abroad. Your hospitality background fits.</span><span class="unlock">UNLOCK → when Ayush brings a named client</span></div>
+    <div class="p reveal"><b>Astrology branding</b><span>Already being sold by the studio.</span><span class="unlock">UNLOCK → when a paying client asks</span></div>
+    <div class="p reveal"><b>Coaching Inn (UK)</b><span>The first lead in this chat: their marketing manager, visuals by email.</span><span class="unlock">UNLOCK → fold into Mission 3's lead sheet if she's still in the role</span></div>
+    <div class="p reveal"><b>AI ops tool for teams</b><span>Replace chaotic task management with AI: what this page becomes.</span><span class="unlock">UNLOCK → after we've used this page for 30 days</span></div>
+    <div class="p reveal"><b>Import product brand</b><span>Premium product for the US/EU with an emotional story; Ayush would invest.</span><span class="unlock">UNLOCK → only with a supplier and a buyer lined up</span></div>
+  </div>
+  <div class="addidea"><input id="ideaIn" placeholder="Got a new idea? Park it here. It unlocks in 7 days." maxlength="140"><button id="ideaBtn">Park it</button></div>
+  <ul id="myParked"></ul>
+</div></section>
+
+<!-- GUARDRAILS -->
+<section id="guards"><div class="wrap">
+  <span class="mono">Rules from the chat</span>
+  <h2>Guardrails.</h2>
+  <div class="guards">
+    <div class="g reveal"><div class="ic">◎</div><div><b>Never change a client's brand identity</b><span>Their fonts, colours and logo are the base for everything. Rule number 1.</span></div></div>
+    <div class="g reveal"><div class="ic">≡</div><div><b>Keep proposals simple</b><span>Deliverables, price and a few slides about you. Extra copy belongs in brand decks, not proposals.</span></div></div>
+    <div class="g reveal"><div class="ic">↑</div><div><b>Look busy, not available</b><span>No "open to work" or "open to remote". Show the clients you already have.</span></div></div>
+    <div class="g reveal"><div class="ic">!</div><div><b>Don't spam LinkedIn</b><span>10–20 personal messages a day. Blasts get the account restricted.</span></div></div>
+    <div class="g reveal"><div class="ic">÷</div><div><b>Write the split before the work</b><span>One line per deal: who leads, your commission or %, who invoices. Two minutes now saves the awkward talk later.</span></div></div>
+    <div class="g reveal"><div class="ic">♡</div><div><b>Only real stories</b><span>The handmade, honest persona is the edge. Keep content true: one staged post that gets exposed undoes it.</span></div></div>
+  </div>
+</div></section>
+
+<!-- WEEK -->
+<section id="week" style="background:#FBFBFD"><div class="wrap">
+  <span class="mono">The weekly rhythm (from 23 Nov)</span>
+  <h2>A week that runs itself.</h2>
+  <div class="week">
+    <div class="d"><span class="mono">Mon</span><b>Leads in</b><span>10 UK/Dubai leads into the sheet</span></div>
+    <div class="d"><span class="mono">Tue</span><b>Outreach</b><span>Connects, comments, Dubai follow-ups</span></div>
+    <div class="d"><span class="mono">Wed</span><b>Content day</b><span>Film or design one post for your page</span></div>
+    <div class="d"><span class="mono">Thu</span><b>Clients</b><span>Calls and proposals: Overcmr, AIOLEC</span></div>
+    <div class="d"><span class="mono">Fri</span><b>Chase</b><span>Follow-ups Claude drafted, then post</span></div>
+    <div class="d"><span class="mono">Sat</span><b>On-ground</b><span>Events, Pincode, One8, or rest</span></div>
+    <div class="d k"><span class="mono">Sun</span><b>30-min review</b><span>What shipped, update closes, then stop</span></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Beyond HQ · Krashleen · built from the "Beyond x Krashleen" chat, 30 Oct–16 Nov 2026</span>
+  <span style="display:flex;gap:8px"><button class="reset" id="logoutBtn">Switch person</button><button class="reset" id="resetBtn">Reset my ticks</button></span>
+</div></footer>
+
+<script>
+(function(){
+  var store={get:function(k,d){try{var v=localStorage.getItem('bhqk_'+k);return v?JSON.parse(v):d}catch(e){return d}},
+             set:function(k,v){try{localStorage.setItem('bhqk_'+k,JSON.stringify(v))}catch(e){}}};
+
+  var M=[
+    {id:'m1',title:'Overcmr × Gunprabh: first retainer',tag:'Warm lead · Mumbai · padel',owners:['K','A'],
+     why:'Gunprabh already shared what he needs and has no real digital presence yet, so it is a clean start. You lead the relationship; Ayush handles strategy and the proposal. The bigger win is a process we can repeat with the next brand.',
+     done:'Done when Overcmr signs a monthly management fee, with shoots and campaigns priced separately',
+     steps:[['Verbal call with Gunprabh: needs, budget, timeline. Show your pickleball work','K'],['Get a shoot quote from your team (Mumbai or bring the product to Indore)','K'],['Build the proposal: management fee, separate execution budget, scope in and out','A'],['Send it, follow up in 48 hours','K'],['Signed, with your commission written down','K']]},
+    {id:'m2',title:'Launch Krashleen (your own brand)',tag:'Unlocks every other mission',owners:['K','A'],
+     why:'Clients check you before they reply. krashleen.in and the pricing page are live; the socials are not. Lean into the handmade, honest persona and make your age the flex: Gen Z who already launched a celebrity chef.',
+     done:'Done when the new page has 6 posts, the LinkedIn rewrite is live and the first inbound DM arrives',
+     steps:[['Rewrite LinkedIn as a freelance creative strategist, showing active clients','K'],['Create the new Instagram page: fresh audience, no cross-promo','K'],['Record the wisdom-tooth trial reel from the storyboard (silent version is fine)','K'],['Edit and post the first reel with subtitles','A'],['Set up hello@krashleen.in and add it everywhere','K'],['Post 2 case-study carousels: Pincode and Fratelli','K']]},
+    {id:'m3',title:'UK + Dubai lead engine',tag:'Where the money is',owners:['K','A'],
+     why:'Ayush is focused on international work. You run outreach, he turns the best leads into pitch pages. Flavours of India and Renaissance (Dubai) are already in play.',
+     done:'Done when 3 leads reply and 1 books a call',
+     steps:[['Create the UK-based LinkedIn profile for Beyond Branding','K'],['Claude in Chrome: a sheet of 30 UK/Dubai businesses ranked by conversion chance','K'],['10 personal connects and comments a day, no blasts','K'],['Flavours of India: reach their marketing lead (Botim call or LinkedIn)','K'],['Research Renaissance\'s Dubai launch and its stakeholders','K'],['Turn the top 3 leads into pitch pages','A']]},
+    {id:'m4',title:'AIOLEC social plan (London)',tag:'Live client · already pitched',owners:['K','A'],
+     why:'The site is live and Ayush already pitched initial social content. Turn it into a real plan with deliverables and growth targets: the part AI can\'t do on its own.',
+     done:'Done when AIOLEC approves the plan and a monthly price',
+     steps:[['Study 5 display or signage brands: what they post and what works','K'],['Draft the 30-day plan: pillars, formats, deliverables, growth targets','K'],['Review: AIOLEC\'s own fonts, colours and logo stay the base','A'],['Add pricing on a simple 1-page proposal','K'],['Send it, with an ad concept as the upsell','A']]}
+  ];
+  var ticks=store.get('ticks',{});
+  var grid=document.getElementById('missionGrid');
+  var name={A:'Ayush',K:'Krashleen'};
+
+  M.forEach(function(m,mi){
+    var el=document.createElement('article');el.className='m reveal';
+    var steps=m.steps.map(function(s,si){var k=m.id+'_'+si;var on=!!ticks[k];
+      return '<li class="'+(on?'done':'')+'"><label><input type="checkbox" class="cb" data-k="'+k+'" '+(on?'checked':'')+'><span>'+s[0]+' <span class="who-s">· '+name[s[1]]+'</span></span></label></li>'}).join('');
+    el.innerHTML='<div class="top"><div><div class="num">MISSION 0'+(mi+1)+'</div><h3>'+m.title+'</h3></div></div>'+
+      '<div class="tags"><span class="tag r">'+m.tag+'</span><span class="tag a">Lead: '+name[m.owners[0]]+'</span></div>'+
+      '<p>'+m.why+'</p><div class="prog"><i data-p="'+m.id+'"></i></div><ul class="steps">'+steps+'</ul><div class="donewhen">✓ '+m.done+'</div>';
+    grid.appendChild(el);
+  });
+
+  function progress(){
+    M.forEach(function(m){var n=0;m.steps.forEach(function(s,i){if(ticks[m.id+'_'+i])n++});
+      var bar=document.querySelector('[data-p="'+m.id+'"]');if(bar)bar.style.width=(n/m.steps.length*100)+'%'});
+    nextUp();
+  }
+  grid.addEventListener('change',function(e){var k=e.target.dataset.k;if(!k)return;ticks[k]=e.target.checked;store.set('ticks',ticks);
+    e.target.closest('li').classList.toggle('done',e.target.checked);progress()});
+
+  // person + next up + today's 3
+  var person=store.get('person','krashleen');
+  var whoBtns=document.querySelectorAll('#whoTabs button');
+  function nextUp(){
+    var code=person==='ayush'?'A':'K',found=null;
+    for(var i=0;i<M.length&&!found;i++){for(var j=0;j<M[i].steps.length;j++){var s=M[i].steps[j];if(!ticks[M[i].id+'_'+j]&&s[1]===code){found={m:M[i].title,s:s[0]};break}}}
+    document.getElementById('nextUp').innerHTML=found?'<span class="mono" style="display:block;margin-bottom:8px">'+found.m+'</span>'+found.s:'Every box is ticked. Go ship something, then add the next missions on Sunday.';
+  }
+  function renderToday(){
+    var t=store.get('today_'+person,{d:'',items:[['',false],['',false],['',false]]});
+    var today=new Date().toDateString();if(t.d!==today){t={d:today,items:[['',false],['',false],['',false]]};store.set('today_'+person,t)}
+    var box=document.getElementById('today');box.innerHTML='';
+    t.items.forEach(function(it,i){var l=document.createElement('label');
+      l.innerHTML='<input type="checkbox" class="cb" '+(it[1]?'checked':'')+'><input type="text" placeholder="Task '+(i+1)+'" value="'+it[0].replace(/"/g,'&quot;')+'" maxlength="90">';
+      var cb=l.children[0],tx=l.children[1];
+      cb.onchange=function(){t.items[i][1]=cb.checked;store.set('today_'+person,t)};
+      tx.oninput=function(){t.items[i][0]=tx.value;store.set('today_'+person,t)};
+      box.appendChild(l)});
+  }
+  whoBtns.forEach(function(b){b.classList.toggle('on',b.dataset.p===person);
+    b.onclick=function(){person=b.dataset.p;store.set('person',person);whoBtns.forEach(function(x){x.classList.toggle('on',x===b)});nextUp();renderToday()}});
+  progress();renderToday();
+
+  // day counter
+  var start=new Date(2026,10,23),now=new Date(),d=Math.floor((now-start)/864e5)+1;
+  var dn=document.getElementById('dayN'),dl=document.getElementById('dayL');
+  if(d<1){dn.textContent='T–'+(1-d);dl.textContent='days · sprint starts Mon 23 Nov'}
+  else if(d>90){dn.textContent='Done';dl.textContent='90 days complete. Review time.';d=90}
+  else{dn.textContent='Day '+d;dl.textContent='of 90 · ends 20 Feb'}
+  setTimeout(function(){document.getElementById('dayBar').style.width=Math.max(0,Math.min(100,d/90*100))+'%'},300);
+
+  // math
+  var inr=function(n){return '₹'+Math.round(n).toLocaleString('en-IN')};
+  var ids=['sNum','sT','sP','sS','sI'],el={};ids.concat(['vNum','vT','vP','vS','vI','vOut','vPct','vGap']).forEach(function(i){el[i]=document.getElementById(i)});
+  var saved=store.get('math',null);if(saved)ids.forEach(function(i){if(saved[i]!=null)el[i].value=saved[i]});
+  function calc(){var num=+el.sNum.value,T=+el.sT.value,P=+el.sP.value,S=+el.sS.value,I=+el.sI.value;
+    var out=T*P*125*S/100+I;
+    el.vNum.textContent=inr(num);el.vT.textContent='£'+T.toLocaleString('en-GB');el.vP.textContent=P;el.vS.textContent=S+'%';el.vI.textContent=inr(I);
+    el.vOut.textContent=inr(out);el.vPct.textContent=Math.round(out/num*100)+'% of your number';
+    var gap=num-out,per=T*125*S/100;
+    el.vGap.innerHTML=gap<=0?'<b style="color:#4ADE80">Covered.</b> Now make it repeat: retainers are what stay.':'Short by <b>'+inr(gap)+'</b>. That\'s '+(per>0?Math.ceil(gap/per):'∞')+' more international deal(s) at your share, or more India work.';
+    var v={};ids.forEach(function(i){v[i]=el[i].value});store.set('math',v)}
+  ids.forEach(function(i){el[i].oninput=calc});calc();
+
+  // closes → incentives
+  var closes=store.get('closes',0);
+  function renderCloses(){document.getElementById('clN').textContent=closes;
+    var nxt=closes<3?3:6;document.getElementById('closesN').textContent=Math.min(closes,nxt)+' / '+nxt;
+    document.getElementById('closesBar').style.width=Math.min(100,closes/nxt*100)+'%';
+    document.getElementById('clMsg').textContent=closes>=6?'iPad Pro with Pencil unlocked. Collect from Ayush.':closes>=3?'iPad unlocked. '+(6-closes)+' more for the iPad Pro with Pencil.':(3-closes)+' more closes for the iPad · 6 for the iPad Pro with Pencil'}
+  document.getElementById('clPlus').onclick=function(){closes++;store.set('closes',closes);renderCloses()};
+  document.getElementById('clMinus').onclick=function(){closes=Math.max(0,closes-1);store.set('closes',closes);renderCloses()};
+  renderCloses();
+
+  // dummy gate (not security)
+  var gate=document.getElementById('gate'),gp='krashleen';
+  if(!store.get('auth',false)){gate.hidden=false;setTimeout(function(){document.getElementById('gatePass').focus()},50)}
+  document.querySelectorAll('#gateWho button').forEach(function(b){b.onclick=function(){gp=b.dataset.p;document.querySelectorAll('#gateWho button').forEach(function(x){x.classList.toggle('on',x===b)})}});
+  document.getElementById('gateForm').onsubmit=function(e){e.preventDefault();
+    if(document.getElementById('gatePass').value.trim().toLowerCase()==='beyond'){store.set('auth',true);person=gp;store.set('person',person);
+      whoBtns.forEach(function(x){x.classList.toggle('on',x.dataset.p===person)});nextUp();renderToday();gate.hidden=true}
+    else document.getElementById('gateErr').hidden=false};
+  document.getElementById('logoutBtn').onclick=function(){store.set('auth',false);gate.hidden=false};
+
+  // parking lot
+  var parked=store.get('parked',[]),ul=document.getElementById('myParked');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function renderPark(){ul.innerHTML='';parked.forEach(function(p,i){var left=Math.ceil((p.t+7*864e5-Date.now())/864e5);
+    var li=document.createElement('li');li.innerHTML='<span>'+esc(p.x)+'</span><em class="'+(left<=0?'ok':'')+'">'+(left<=0?'UNLOCKED · still excited?':'unlocks in '+left+'d')+'</em><button aria-label="Remove">×</button>';
+    li.querySelector('button').onclick=function(){parked.splice(i,1);store.set('parked',parked);renderPark()};ul.appendChild(li)})}
+  function add(){var v=document.getElementById('ideaIn').value.trim();if(!v)return;parked.unshift({x:v,t:Date.now()});store.set('parked',parked);document.getElementById('ideaIn').value='';renderPark()}
+  document.getElementById('ideaBtn').onclick=add;
+  document.getElementById('ideaIn').onkeydown=function(e){if(e.key==='Enter')add()};
+  renderPark();
+
+  document.getElementById('resetBtn').onclick=function(){ticks={};store.set('ticks',ticks);
+    document.querySelectorAll('#missionGrid .cb').forEach(function(c){c.checked=false;c.closest('li').classList.remove('done')});progress()};
+
+  // reveal
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
