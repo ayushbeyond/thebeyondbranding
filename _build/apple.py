@@ -349,8 +349,8 @@ def head(title, desc, site, path, jsonld=None):
 <link rel="canonical" href="{site}/{path}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Beyond Branding"><meta property="og:url" content="{site}/{path}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
-<meta property="og:image" content="{site}/assets/og-image.jpg?v=4"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Beyond Branding: brand, packaging and website design studio">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}"><meta name="twitter:image" content="{site}/assets/og-image.jpg?v=4">
+<meta property="og:image" content="{site}/assets/og-beyond-branding.jpg"><meta property="og:image:secure_url" content="{site}/assets/og-beyond-branding.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Beyond Branding: brand, packaging and website design studio">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}"><meta name="twitter:image" content="{site}/assets/og-beyond-branding.jpg">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 {ld}
@@ -531,7 +531,7 @@ def build_home(projects, site, variant=None, preview=False):
                 ("Exhibition and event design", 800), ("Campaign and social media design", 150), ("Brochure and catalogue design", 400)]
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "ProfessionalService", "@id": org_id, "name": "Beyond Branding", "url": site + "/",
-         "logo": site + "/assets/apple-touch-icon.png", "image": site + "/assets/og-image.jpg?v=4", "description": desc,
+         "logo": site + "/assets/apple-touch-icon.png", "image": site + "/assets/og-beyond-branding.jpg", "description": desc,
          "email": "ayush@beyondbranding.media", "telephone": "+1-910-830-1588", "priceRange": "$$",
          "address": {"@type": "PostalAddress", "streetAddress": "Suite 408, 80A Ruskin Ave", "addressLocality": "Welling", "addressRegion": "London", "postalCode": "DA16 3QQ", "addressCountry": "GB"},
          "slogan": "Fast ideas. Premium design. On time, every time.",

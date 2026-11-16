@@ -488,7 +488,7 @@ def build_guide(g, site):
 """
     art = {"@type": "Article", "headline": g["h1"], "description": g["desc"], "datePublished": UPDATED, "dateModified": UPDATED,
            "author": {"@type": "Person", "name": "Ayush", "jobTitle": "Founder & Creative Director", "url": site + "/"},
-           "publisher": ORG(site), "mainEntityOfPage": f"{site}/{path}", "image": f"{site}/assets/og-image.jpg?v=4"}
+           "publisher": ORG(site), "mainEntityOfPage": f"{site}/{path}", "image": f"{site}/assets/og-beyond-branding.jpg"}
     ld = [art, faq_ld(g["faqs"]), crumbs_ld(site, [("Home", ""), ("Guides", "guides/"), (g["h1"], path)])]
     out = _page(g["title"], g["desc"], site, path, ld, body).replace('og:type" content="website"', 'og:type" content="article"', 1)
     return rel(out, "../../")

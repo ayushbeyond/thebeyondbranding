@@ -381,7 +381,7 @@ def build_hub():
           "hasPart": [{"@type": "CreativeWork", "name": p["client"], "url": f"{SITE}/work/{p['slug']}.html"} for p in PROJECTS]}
     out = head("Work · Beyond Branding — Brand, Packaging, Exhibition & Web Case Studies",
                f"Case studies from Beyond Branding — identity, packaging, exhibitions, campaigns and websites for {names} and more. London · Dubai · Mumbai.",
-               f"{SITE}/portfolio.html", f"{SITE}/assets/og-image.jpg", "", HUB_CSS, ld)
+               f"{SITE}/portfolio.html", f"{SITE}/assets/og-beyond-branding.jpg", "", HUB_CSS, ld)
     out += header("", "index.html", "Home")
     out += f"""<main>
 <section class="masthead">

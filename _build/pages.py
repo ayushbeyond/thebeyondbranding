@@ -114,7 +114,7 @@ def build_case2(p, nxt, related, site, packages):
           "creator": {"@type": "Organization", "name": "Beyond Branding", "url": site}, "image": f"{site}/assets/{imgs[0][0]}", "url": f"{site}/work/{p['slug']}.html"}
     out = head(f"{p['client']} · {p['services'].split(' · ')[0]} · Beyond Branding", f"{p['hook']} {p['summary']}", site, f"work/{p['slug']}.html")
     out = out.replace("</head>", WORK_CSS + f'<script type="application/ld+json">{json.dumps(ld)}</script></head>', 1)
-    out = out.replace('content="' + site + '/assets/og-image.jpg"', f'content="{site}/assets/{imgs[0][0]}"', 1)
+    out = out.replace('content="' + site + '/assets/og-beyond-branding.jpg"', f'content="{site}/assets/{imgs[0][0]}"', 1)
     out += f"""<main>
 <section class="cs-hero">
   <div class="crumb rv"><a href="portfolio.html">Work</a> / {E(p['client'])}</div>
