@@ -8,6 +8,7 @@
   gtag('js', new Date());
 </script>
 <meta charset="utf-8">
+<script>if(!/\/$|\.html$/.test(location.pathname))location.replace(location.pathname+"/"+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Nexas Glass · Glass for every project, processed to your drawing</title>
@@ -18,18 +19,18 @@
 <meta property="og:url" content="https://thebeyondbranding.com/pitch/nexas-glass/v2/">
 <meta property="og:image" content="https://thebeyondbranding.com/pitch/nexas-glass/v2/assets/hero-facade.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0D47A1">
+<link rel="icon" type="image/svg+xml" href="/pitch/nexas-glass/v2/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
 <style>
 /* v2: daylight B2B. White and cool-grey surfaces, navy ink, one glass-blue accent. Sans throughout, mono for specs. Product-catalogue structure: role paths, product range, process, estimate, enquiry. */
 :root{
-  --bg:#FFFFFF; --soft:#F3F5F8; --sky:#EAF2FB; --line:#E2E7ED; --line2:#CDD5DE;
-  --ink:#0E1B26; --ink2:#26333F; --mut:#5A6773; --mut2:#8793A0;
-  --blue:#1E6FD9; --blue-dk:#1557AE; --blue-lt:#D9E8FA;
-  --navy:#0C1823; --navy2:#13222F;
+  --bg:#FFFFFF; --soft:#F1F6FD; --sky:#E3EEFC; --line:#DDE6F1; --line2:#C6D3E3;
+  --ink:#0B1E3A; --ink2:#22344F; --mut:#566A84; --mut2:#8597AE;
+  --blue:#1A73E8; --blue-dk:#0D5BC6; --blue-lt:#D6E6FC; --blue-x:#0D47A1;
+  --navy:#0A2A5E; --navy2:#0F3A7A;
   --f:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
   --m:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --gl:max(24px,env(safe-area-inset-left,0px)); --gr:max(24px,env(safe-area-inset-right,0px));
@@ -55,9 +56,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .lede{font-size:clamp(16px,1.2vw,18px);color:var(--mut);max-width:58ch;line-height:1.6}
 .sec{padding-block:clamp(72px,9vw,128px)}
 .soft{background:var(--soft)}
-.dark{background:var(--navy);color:#fff}
-.dark .lede{color:#A9B6C2}
-.dark .kick{color:#7FB2F2}.dark .kick::before{background:#7FB2F2}
+.dark{background:radial-gradient(120% 90% at 100% 0%,#1A73E8 0%,rgba(26,115,232,0) 55%),linear-gradient(160deg,#0D47A1,#0A2A5E 70%);color:#fff}
+.dark .lede{color:#C4D8F5}
+.dark .lede{color:#B9CFEE}
+.dark .kick{color:#9CC6FF}.dark .kick::before{background:#9CC6FF}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:clamp(36px,4vw,56px);flex-wrap:wrap}
 .head .l{display:flex;flex-direction:column;gap:16px;max-width:760px}
 .head .r{max-width:440px}
@@ -70,10 +72,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .btn-ow{border-color:rgba(255,255,255,.35);color:#fff}.btn-ow:hover{border-color:#fff}
 .btn-sm{padding:10px 16px;font-size:14px}
 .note{font-size:12.5px;color:var(--mut2)}
-.dark .note{color:#7D8B98}
+.dark .note{color:#8DA6CC}
 
 /* Topbar + header */
-.topbar{background:var(--navy);color:#C9D3DC;font-size:13px}
+.topbar{background:var(--blue-x);color:#C9D3DC;font-size:13px}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;height:38px}
 .topbar a{text-decoration:none;color:#fff}
 .topbar .tl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -102,8 +104,31 @@ nav.main a:hover{background:var(--soft)}
 .sheet .x{align-self:flex-end;width:44px;height:44px;border-radius:99px;border:1.5px solid var(--line2);background:#fff;margin-bottom:8px}
 
 /* Hero */
-.hero{padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(40px,5vw,72px)}
-.hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,4vw,64px);align-items:center}
+.hero{position:relative;color:#fff;overflow:hidden;background:#0A2A5E}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(7,30,74,.96) 0%,rgba(10,52,128,.86) 38%,rgba(26,115,232,.38) 72%,rgba(26,115,232,.12) 100%)}
+.hero::after{content:"";position:absolute;inset:auto 0 0;z-index:1;height:140px;background:linear-gradient(transparent,rgba(7,30,74,.35))}
+.hero .wrap{position:relative;z-index:2}
+.hero .kick{color:#9CC6FF}.hero .kick::before{background:#9CC6FF}
+.hero .lede{color:#D3E3FA}
+.hero .btn-o{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(8px)}
+.hero .btn-o:hover{background:rgba(255,255,255,.2);border-color:#fff}
+.hero .btn-p{background:#fff;color:var(--blue-x)}.hero .btn-p:hover{background:var(--blue-lt)}
+.hero-facts{border-top-color:rgba(255,255,255,.22)!important}
+.hero-facts div+div{border-left-color:rgba(255,255,255,.22)!important}
+.hero-facts span{color:#B9CFEE!important}
+.gcard{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:6px;box-shadow:0 30px 80px rgba(4,20,52,.35)}
+.gcard .mono{color:#B9CFEE;margin-bottom:8px}
+.gcard a{display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px;text-decoration:none;color:#fff;font-weight:500;font-size:15px;transition:background .2s}
+.gcard a:hover{background:rgba(255,255,255,.14)}
+.gcard a .ic{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:none}
+.gcard a .ic svg{width:22px;height:22px}
+.gcard a small{display:block;font-weight:400;font-size:12.5px;color:#B9CFEE}
+.gcard a .go{margin-left:auto;opacity:.7}.gcard a .go svg{width:13px;height:13px}
+.gcard .btn{margin-top:10px;justify-content:center;background:#fff;color:var(--blue-x)}
+
+.hero{padding-top:clamp(56px,8vw,120px);padding-bottom:clamp(56px,7vw,104px)}
+.hero-g{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:clamp(32px,4vw,64px);align-items:center}
 .hero-c{display:flex;flex-direction:column;gap:26px}
 .hero-c .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);padding-top:22px;margin-top:6px}
@@ -120,11 +145,11 @@ nav.main a:hover{background:var(--soft)}
 .chip-f span{font-size:12.5px;color:var(--mut)}
 .cf1{left:20px;bottom:20px}
 .cf2{right:20px;top:20px}
-@media (max-width:960px){.hero-g{grid-template-columns:1fr}.hero-v{aspect-ratio:4/3}}
-@media (max-width:520px){.hero-facts{grid-template-columns:1fr;gap:14px}.hero-facts div+div{padding-left:0;border-left:0}.cf2{display:none}.cf1{left:12px;right:12px;bottom:12px}}
+@media (max-width:960px){.hero-g{grid-template-columns:1fr}}
+@media (max-width:520px){.hero-facts{grid-template-columns:1fr;gap:14px}.hero-facts div+div{padding-left:0;border-left:0!important}}
 
 /* Category rail */
-.rail{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.rail{border-bottom:1px solid var(--line);background:#fff;box-shadow:0 10px 30px rgba(10,42,94,.06)}
 .rail .wrap{display:flex;overflow-x:auto;scrollbar-width:none}
 .rail .wrap::-webkit-scrollbar{display:none}
 .rail a{flex:1 0 auto;min-width:150px;display:flex;align-items:center;gap:12px;padding:20px 18px;text-decoration:none;border-right:1px solid var(--line);font-size:14px;font-weight:500;transition:background .2s}
@@ -138,7 +163,7 @@ nav.main a:hover{background:var(--soft)}
 .band .q em{font-style:normal;color:var(--blue)}
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .stats div{background:#fff;padding:22px}
-.stats b{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.stats b{color:var(--blue);display:block;font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
 .stats span{font-size:13.5px;color:var(--mut)}
 @media (max-width:900px){.band{grid-template-columns:1fr;gap:32px}}
 
@@ -146,7 +171,8 @@ nav.main a:hover{background:var(--soft)}
 .roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .role{position:relative;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:var(--r);padding:0;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s,transform .25s var(--ease)}
 .role:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(14,27,38,.08)}
-.role[aria-selected="true"]{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-lt)}
+.role[aria-selected="true"]{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-lt),0 18px 40px rgba(26,115,232,.18)}
+.role[aria-selected="true"] .tx{background:var(--blue);color:#fff}.role[aria-selected="true"] .tx span{color:#D6E6FC}.role[aria-selected="true"] .ar{background:#fff!important;color:var(--blue)!important}
 .role .im{aspect-ratio:4/3;overflow:hidden;background:var(--soft)}
 .role .im img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .role:hover .im img{transform:scale(1.04)}
@@ -156,7 +182,7 @@ nav.main a:hover{background:var(--soft)}
 .role .ar{width:34px;height:34px;border-radius:99px;background:var(--soft);display:grid;place-items:center;flex:none;transition:background .2s,color .2s}
 .role[aria-selected="true"] .ar{background:var(--blue);color:#fff}
 .role .ar svg{width:14px;height:14px}
-.rpanel{margin-top:16px;border-radius:var(--r);background:var(--soft);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:clamp(24px,3vw,48px);align-items:start}
+.rpanel{margin-top:16px;border-radius:var(--r);background:#fff;border:1px solid var(--line);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:clamp(24px,3vw,48px);align-items:start}
 .rpanel h3{margin-bottom:10px}
 .rpanel ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .rpanel li{display:flex;gap:10px;font-size:15px;color:var(--ink2)}
@@ -246,14 +272,14 @@ nav.main a:hover{background:var(--soft)}
 @media (max-width:900px){.proc{grid-template-columns:1fr}.proc .ph{min-height:340px}}
 
 /* Capabilities (dark) */
-.caps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.1)}
-.caps div{background:var(--navy2);padding:26px;display:flex;flex-direction:column;gap:12px;min-height:190px}
-.caps svg{width:30px;height:30px;color:#7FB2F2}
+.caps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.16);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.caps div{background:rgba(255,255,255,.06);backdrop-filter:blur(6px);padding:26px;display:flex;flex-direction:column;gap:12px;min-height:190px}
+.caps svg{width:30px;height:30px;color:#9CC6FF}
 .caps b{font-size:17px;font-weight:600}
-.caps span{font-size:14px;color:#A9B6C2;line-height:1.5}
+.caps span{font-size:14px;color:#C4D8F5;line-height:1.5}
 .why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:clamp(48px,5vw,72px);padding-top:40px;border-top:1px solid rgba(255,255,255,.12)}
 .why b{display:block;font-size:18px;font-weight:600;letter-spacing:-.015em;margin-bottom:8px}
-.why span{font-size:14.5px;color:#A9B6C2}
+.why span{font-size:14.5px;color:#C4D8F5}
 .why i{display:block;font-style:normal;font-family:var(--m);font-size:11px;color:#7FB2F2;margin-bottom:14px;letter-spacing:.1em}
 @media (max-width:1000px){.caps,.why{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.caps,.why{grid-template-columns:1fr}}
@@ -261,7 +287,7 @@ nav.main a:hover{background:var(--soft)}
 /* Estimate */
 .est{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
 .est .in{padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:20px}
-.est .out{background:var(--sky);padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:22px}
+.est .out{background:linear-gradient(150deg,#1A73E8,#0D47A1);color:#fff;padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:22px}
 .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .fld{display:flex;flex-direction:column;gap:7px}
 .fld.full{grid-column:1/-1}
@@ -273,7 +299,9 @@ nav.main a:hover{background:var(--soft)}
 .seg button{border:1.5px solid var(--line2);background:#fff;border-radius:99px;padding:8px 14px;font-size:14px}
 .seg button[aria-pressed="true"]{border-color:var(--blue);background:var(--blue);color:#fff}
 .res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.res div{background:#fff;border-radius:14px;padding:18px}
+.res div{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:18px}
+.res span{color:#D3E3FA!important}.res small{color:#B9CFEE!important}
+.est .out .btn-p{background:#fff;color:var(--blue-x)}.est .out .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .res b{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
 .res span{font-size:13px;color:var(--mut)}
 .res small{font-family:var(--m);font-size:11px;color:var(--mut2)}
@@ -336,20 +364,21 @@ nav.main a:hover{background:var(--soft)}
 .toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:99px;font-size:14px;z-index:99;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
+.enqsec{background:linear-gradient(170deg,#E3EEFC 0%,#F1F6FD 55%,#fff 100%)}
 /* Footer */
-footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px}
+footer{background:#071E4A;color:#C4D8F5;padding-top:64px;padding-bottom:32px}
 .ft-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
 .ft-top .lk{color:#fff}
-.ft-top .lk{display:flex;align-items:center;gap:16px}.ft-top .lk svg{height:36px;width:auto}.lks{font-family:var(--m);font-size:12px;letter-spacing:.24em;color:#A9B6C2;border-left:1px solid rgba(255,255,255,.25);padding-left:16px;line-height:36px}
-.ft-top .lk .xb{fill:#3B8BEB}
-.ft-top .tg{font-size:15px;color:#A9B6C2;margin-top:14px}
+.ft-top .lk{display:flex;align-items:center;gap:16px}.ft-top .lk svg{height:36px;width:auto}.lks{font-family:var(--m);font-size:12px;letter-spacing:.24em;color:#B9CFEE;border-left:1px solid rgba(255,255,255,.25);padding-left:16px;line-height:36px}
+.ft-top .lk .xb{fill:#4F9BFF}
+.ft-top .tg{font-size:15px;color:#B9CFEE;margin-top:14px}
 .ft-top .cc{font-size:15px}.ft-top .cc b{color:#fff;font-size:22px;font-weight:600;display:block;letter-spacing:-.01em}
 .ft-cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;padding-block:40px}
 .ft-cols h4{font-family:var(--m);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;font-weight:500;margin-bottom:18px}
-.ft-cols a,.ft-cols p{display:block;text-decoration:none;font-size:14.5px;color:#A9B6C2;padding:4px 0}
+.ft-cols a,.ft-cols p{display:block;text-decoration:none;font-size:14.5px;color:#B9CFEE;padding:4px 0}
 .ft-cols a:hover{color:#fff}
-.ft-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7D8B98;border-top:1px solid rgba(255,255,255,.12);padding-top:22px}
-.ft-bot a{color:#A9B6C2}
+.ft-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#8DA6CC;border-top:1px solid rgba(255,255,255,.12);padding-top:22px}
+.ft-bot a{color:#B9CFEE}
 @media (max-width:900px){.ft-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -431,6 +460,7 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
 
 <main>
 <section class="hero" aria-labelledby="h1">
+  <img class="bgimg" src="/pitch/nexas-glass/v2/assets/hero-facade.webp" alt="" width="1280" height="853" fetchpriority="high">
   <div class="wrap hero-g">
     <div class="hero-c">
       <span class="kick">Glass processing &amp; supply</span>
@@ -446,10 +476,13 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
         <div><b>Project supply</b><span>Local projects and pan-India dispatch</span></div>
       </div>
     </div>
-    <div class="hero-v">
-      <img src="assets/hero-facade.webp" alt="Glass and aluminium facade of a commercial building against a pale sky" width="1280" height="853" fetchpriority="high">
-      <div class="chip-f cf2"><span class="ic"><svg><use href="#c-dgu"/></svg></span><div><b>Toughened · Laminated · DGU</b><span>Processed and quality-checked</span></div></div>
-      <div class="chip-f cf1"><span class="ic"><svg><use href="#p-1"/></svg></span><div><b>Send drawings or a BOQ</b><span>We review the schedule and quote by line item</span></div></div>
+    <div class="gcard">
+      <span class="mono">What do you need?</span>
+      <a href="#products" data-open="toughened"><span class="ic"><svg><use href="#c-tough"/></svg></span><span>Toughened &amp; laminated<small>Doors, partitions, railings</small></span><span class="go"><svg><use href="#i-ar"/></svg></span></a>
+      <a href="#products" data-open="dgu"><span class="ic"><svg><use href="#c-dgu"/></svg></span><span>DGU for windows &amp; facades<small>Made to the opening</small></span><span class="go"><svg><use href="#i-ar"/></svg></span></a>
+      <a href="#products" data-open="railings"><span class="ic"><svg><use href="#c-rail"/></svg></span><span>Glass railings<small>Stairs, balconies, terraces</small></span><span class="go"><svg><use href="#i-ar"/></svg></span></a>
+      <a href="#specialty"><span class="ic"><svg><use href="#c-deco"/></svg></span><span>Specialty &amp; glass bricks<small>Feature walls and interiors</small></span><span class="go"><svg><use href="#i-ar"/></svg></span></a>
+      <a href="#estimate" class="btn btn-sm">Estimate area &amp; weight <svg><use href="#i-ar"/></svg></a>
     </div>
   </div>
 </section>
@@ -491,10 +524,10 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
       <p class="r lede">Builders, contractors, architects and fabricators buy glass differently. Pick your role to see what we do for you and what to send us.</p>
     </div>
     <div class="roles rv" role="tablist" aria-label="Choose your role">
-      <button class="role" role="tab" aria-selected="true" data-role="builder"><div class="im"><img src="assets/builders.webp" alt="Two builders reviewing drawings at a residential construction site" loading="lazy"></div><div class="tx"><div><b>Builder or developer</b><span>Residential and commercial projects</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
-      <button class="role" role="tab" aria-selected="false" data-role="contractor"><div class="im"><img src="assets/install.webp" alt="Installation crew fixing a large glass panel at height" loading="lazy"></div><div class="tx"><div><b>Contractor or facade firm</b><span>Glazing, interiors, project managers</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
-      <button class="role" role="tab" aria-selected="false" data-role="architect"><div class="im"><img src="assets/architects.webp" alt="Two architects in hard hats reviewing drawings on site" loading="lazy"></div><div class="tx"><div><b>Architect or designer</b><span>Specification and interiors</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
-      <button class="role" role="tab" aria-selected="false" data-role="trade"><div class="im"><img src="assets/trade.webp" alt="Glazier carrying a framed glass panel to a delivery truck" loading="lazy"></div><div class="tx"><div><b>Fabricator or dealer</b><span>Trade and repeat orders</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
+      <button class="role" role="tab" aria-selected="true" data-role="builder"><div class="im"><img src="/pitch/nexas-glass/v2/assets/builders.webp" alt="Two builders reviewing drawings at a residential construction site" loading="lazy"></div><div class="tx"><div><b>Builder or developer</b><span>Residential and commercial projects</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
+      <button class="role" role="tab" aria-selected="false" data-role="contractor"><div class="im"><img src="/pitch/nexas-glass/v2/assets/install.webp" alt="Installation crew fixing a large glass panel at height" loading="lazy"></div><div class="tx"><div><b>Contractor or facade firm</b><span>Glazing, interiors, project managers</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
+      <button class="role" role="tab" aria-selected="false" data-role="architect"><div class="im"><img src="/pitch/nexas-glass/v2/assets/architects.webp" alt="Two architects in hard hats reviewing drawings on site" loading="lazy"></div><div class="tx"><div><b>Architect or designer</b><span>Specification and interiors</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
+      <button class="role" role="tab" aria-selected="false" data-role="trade"><div class="im"><img src="/pitch/nexas-glass/v2/assets/trade.webp" alt="Glazier carrying a framed glass panel to a delivery truck" loading="lazy"></div><div class="tx"><div><b>Fabricator or dealer</b><span>Trade and repeat orders</span></div><span class="ar"><svg><use href="#i-ar"/></svg></span></div></button>
     </div>
     <div class="rpanel rv" id="rpanel" role="tabpanel" aria-live="polite"></div>
   </div>
@@ -560,7 +593,7 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
       <p class="r lede">Six steps, the same for every order. You deal with one contact from the first message to delivery.</p>
     </div>
     <div class="proc">
-      <div class="ph rv"><img src="assets/fabrication.webp" alt="Technician in safety gear feeding a glass sheet into an edge-processing machine" loading="lazy"><div class="lb"><b>Processing</b><br>Cutting, edging and drilling to drawing before toughening or lamination.</div></div>
+      <div class="ph rv"><img src="/pitch/nexas-glass/v2/assets/fabrication.webp" alt="Technician in safety gear feeding a glass sheet into an edge-processing machine" loading="lazy"><div class="lb"><b>Processing</b><br>Cutting, edging and drilling to drawing before toughening or lamination.</div></div>
       <ol class="steps rv">
         <li><span class="n"><svg><use href="#p-1"/></svg><i>01</i></span><div><b>Share your requirement</b><span>Drawings, a BOQ, a window schedule or a photo on WhatsApp. Whatever you have.</span></div></li>
         <li><span class="n"><svg><use href="#p-2"/></svg><i>02</i></span><div><b>Technical review</b><span>We check glass type, thickness, processing and fittings against the application.</span></div></li>
@@ -623,7 +656,7 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
           <div><b id="rA">25.2</b><span>Total area, m²</span><br><small id="rAf">271.3 sq ft</small></div>
           <div><b id="rWt">756</b><span>Approx. weight, kg</span><br><small id="rWp">75.6 kg per panel</small></div>
         </div>
-        <p style="font-size:15px;color:var(--ink2)" id="rSum">10 panels of 12 mm toughened glass, 1200 × 2100 mm.</p>
+        <p style="font-size:15px;color:#E6EFFC" id="rSum">10 panels of 12 mm toughened glass, 1200 × 2100 mm.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn btn-p" id="eSend">Add to my enquiry <svg><use href="#i-ar"/></svg></button>
           <a class="btn btn-o" href="#" id="eWa"><svg style="width:16px;height:16px"><use href="#i-wa"/></svg>Send on WhatsApp</a>
@@ -645,11 +678,11 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
         <div><b>Rainbow glass</b><span>Colour that shifts with the viewing angle</span></div>
         <div><b>One-way vision mirror</b><span>Privacy when the lighting is right</span></div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-p" href="../#collection">View the specialty collection <svg><use href="#i-ar"/></svg></a><button class="btn btn-o" data-open="decorative">Product details</button></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-p" href="/pitch/nexas-glass/#collection">View the specialty collection <svg><use href="#i-ar"/></svg></a><button class="btn btn-o" data-open="decorative">Product details</button></div>
     </div>
     <div class="bricks rv" aria-label="A selection of glass bricks from the Nexas range">
-      <img src="../assets/bricks/super-clear.webp" alt="Super Clear glass brick" loading="lazy"><img src="../assets/bricks/cloud-blue.webp" alt="Cloud Blue glass brick" loading="lazy"><img src="../assets/bricks/clear-yellow.webp" alt="Clear Yellow glass brick" loading="lazy"><img src="../assets/bricks/lattice-block.webp" alt="Lattice glass block" loading="lazy"><img src="../assets/bricks/rock-red.webp" alt="Rock Red glass brick" loading="lazy">
-      <img src="../assets/bricks/tropical-green.webp" alt="Tropical Green glass brick" loading="lazy"><img src="../assets/bricks/line-block.webp" alt="Line glass block" loading="lazy"><img src="../assets/bricks/cloud-white.webp" alt="Cloud White glass brick" loading="lazy"><img src="../assets/bricks/rock-blue.webp" alt="Rock Blue glass brick" loading="lazy"><img src="../assets/bricks/clear-orange.webp" alt="Clear Orange glass brick" loading="lazy">
+      <img src="/pitch/nexas-glass/assets/bricks/super-clear.webp" alt="Super Clear glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/cloud-blue.webp" alt="Cloud Blue glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/clear-yellow.webp" alt="Clear Yellow glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/lattice-block.webp" alt="Lattice glass block" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/rock-red.webp" alt="Rock Red glass brick" loading="lazy">
+      <img src="/pitch/nexas-glass/assets/bricks/tropical-green.webp" alt="Tropical Green glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/line-block.webp" alt="Line glass block" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/cloud-white.webp" alt="Cloud White glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/rock-blue.webp" alt="Rock Blue glass brick" loading="lazy"><img src="/pitch/nexas-glass/assets/bricks/clear-orange.webp" alt="Clear Orange glass brick" loading="lazy">
     </div>
   </div>
 </section>
@@ -664,7 +697,7 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
   </div>
 </section>
 
-<section class="sec soft" id="enquire" aria-labelledby="eq-h">
+<section class="sec enqsec" id="enquire" aria-labelledby="eq-h">
   <div class="wrap enq">
     <div class="side rv">
       <span class="kick">Request a quote</span>
@@ -703,7 +736,7 @@ footer{background:var(--navy);color:#C9D3DC;padding-top:64px;padding-bottom:32px
     <div class="ft-cols">
       <div><h4>Get in touch</h4><p>[Address], [City], India</p><a href="mailto:">[Email]</a><a href="#" data-wa="Hi Nexas Glass, I'd like to discuss a glass requirement.">WhatsApp</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
       <div><h4>Products</h4><a href="#products" data-open="toughened">Toughened glass</a><a href="#products" data-open="laminated">Laminated glass</a><a href="#products" data-open="dgu">DGU / insulated</a><a href="#products" data-open="railings">Glass railings</a><a href="#products" data-open="partitions">Partitions &amp; doors</a><a href="#products" data-open="facade">Facade glazing</a></div>
-      <div><h4>Specialty</h4><a href="../#collection">Glass bricks</a><a href="#products" data-open="decorative">Decorative glass</a><a href="#products" data-open="shower">Shower glass</a><a href="#products" data-open="fabrication">Fabrication services</a></div>
+      <div><h4>Specialty</h4><a href="/pitch/nexas-glass/#collection">Glass bricks</a><a href="#products" data-open="decorative">Decorative glass</a><a href="#products" data-open="shower">Shower glass</a><a href="#products" data-open="fabrication">Fabrication services</a></div>
       <div><h4>Company</h4><a href="#roles">Who we serve</a><a href="#process">How we work</a><a href="#guides">Guides</a><a href="#catalogues">Catalogues</a><a href="#enquire">Request a quote</a></div>
     </div>
     <div class="ft-bot"><span>© 2026 Nexas Glass</span><span>Website concept. Product scope, specifications and certifications to be confirmed by Nexas Glass. Photography from <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>, <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> and <a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay</a>.</span></div>
@@ -744,32 +777,32 @@ const P=[
   uses:['Windows','Sliding doors','Facades','Skylights','Commercial glazing'],
   info:['Clear, tinted, reflective and coated outer panes, to be confirmed per order','Toughened or laminated panes for safety locations','Made to the opening size, with spacer and sealant chosen for the frame system'],
   quote:['Window or facade schedule','Outer pane, gap and inner pane','Frame system and glazing method','Delivery phasing by floor or block']},
- {id:'railings',f:'systems',cat:'Systems',name:'Glass railings',img:'assets/railing.webp',alt:'Staircase with frameless glass balustrade and timber handrail',
+ {id:'railings',f:'systems',cat:'Systems',name:'Glass railings',img:'/pitch/nexas-glass/v2/assets/railing.webp',alt:'Staircase with frameless glass balustrade and timber handrail',
   s:'Toughened or laminated glass panels with fittings for staircases, balconies, terraces and voids.',
   uses:['Staircases','Balconies','Terraces','Atrium voids','Pool fences'],
   info:['Frameless, spigot, patch-fitting and post systems, to be confirmed','Panel and fitting choice depends on height and the loads it must take','Handrail and edge options for residential and commercial projects'],
   quote:['Run lengths and heights','Location (stair, balcony, terrace)','Preferred fixing style','Site photos or drawings']},
- {id:'partitions',f:'systems',cat:'Systems',name:'Partitions & doors',img:'assets/partition.webp',alt:'Office meeting room enclosed by full-height glass partitions',
+ {id:'partitions',f:'systems',cat:'Systems',name:'Partitions & doors',img:'/pitch/nexas-glass/v2/assets/partition.webp',alt:'Office meeting room enclosed by full-height glass partitions',
   s:'Glass partitions, cabins and frameless doors for offices, clinics, showrooms and homes.',
   uses:['Office cabins','Meeting rooms','Frameless doors','Sliding systems','Clinics'],
   info:['Clear, frosted, tinted or patterned glass','Framed and frameless options with door hardware','Film and frosting for privacy where needed'],
   quote:['Floor plan or partition layout','Height and door positions','Glass finish and privacy needs','Hardware preferences']},
- {id:'facade',f:'systems',cat:'Systems',name:'Facade glazing',img:'assets/curtainwall.webp',alt:'Curtain-wall glass facade with a regular grid of panels',
+ {id:'facade',f:'systems',cat:'Systems',name:'Facade glazing',img:'/pitch/nexas-glass/v2/assets/curtainwall.webp',alt:'Curtain-wall glass facade with a regular grid of panels',
   s:'Glass packages for facade and curtain-wall contractors, processed to the contractor\'s drawings and schedule.',
   uses:['Curtain walls','Structural glazing','Storefronts','Canopies','Spandrels'],
   info:['DGU, laminated and toughened units to schedule','Panels labelled to the facade drawings for easy installation','Delivery phased with the installation programme'],
   quote:['Facade glass schedule','Glass specification per elevation','Programme and phasing','Site location for logistics']},
- {id:'shower',f:'systems',cat:'Systems',name:'Shower & bathroom glass',img:'assets/shower.webp',alt:'Bathroom with a frameless toughened glass shower enclosure',
+ {id:'shower',f:'systems',cat:'Systems',name:'Shower & bathroom glass',img:'/pitch/nexas-glass/v2/assets/shower.webp',alt:'Bathroom with a frameless toughened glass shower enclosure',
   s:'Toughened shower enclosures, screens and bathroom glass for homes, hotels and developments.',
   uses:['Shower enclosures','Bath screens','Vanity mirrors','Hotel bathrooms'],
   info:['Clear, frosted and tinted toughened glass','Hinged, sliding and fixed configurations','Repeated bathroom layouts quoted as a single package for developers'],
   quote:['Enclosure type and opening size','Glass thickness and finish','Hardware finish','Number of identical units']},
- {id:'decorative',f:'specialty',cat:'Specialty',name:'Decorative & specialty glass',img:'../assets/samples.webp',alt:'Samples of textured, fluted and coloured decorative glass',
+ {id:'decorative',f:'specialty',cat:'Specialty',name:'Decorative & specialty glass',img:'/pitch/nexas-glass/assets/samples.webp',alt:'Samples of textured, fluted and coloured decorative glass',
   s:'Glass bricks, textured, fluted and rainbow glass, one-way mirrors and custom decorative work for interiors.',
   uses:['Feature walls','Partitions','Hospitality','Retail','Cabinetry'],
   info:['35 glass brick and block designs','Textured, fluted and patterned glass','Rainbow glass and one-way vision mirrors','Custom concepts reviewed for feasibility from a reference image'],
   quote:['Reference image or design intent','Approximate size and quantity','Location and lighting','Sample requirement']},
- {id:'fabrication',f:'specialty',cat:'Service',name:'Fabrication services',img:'assets/fabrication.webp',alt:'Technician processing a glass sheet on an edging machine',
+ {id:'fabrication',f:'specialty',cat:'Service',name:'Fabrication services',img:'/pitch/nexas-glass/v2/assets/fabrication.webp',alt:'Technician processing a glass sheet on an edging machine',
   s:'Cutting, edge work, drilling and processing to drawing, for fabricators and project buyers.',
   uses:['Cut to size','Edge polishing','Drilling','Cut-outs','Templates'],
   info:['Processing to your drawings or templates','Combined with toughening, lamination or DGU assembly where required','Suited to repeat trade orders and project schedules'],
@@ -814,12 +847,12 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-role-go]')
 
 /* Applications slider */
 const A=[
- {img:'assets/tower.webp',alt:'High-rise residential tower under construction with a tower crane',k:'Residential towers',h:'Residential towers',p:'Windows, balcony railings and bathroom glass, supplied floor by floor to the builder\'s schedule.',t:['DGU windows','Glass railings','Shower glass']},
- {img:'assets/partition.webp',alt:'Glass-walled meeting room in an office',k:'Commercial interiors',h:'Offices and workspaces',p:'Cabins, meeting rooms and frameless doors with clear, frosted or tinted glass.',t:['Partitions','Frameless doors','Frosted glass']},
- {img:'assets/curtainwall.webp',alt:'Glass curtain-wall facade',k:'Facades',h:'Commercial facades',p:'DGU and laminated packages for curtain-wall and structural-glazing contractors.',t:['DGU','Laminated','Toughened']},
- {img:'assets/railing.webp',alt:'Staircase with glass balustrade',k:'Staircases and voids',h:'Stairs, balconies and terraces',p:'Glass railings sized for the location, with fittings and handrails.',t:['Railings','Laminated','Toughened']},
- {img:'assets/windows.webp',alt:'Apartment living room with full-height windows',k:'Homes and villas',h:'Homes and villas',p:'Large windows and sliding doors with insulated glass for comfort and quieter rooms.',t:['DGU','Sliding doors','Laminated']},
- {img:'assets/shower.webp',alt:'Bathroom with frameless glass shower',k:'Bathrooms',h:'Bathrooms and hospitality',p:'Shower enclosures and bath screens, including repeat layouts for hotels and developments.',t:['Shower glass','Mirrors','Frosted glass']}
+ {img:'/pitch/nexas-glass/v2/assets/tower.webp',alt:'High-rise residential tower under construction with a tower crane',k:'Residential towers',h:'Residential towers',p:'Windows, balcony railings and bathroom glass, supplied floor by floor to the builder\'s schedule.',t:['DGU windows','Glass railings','Shower glass']},
+ {img:'/pitch/nexas-glass/v2/assets/partition.webp',alt:'Glass-walled meeting room in an office',k:'Commercial interiors',h:'Offices and workspaces',p:'Cabins, meeting rooms and frameless doors with clear, frosted or tinted glass.',t:['Partitions','Frameless doors','Frosted glass']},
+ {img:'/pitch/nexas-glass/v2/assets/curtainwall.webp',alt:'Glass curtain-wall facade',k:'Facades',h:'Commercial facades',p:'DGU and laminated packages for curtain-wall and structural-glazing contractors.',t:['DGU','Laminated','Toughened']},
+ {img:'/pitch/nexas-glass/v2/assets/railing.webp',alt:'Staircase with glass balustrade',k:'Staircases and voids',h:'Stairs, balconies and terraces',p:'Glass railings sized for the location, with fittings and handrails.',t:['Railings','Laminated','Toughened']},
+ {img:'/pitch/nexas-glass/v2/assets/windows.webp',alt:'Apartment living room with full-height windows',k:'Homes and villas',h:'Homes and villas',p:'Large windows and sliding doors with insulated glass for comfort and quieter rooms.',t:['DGU','Sliding doors','Laminated']},
+ {img:'/pitch/nexas-glass/v2/assets/shower.webp',alt:'Bathroom with frameless glass shower',k:'Bathrooms',h:'Bathrooms and hospitality',p:'Shower enclosures and bath screens, including repeat layouts for hotels and developments.',t:['Shower glass','Mirrors','Frosted glass']}
 ];
 const sl=$('#slides');sl.innerHTML=A.map((a,i)=>`<div class="slide" role="group" aria-label="${i+1} of ${A.length}"><img src="${a.img}" alt="${a.alt}" loading="lazy"><div class="box"><span class="mono" style="color:var(--mut)">${a.k}</span><h3 class="h3">${a.h}</h3><p>${a.p}</p><div class="tags">${a.t.map(x=>`<span class="tag">${x}</span>`).join('')}</div><a href="#enquire" class="btn btn-p btn-sm" style="align-self:flex-start">Quote for this ${ic('i-ar')}</a></div></div>`).join('');
 const pad=n=>String(n).padStart(2,'0');let cur=0;
