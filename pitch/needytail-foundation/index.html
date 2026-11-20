@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Needytail Foundation | Website concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Baloo+2:wght@600;700&family=Poppins:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, trustworthy, a little playful; a local pet business people want to hand their dog to.
+   IDEA: a friendly shop-front with its price board on the wall, drawn as one page.
+   PICTURE: a dog and a cat on one big cushion, the business's name above the door.
+   COLOUR and TYPE: lilac ground, deep plum ink, berry accent; Fredoka titles, Nunito body.
+   LAYOUT: hero, price board, why us, how booking works, booking form, FAQ, Beyond Branding concept footer. */
+:root{color-scheme:light dark;
+--bg:light-dark(#f4f1fb,#17121f);--panel:light-dark(#ffffff,#221a2e);--soft:light-dark(#ebe5f7,#2b2238);
+--ink:light-dark(#221b33,#f1ecf8);--mute:light-dark(#5e5672,#b5aac6);--line:light-dark(#ddd4ee,#3a2f4a);
+--brand:light-dark(#5b3fa0,#b9a2f0);--brandInk:light-dark(#ffffff,#17121f);--accent:light-dark(#d9436b,#ff7f9f);
+--ok:light-dark(#1f7a4d,#6fd3a0);--cushion:light-dark(#d8ccef,#3b2f52);--bb:#141019;--bbInk:#f4f1fb}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,.logo,.stats b,.item .pr{font-family:var(--head,Fredoka),Nunito,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(36px,6vw,58px);font-weight:700}h2{font-size:clamp(28px,4vw,40px);font-weight:600}h3{font-size:21px;font-weight:600}
+p{margin:0}a{color:var(--brand)}
+.wrap{max-width:1180px;margin:0 auto}.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}.soft{background:var(--soft)}
+.sub{color:var(--mute);max-width:62ch;margin-top:10px}
+nav{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px max(5vw,16px);position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:600 20px Fredoka,sans-serif;display:flex;gap:8px;align-items:center;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:4px;flex-wrap:wrap}.links a{padding:8px 12px;border-radius:99px;text-decoration:none;color:var(--mute);font-weight:700;font-size:15px}.links a:hover{background:var(--soft);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:99px;border:0;background:var(--accent);color:#fff;font:800 16px Nunito,sans-serif;cursor:pointer;text-decoration:none}
+.btn.ghost{background:var(--panel);color:var(--ink);border:1.5px solid var(--line)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px;margin-bottom:18px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.stats b{display:block;font:600 clamp(17px,2.2vw,22px)/1.2 Fredoka,sans-serif}.stats span{color:var(--mute);font-size:14px}
+.scene{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:0 30px 60px -30px rgba(60,30,110,.35)}
+.fig{position:relative;min-height:320px}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.board{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:18px clamp(18px,3vw,28px);border-top:1px dashed var(--line)}
+.item:first-child{border-top:0}.item p{color:var(--mute);font-size:15px;grid-column:1}
+.item .pr{font:600 22px Fredoka,sans-serif;white-space:nowrap;grid-row:1/3;grid-column:2;align-self:center;text-align:right}
+.item .pr small{display:block;font:700 12px Nunito,sans-serif;color:var(--mute)}
+.pop{display:inline-block;margin-left:8px;font:800 12px Nunito,sans-serif;color:var(--accent);border:1px solid currentColor;border-radius:99px;padding:1px 8px;vertical-align:middle}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-top:26px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}.card p{color:var(--mute);font-size:15px;margin-top:6px}
+.card svg{margin-bottom:10px}
+.steps{counter-reset:s}.steps .card{counter-increment:s}
+.steps .card::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font:600 18px Fredoka,sans-serif;margin-bottom:12px}
+.apply{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
+form{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:clamp(18px,3vw,30px);display:grid;gap:16px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:grid;gap:6px;font-weight:800;font-size:14px}
+input,select,textarea{font:16px Nunito,sans-serif;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;min-height:46px;width:100%}
+textarea{min-height:100px;resize:vertical}
+.done{display:none;background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:28px;gap:14px}.done.on{display:grid}.acts{display:flex;gap:10px;flex-wrap:wrap}
+.note{color:var(--mute);font-size:14px}
+.faq details{background:var(--panel);border-radius:18px;padding:16px 20px;margin-top:12px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--mute);margin-top:8px}
+.biz{border-top:1px solid var(--line);padding:24px max(5vw,16px);color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+.gal figure{margin:0;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--soft)}.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.offer{background:var(--panel);color:var(--ink);border-radius:24px;padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 28px;align-items:center;margin-bottom:28px}
+.offer .big{font:700 clamp(30px,4vw,42px)/1 var(--head,Fredoka),sans-serif;color:var(--accent)}
+.offer ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--mute);font-size:14px;font-weight:700}
+.offer li::before{content:"✓ ";color:var(--ok)}
+.bb{background:var(--bb);color:var(--bbInk);padding:clamp(28px,4vw,48px) max(5vw,16px)}
+.bb .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.bb h3{font-size:24px}.bb p{color:#c9c0d8;font-size:15px;margin-top:8px}
+.bb .mark{font:600 13px Nunito,sans-serif;color:#ff7f9f;margin-bottom:8px}
+.bb .acts{justify-content:flex-end}.bb .btn.ghost{background:transparent;color:var(--bbInk);border-color:#3e3550}
+.bb small{display:block;color:#8d84a0;font-size:12px;margin-top:14px}
+@media(max-width:860px){.offer{grid-template-columns:minmax(0,1fr)}.hero,.apply,.bb .wrap{grid-template-columns:minmax(0,1fr)}.links{display:none}.bb .acts{justify-content:flex-start}}
+@media(max-width:600px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.gal figure:nth-child(3){display:none}.two{grid-template-columns:minmax(0,1fr)}.fig{min-height:230px}.item .pr{font-size:19px}}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .25s}.card:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#top" id="logo"></a>
+<div class="links"><a href="#prices" id="navPrices">Prices</a><a href="#why">Why us</a><a href="#how">How it works</a><a href="#faq">FAQ</a></div>
+<a class="btn" href="#book" id="navCta">Book</a></nav>
+
+<header class="band" id="top"><div class="wrap hero">
+<div><div class="pill"><span class="dot"></span><span id="pill"></span></div>
+<h1 id="headline"></h1><p class="sub" id="intro"></p>
+<div class="cta"><a class="btn" href="#book" id="heroCta"></a><a class="btn ghost" href="#prices" id="heroCta2"></a></div>
+<div class="stats" id="stats"></div></div>
+<figure class="scene"><div class="fig" id="fig"></div></figure>
+</div></header>
+
+<section class="band" id="prices"><div class="wrap">
+<h2 id="priceTitle"></h2><p class="sub" id="priceSub"></p>
+<div class="board" id="board"></div><p class="note" style="margin-top:12px" id="priceNote"></p></div></section>
+
+<section class="band soft" id="why"><div class="wrap">
+<h2 id="whyTitle"></h2><div class="cards" id="whyList"></div></div></section>
+
+<section class="band" id="gallery"><div class="wrap"><h2 id="galTitle">A peek inside</h2><p class="sub">Sample photos for now. Your own photos and reels go here.</p><div class="gal" id="gal"></div></div></section>
+
+<section class="band" id="how"><div class="wrap">
+<h2>How it works</h2><div class="cards steps" id="steps"></div></div></section>
+
+<section class="band soft" id="book"><div class="wrap apply">
+<div><h2 id="bookTitle"></h2><p class="sub" id="bookSub"></p><p class="note" style="margin-top:18px" id="contactLine"></p></div>
+<div>
+<form id="form" novalidate>
+<div class="two"><label>Your name<input id="f-name" autocomplete="name"></label>
+<label>Phone or WhatsApp<input id="f-phone" type="tel" autocomplete="tel"></label></div>
+<div class="two"><label>Pet's name<input id="f-pet"></label>
+<label>Dog, cat or other?<select id="f-kind"><option>Dog</option><option>Cat</option><option>Other</option></select></label></div>
+<div class="two"><label id="svcLabel">Service<select id="f-svc"></select></label>
+<label>Preferred date<input id="f-date" type="date"></label></div>
+<label>Anything we should know?<textarea id="f-msg" placeholder="Breed, age, temperament, any health notes"></textarea></label>
+<p class="note" id="err" role="alert"></p>
+<button class="btn" type="submit" id="sendBtn"></button>
+</form>
+<div class="done" id="done" aria-live="polite"><h3>Almost done</h3><p id="doneText"></p>
+<div class="acts"><a class="btn" id="waBtn" target="_blank" rel="noopener">Send on WhatsApp</a><a class="btn ghost" id="mailBtn">Send by email</a></div></div>
+</div></div></section>
+
+<section class="band faq" id="faq"><div class="wrap"><h2>Questions people ask</h2><div id="faqList"></div></div></section>
+
+<div class="biz"><span id="bizL"></span><span id="bizR"></span></div>
+
+<footer class="bb"><div class="wrap" style="display:block"><div class="offer"><div><p class="note" style="font-weight:800">Get this website for <span id="offName"></span></p><div class="big" id="offPrice"></div><ul id="offList"></ul></div><a class="btn" id="offBtn" target="_blank" rel="noopener">I'm interested</a></div></div><div class="wrap">
+<div><p class="mark">Website concept by Beyond Branding</p>
+<h3 id="bbTitle"></h3>
+<p>We're a brand and web studio working across London, Dubai and Mumbai. This page is ready to go live with your own photos, prices and booking details.</p>
+<small id="bbNote"></small></div>
+<div class="acts"><a class="btn" href="https://wa.me/19108301588" target="_blank" rel="noopener">WhatsApp +1 (910) 830-1588</a><a class="btn ghost" href="https://thebeyondbranding.com" target="_blank" rel="noopener">thebeyondbranding.com</a>
+<p style="width:100%;text-align:inherit">ayush@thebeyondbranding.com</p></div>
+</div></footer>
+
+<script>
+{
+/*CONFIG-START*/
+const LEAD={"name": "Needytail Foundation", "city": "Indore", "area": "Baktaverram Nagar, Indore", "market": "IN", "type": "rescue", "category": "Animal welfare", "phone": "", "wa": "", "email": "needytailfoundation@gmail.com", "instagram": "", "ref": "BB-06NEE", "brand": {"brand": "#0f6e78", "brandDark": "#7fd3da", "accent": "#f0643f", "accentDark": "#ff9a7a", "ground": "#eef7f6", "soft": "#dcefed", "cushion": "#bfe2df", "head": "Baloo 2"}};
+/*CONFIG-END*/
+
+/* ===== MASTER CONTENT: same for every lead. Edit here to change all concepts at once. ===== */
+const CUR={UK:["£","en-GB"],US:["$","en-US"],IN:["₹","en-IN"]};
+const PRICES={ // master price list, one column per market
+  care:[
+    {n:"Full groom",d:"Bath, blow-dry, haircut to style, nails, ears and a bandana.",p:{UK:55,US:85,IN:1499},from:true,pop:true},
+    {n:"Bath and tidy",d:"Wash, dry, brush-out, face, feet and hygiene trim.",p:{UK:38,US:60,IN:899},from:true},
+    {n:"Puppy's first groom",d:"A short, gentle visit to make grooming a happy thing for life.",p:{UK:30,US:45,IN:699}},
+    {n:"Nails and ears",d:"Quick walk-in tidy. No appointment needed.",p:{UK:12,US:20,IN:299}},
+    {n:"Day care",d:"Supervised play, rest and cuddles, drop-off from 8am.",p:{UK:28,US:45,IN:599},per:"day"},
+    {n:"Overnight boarding",d:"Home-from-home stay with daily photo updates to your phone.",p:{UK:40,US:65,IN:899},per:"night"}
+  ],
+  rescue:[
+    {n:"Adopt",d:"Vaccinated, neutered and microchipped, with lifelong support from us.",p:{UK:250,US:200,IN:0},per:"adoption fee"},
+    {n:"Foster",d:"Give a rescue a safe place while they wait. We cover food and vet costs.",p:{UK:0,US:0,IN:0}},
+    {n:"Sponsor a rescue",d:"Covers food, care and treatment for one animal every month.",p:{UK:10,US:15,IN:500},per:"month",pop:true},
+    {n:"Feed the shelter",d:"A one-off gift that feeds every animal in our care for a day.",p:{UK:25,US:30,IN:1000}},
+    {n:"Emergency vet fund",d:"For the urgent cases that can't wait.",p:{UK:50,US:60,IN:2500}}
+  ]
+};
+const COPY={
+  care:{pill:c=>c?`Now booking in ${c}`:"Now taking bookings",head:n=>`Happy pets, <em>happy people</em>`,intro:(n,c,cat)=>`${n} is ${c?c+(c.endsWith("s")?"'":"'s"):"your"} friendly ${cat.toLowerCase()} spot. Gentle hands, no rush, and your pet's comfort first, every single visit.`,
+    cta:"Book an appointment",cta2:"See prices",stats:[["Gentle","handling, no cages"],["Photo","updates after every visit"],["Easy","booking on WhatsApp"]],
+    priceTitle:"Prices",priceSub:"Clear prices, no surprises. Final price depends on size and coat, and we'll always confirm before we start.",priceNote:"Prices shown are starting prices.",
+    whyTitle:"Why pet parents choose us",why:[["Calm, not rushed","One pet at a time, so nervous dogs and cats never feel overwhelmed."],["Safe products","Gentle, pet-safe shampoos and treatments for sensitive skin."],["You stay in the loop","Before-and-after photos sent to your phone."],["Local and trusted","Loved by pet families all over the area."]],
+    steps:[["Pick a service","Choose from the price list, or ask us if you're not sure."],["Send a request","Fill in the form. It goes straight to our WhatsApp."],["We confirm","We'll reply with a time that works for you."],["Happy pet","Pick up a clean, calm and very handsome friend."]],
+    bookTitle:"Book a visit",bookSub:"Tell us about your pet and the service you'd like. We'll confirm on WhatsApp.",send:"Send booking request",
+    faq:[["Do you take nervous or older pets?","Yes. We take it slowly, give breaks, and never force anything."],["How long does a groom take?","Most full grooms take 2 to 3 hours depending on size and coat."],["Do you need vaccination records?","Yes, please bring or send a copy on your first visit."]]},
+  rescue:{pill:c=>c?`Rescuing animals in ${c}`:"Rescue, rehab, rehome",head:n=>`Every rescue deserves <em>a home</em>`,intro:(n,c)=>`${n} rescues, treats and rehomes animals${c?" across "+c:""}. Adopt, foster or sponsor, and help give them the second chance they deserve.`,
+    cta:"Adopt or foster",cta2:"Ways to help",stats:[["Rescue","treatment and rehab"],["Rehome","to checked, loving families"],["Support","for life after adoption"]],
+    priceTitle:"Ways to help",priceSub:"Every bit goes straight to the animals: food, treatment, shelter and getting them home.",priceNote:"Donations and fees are suggested amounts.",
+    whyTitle:"Why your help matters",why:[["Every life counts","We take in the injured, the abandoned and the ones nobody else will."],["Vet care first","Every animal is treated, vaccinated and neutered before adoption."],["Careful matching","We match each animal to the right home, so it lasts."],["Full transparency","We share where every donation goes."]],
+    steps:[["Choose how to help","Adopt, foster, sponsor or give once."],["Send your details","The form goes straight to our team on WhatsApp."],["We get to know you","A quick chat and, for adoptions, a home check."],["A life changed","An animal gets their second chance, thanks to you."]],
+    bookTitle:"Adopt, foster or help",bookSub:"Tell us a little about you and how you'd like to help. We'll get back to you.",send:"Send my enquiry",
+    faq:[["Can I adopt if I rent?","Yes, with your landlord's permission. We'll talk it through with you."],["What does fostering involve?","Giving a safe, temporary home. We cover food and vet costs."],["Can I visit the shelter?","Yes, by appointment. Message us to arrange a time."]]}
+};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L=LEAD,T=COPY[L.type]||COPY.care,[sym,loc]=CUR[L.market]||CUR.UK;
+const money=v=>v===0?"Free":sym+v.toLocaleString(loc);
+const paw=(f="currentColor",s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" aria-hidden="true"><g fill="${f}"><ellipse cx="12" cy="16" rx="5.2" ry="4.4"/><circle cx="5.5" cy="10" r="2.3"/><circle cx="9.5" cy="6.2" r="2.3"/><circle cx="14.5" cy="6.2" r="2.3"/><circle cx="18.5" cy="10" r="2.3"/></g></svg>`;
+
+const dog=(x,y,s)=>`<g transform="translate(${x},${y}) scale(${s})">
+<ellipse cx="0" cy="46" rx="62" ry="9" fill="#000" opacity=".12"/>
+<path d="M44,24 Q76,0 66,-22 Q60,-30 56,-20 Q60,0 38,10Z" fill="#c98a4b"/>
+<path d="M-40,46 Q-48,-10 -22,-30 L22,-30 Q48,-10 40,46Z" fill="#d9a15f"/>
+<ellipse cx="0" cy="8" rx="20" ry="30" fill="#f6e7d2"/>
+<ellipse cx="-16" cy="44" rx="12" ry="7" fill="#f6e7d2"/><ellipse cx="16" cy="44" rx="12" ry="7" fill="#f6e7d2"/>
+<ellipse cx="0" cy="-58" rx="34" ry="31" fill="#d9a15f"/>
+<path d="M-30,-78 Q-56,-70 -50,-32 Q-40,-28 -30,-48Z M30,-78 Q56,-70 50,-32 Q40,-28 30,-48Z" fill="#8a5a2e"/>
+<ellipse cx="0" cy="-42" rx="20" ry="16" fill="#f6e7d2"/>
+<circle cx="-12" cy="-62" r="4.5" fill="#2a1d18"/><circle cx="12" cy="-62" r="4.5" fill="#2a1d18"/><circle cx="-11" cy="-63.5" r="1.4" fill="#fff"/><circle cx="13" cy="-63.5" r="1.4" fill="#fff"/>
+<ellipse cx="0" cy="-48" rx="7" ry="5" fill="#2a1d18"/><path d="M0,-43 Q-6,-36 -11,-39 M0,-43 Q6,-36 11,-39" stroke="#2a1d18" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M-6,-37 Q0,-28 6,-37Z" fill="#e8798f"/>
+<path d="M-26,-22 Q0,-12 26,-22 L24,-14 Q0,-4 -24,-14Z" fill="var(--accent)"/></g>`;
+const cat=(x,y,s)=>`<g transform="translate(${x},${y}) scale(${s})">
+<ellipse cx="2" cy="40" rx="44" ry="7" fill="#000" opacity=".12"/>
+<path d="M30,30 Q62,22 54,-10 Q50,-22 44,-14 Q50,10 26,18Z" fill="#4b4453"/>
+<path d="M-30,38 Q-36,-6 -18,-26 L18,-26 Q36,-6 30,38Z" fill="#6b6475"/>
+<ellipse cx="0" cy="-8" rx="16" ry="22" fill="#fff"/>
+<ellipse cx="-13" cy="36" rx="9" ry="6" fill="#fff"/><ellipse cx="13" cy="36" rx="9" ry="6" fill="#fff"/>
+<path d="M-26,-62 L-24,-90 L-6,-72Z M26,-62 L24,-90 L6,-72Z" fill="#4b4453"/><path d="M-22,-66 L-21,-82 L-11,-72Z M22,-66 L21,-82 L11,-72Z" fill="#f2b8c6"/>
+<ellipse cx="0" cy="-52" rx="28" ry="25" fill="#6b6475"/><path d="M-12,-58 Q0,-40 12,-58 L8,-32 Q0,-27 -8,-32Z" fill="#fff"/>
+<ellipse cx="-10" cy="-55" rx="5" ry="5.5" fill="#8cc63f"/><ellipse cx="10" cy="-55" rx="5" ry="5.5" fill="#8cc63f"/><ellipse cx="-10" cy="-55" rx="1.6" ry="4" fill="#1d1a20"/><ellipse cx="10" cy="-55" rx="1.6" ry="4" fill="#1d1a20"/>
+<path d="M-3,-44 L3,-44 L0,-40Z" fill="#d9849a"/></g>`;
+const fig=$("fig");
+const draw=()=>{const W=fig.clientWidth,H=fig.clientHeight,s=Math.min(1.6,Math.max(.7,W/360,0)*Math.min(1,H/300));
+  fig.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="A dog and a cat on a cushion"><circle cx="${W*.8}" cy="${H*.24}" r="${H*.22}" fill="var(--soft)"/>
+  <ellipse cx="${W/2}" cy="${H-34}" rx="${W*.46}" ry="${H*.13}" fill="var(--cushion)"/>
+  ${dog(W*.37,H-34-46*s,s)}${cat(W*.7,H-34-40*s,s*.95)}</svg>`};
+const ro=new ResizeObserver(draw);ro.observe(fig);
+
+const B=L.brand||{},rs=document.documentElement.style;
+if(B.brand){rs.setProperty("--brand",`light-dark(${B.brand},${B.brandDark||"#c9b8f5"})`);rs.setProperty("--accent",`light-dark(${B.accent},${B.accentDark||B.accent})`);rs.setProperty("--bg",`light-dark(${B.ground},#17121f)`);rs.setProperty("--soft",`light-dark(${B.soft},#2b2238)`);rs.setProperty("--cushion",`light-dark(${B.cushion||B.soft},#3b2f52)`);rs.setProperty("--head",`"${B.head}"`)}
+const initials=L.name.replace(/[^A-Za-z ]/g,"").split(" ").filter(w=>w&&!/^(llc|the|and|of)$/i.test(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+const mark=s=>`<svg width="${s}" height="${s}" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="var(--brand)"/><text x="20" y="25.5" text-anchor="middle" font-family="var(--head),sans-serif" font-weight="700" font-size="${initials.length>1?15:18}" fill="#fff">${initials}</text><g fill="var(--accent)" transform="translate(27,1) scale(.42)">${paw("var(--accent)",24).replace(/<\/?svg[^>]*>/g,"")}</g></svg>`;
+const PH=L.type==="rescue"?["photo-1548199973-03cce0bbc87b","photo-1514888286974-6c03e2ca1dba","photo-1601758228041-f3b2795255f1"]:["photo-1516734212186-a967f81ad0d7","photo-1583337130417-3346a1be7dee","photo-1543466835-00a7907e9de1"];
+$("gal").innerHTML=PH.map(id=>`<figure><img src="https://images.unsplash.com/${id}?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" onerror="this.parentNode.remove();if(!document.querySelector('#gal figure'))document.getElementById('gallery').remove()"></figure>`).join("");
+const OFFER={UK:"£349",US:"$449",IN:"₹12,999"};
+$("offName").textContent=L.name;$("offPrice").textContent=(OFFER[L.market]||OFFER.UK)+" one-off";
+$("offList").innerHTML=["Your logo, colours and photos","Booking straight to WhatsApp","Domain and hosting setup","Live in 7 days","30 days of free edits"].map(x=>`<li>${x}</li>`).join("");
+$("offBtn").href=`https://wa.me/19108301588?text=${encodeURIComponent(`Hi Ayush, this is ${L.name}. I saw the website you made for us (ref ${L.ref}) and I'm interested.`)}`;
+document.title=`${L.name} | ${L.city}`;
+$("logo").innerHTML=mark(34)+esc(L.name);
+$("navPrices").textContent=L.type==="rescue"?"Ways to help":"Prices";$("navCta").textContent=L.type==="rescue"?"Help":"Book";
+$("pill").textContent=T.pill(L.city);$("headline").innerHTML=T.head(L.name);
+$("intro").textContent=T.intro(L.name,L.city,L.category||"pet care");
+$("heroCta").textContent=T.cta;$("heroCta2").textContent=T.cta2;
+$("stats").innerHTML=T.stats.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join("");
+const list=PRICES[L.type]||PRICES.care;
+$("priceTitle").textContent=T.priceTitle;$("priceSub").textContent=T.priceSub;$("priceNote").textContent=T.priceNote;
+$("board").innerHTML=list.map(i=>{const v=i.p[L.market]??i.p.UK;return `<div class="item"><h3>${esc(i.n)}${i.pop?'<span class="pop">Most popular</span>':""}</h3><p>${esc(i.d)}</p>
+<div class="pr">${v===0?"Free":(i.from?"<small>from</small>":"")+money(v)}${i.per&&v!==0?`<small>per ${i.per}</small>`:""}</div></div>`}).join("");
+$("whyTitle").textContent=T.whyTitle;
+$("whyList").innerHTML=T.why.map(w=>`<div class="card">${paw("var(--accent)",26)}<h3>${esc(w[0])}</h3><p>${esc(w[1])}</p></div>`).join("");
+$("steps").innerHTML=T.steps.map(s=>`<div class="card"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("");
+$("bookTitle").textContent=T.bookTitle;$("bookSub").textContent=T.bookSub;$("sendBtn").textContent=T.send;
+$("svcLabel").firstChild.textContent=L.type==="rescue"?"How you'd like to help":"Service";
+$("f-svc").innerHTML=list.map(i=>`<option>${esc(i.n)}</option>`).join("");
+const reach=[L.phone&&`call or WhatsApp ${L.phone}`,L.email&&`email ${L.email}`,L.instagram&&`message ${L.instagram} on Instagram`].filter(Boolean);
+$("contactLine").textContent=reach.length?`Prefer to message? You can ${reach.join(", or ")}.`:"";
+$("faqList").innerHTML=T.faq.map(f=>`<details><summary>${esc(f[0])}</summary><p>${esc(f[1])}</p></details>`).join("");
+$("bizL").textContent=[`© ${new Date().getFullYear()} ${L.name}`,L.area||L.city].filter(Boolean).join(" · ");
+$("bizR").textContent=[L.phone,L.email,L.instagram].filter(Boolean).join(" · ");
+$("bbTitle").textContent=`Made for ${L.name}. Want it live?`;
+$("bbNote").textContent=`This is an unofficial concept made to show ${L.name} what's possible. It isn't affiliated with or endorsed by ${L.name}. Prices and wording are placeholders.`;
+
+const digits=(L.wa||L.phone||"").replace(/\D/g,"");
+let txt="";
+$("form").addEventListener("submit",e=>{e.preventDefault();const v=id=>$(id).value.trim();
+  if(!v("f-name")||!v("f-phone")){$("err").textContent="Please add your name and phone number.";return}
+  $("err").textContent="";
+  txt=`${T.send} for ${L.name}\nName: ${v("f-name")}\nPhone: ${v("f-phone")}\nPet: ${v("f-pet")} (${v("f-kind")})\n${L.type==="rescue"?"Help":"Service"}: ${v("f-svc")}\nDate: ${v("f-date")}\nNotes: ${v("f-msg")}`;
+  const wa=$("waBtn"),ml=$("mailBtn");
+  wa.style.display=digits?"":"none";wa.href=`https://wa.me/${digits}?text=${encodeURIComponent(txt)}`;
+  ml.style.display=L.email?"":"none";ml.href=`mailto:${L.email}?subject=${encodeURIComponent(T.send)}&body=${encodeURIComponent(txt)}`;
+  $("doneText").textContent=`Thanks ${v("f-name").split(" ")[0]}! Tap below to send your request${digits?" on WhatsApp":""}${L.email?" or by email":""}, and we'll confirm shortly.`;
+  $("form").style.display="none";$("done").classList.add("on")});
+}
+</script>
+</body>
+</html>
