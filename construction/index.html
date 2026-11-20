@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- google-tag --><script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T6XNBKNC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Branding Construction</title>
+<link rel="canonical" href="https://thebeyondbranding.com/construction/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="description" content="Beyond Branding builds brands and websites for construction, fit-out and architecture firms across the UK, ROI and EU. Get a free concept of your new site.">
+<meta property="og:title" content="Brands for the built environment | Beyond Branding">
+<meta property="og:description" content="Websites, brand motion and content for construction and fit-out firms. Free concept, live in 10 working days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion: a confident studio sales page for construction directors
+   IDEA a drawing sheet: line-art elevation that becomes a built facade, the way a project goes from drawing to handover
+   PICTURE a large shopfront elevation that draws itself in line, then fills in as a rendered build
+   COLOUR white ground, near-black ink, Beyond Branding bright red accent, concrete grey panels; night is graphite
+   TYPE Inter Tight 700 display + Inter text
+   LAYOUT laptop: title band across the top, the elevation full width beneath; phone: title, elevation, buttons */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#121314);--ink:light-dark(#111214,#f2f2f0);--quiet:light-dark(#5a5d63,#a7aab0);--panel:light-dark(#f2f2ef,#1c1d1f);--line:light-dark(#d9d9d4,#2e3033);--red:light-dark(#e1001e,#ff3b4f);--draw:light-dark(#111214,#e9e9e6)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(38px,6vw,76px);font-weight:700}
+h2{font-size:clamp(30px,4vw,48px);font-weight:700}
+h3{font-size:20px;font-weight:600;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(40px,6vw,96px);padding-inline:max(5vw,16px)}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:"Inter Tight",sans-serif;font-weight:700;font-size:19px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--red);display:inline-block}
+.links{display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
+.links a{text-decoration:none;color:var(--quiet)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:inherit}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.hero{padding-bottom:0}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--quiet);max-width:34em}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.sheet{margin-top:clamp(28px,4vw,48px);border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;background:var(--panel);position:relative;overflow:hidden}
+.sheet svg{display:block;width:100%;height:auto}
+.tb{position:absolute;right:16px;bottom:16px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--quiet);display:grid;grid-template-columns:auto auto;gap:2px 16px}
+.tb b{color:var(--ink);font-weight:600}
+.stage{position:absolute;left:16px;bottom:16px;display:flex;gap:6px;flex-wrap:wrap}
+.stage span{font-size:13px;padding:5px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--quiet)}
+.stage span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ln{fill:none;stroke:var(--draw);stroke-width:1.4;stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:draw 2.4s ease forwards}
+.fl{opacity:0;animation:fill 1.4s ease forwards 2.3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fill{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.ln{animation:none;stroke-dashoffset:0}.fl{animation:none;opacity:1}}
+.proof{background:var(--ink);color:var(--bg)}
+.proof .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.proof .lead{color:color-mix(in srgb,var(--bg) 72%,var(--ink))}
+.proof a.btn{border-color:var(--bg);color:var(--bg)}
+.did{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.did li{padding:18px 0;border-top:1px solid color-mix(in srgb,var(--bg) 22%,var(--ink));display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);gap:16px}
+.did b{font-family:"Inter Tight",sans-serif;font-size:18px}
+.did span{color:color-mix(in srgb,var(--bg) 72%,var(--ink))}
+.disc{display:flex;gap:6px;margin-top:28px}
+.disc i{flex:1;height:10px;border-radius:5px}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
+.card{background:var(--panel);border-radius:16px;padding:24px;display:grid;gap:10px;align-content:start}
+.card .n{font-family:"Inter Tight",sans-serif;font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--red)}
+.card p{color:var(--quiet)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px)}
+.steps{display:grid;gap:0;margin-top:8px}
+.step{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.step .t{font-family:"Inter Tight",sans-serif;font-weight:700;font-size:22px;color:var(--red);white-space:nowrap}
+.step p{color:var(--quiet);margin-top:6px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+.tier{border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:16px;align-content:start;background:var(--bg)}
+.tier.hot{border:2px solid var(--red)}
+.tier .price{font-family:"Inter Tight",sans-serif;font-size:44px;font-weight:700;white-space:nowrap}
+.tier .price small{font-size:16px;color:var(--quiet);font-weight:500;font-family:Inter,sans-serif}
+.tier ul{margin:0;padding-left:18px;color:var(--quiet);display:grid;gap:6px}
+.tag{justify-self:start;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--red);color:#fff}
+.monthly{margin-top:16px;background:var(--panel);border-radius:18px;padding:24px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.monthly b{font-family:"Inter Tight",sans-serif;font-size:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:15px}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{color:var(--quiet);margin-top:10px;max-width:60em}
+.cta{background:var(--red);color:#fff}
+.cta .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.cta .lead{color:#ffe1e4}
+form{display:grid;gap:12px;background:#fff;color:#111214;border-radius:18px;padding:24px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,textarea,select{font:16px Inter,sans-serif;padding:12px 14px;border:1px solid #c9c9c4;border-radius:10px;width:100%;background:#fff;color:#111214}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.note{font-size:13px;color:#5a5d63}
+.ok{display:none;font-size:15px;background:#eef8ef;border-radius:10px;padding:12px 14px;color:#1d5c2a}
+.ok a{font-weight:600}
+footer{font-size:15px;color:var(--quiet)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:900px){.hero .top,.proof .grid,.split,.cta .grid{grid-template-columns:minmax(0,1fr)}.cols{grid-template-columns:repeat(2,minmax(0,1fr))}.tiers{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.links{display:none}.stage{position:static;margin:12px}.cols{grid-template-columns:minmax(0,1fr)}.tb{position:static;margin:12px;border-radius:10px}.did li{grid-template-columns:minmax(0,1fr);gap:4px}.step{grid-template-columns:minmax(0,1fr);gap:4px}.two{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="https://thebeyondbranding.com"><i></i>Beyond Branding</a>
+  <div class="links"><a href="#work">ESPERTI case</a><a href="#how">How it works</a><a href="#packages">Packages</a><a href="#faq">FAQ</a></div>
+  <a class="btn red" href="#concept">Get a free concept</a>
+</div></nav>
+
+<header class="band hero"><div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Brands for the built environment.</h1>
+    </div>
+    <div>
+      <p class="lead">We build websites, brand motion and content for construction, fit-out and architecture firms across the UK, Ireland and the EU, so you look as precise online as your work is on site.</p>
+      <div class="ctas"><a class="btn red" href="#concept">Get a free concept of your site</a><a class="btn" href="#work">See esperti.uk</a></div>
+    </div>
+  </div>
+  <div class="sheet" aria-label="A shopfront elevation drawn in line, then filled in as a finished build">
+    <div class="stage" id="stage"><span class="on">Drawing</span><span>Render</span><span>Handover</span></div>
+    <svg id="elev" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Shopfront elevation">
+      <defs>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb8c6"/><stop offset="1" stop-color="#4f6876"/></linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d9d4" stop-opacity="0"/><stop offset="1" stop-color="#d9d9d4" stop-opacity=".5"/></linearGradient>
+        <pattern id="brick" width="36" height="16" patternUnits="userSpaceOnUse"><rect width="36" height="16" fill="#8f8a83"/><path d="M0 8H36M18 0V8M0 8V16M36 8V16" stroke="#77726b" stroke-width="1.2"/></pattern>
+        <pattern id="clad" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#2b2d31"/><path d="M0 0V14" stroke="#3b3e43" stroke-width="2"/></pattern>
+      </defs>
+      <g class="fl">
+        <rect x="0" y="0" width="1200" height="430" fill="url(#sky)"/>
+        <rect x="150" y="60" width="900" height="370" fill="url(#brick)"/>
+        <rect x="150" y="60" width="900" height="26" fill="#5e5a54"/>
+        <rect x="190" y="110" width="820" height="66" fill="url(#clad)"/>
+        <rect x="190" y="110" width="820" height="4" fill="#e1001e"/>
+        <rect x="200" y="200" width="250" height="230" fill="url(#glass)"/>
+        <rect x="470" y="200" width="160" height="230" fill="#3d5361"/>
+        <rect x="650" y="200" width="350" height="230" fill="url(#glass)"/>
+        <path d="M200 200L330 200L200 330Z M650 200L820 200L650 370Z" fill="#fff" opacity=".18"/>
+        <circle cx="1040" cy="143" r="20" fill="#e1001e"/>
+        <rect x="0" y="430" width="1200" height="30" fill="#c9c6c0"/>
+        <rect x="60" y="250" width="70" height="180" rx="35" fill="#6f7d63"/>
+        <rect x="1070" y="270" width="70" height="160" rx="35" fill="#6f7d63"/>
+      </g>
+      <g>
+        <path class="ln" style="--l:3000" d="M150 430V60H1050V430"/>
+        <path class="ln" style="--l:1000" d="M150 86H1050"/>
+        <path class="ln" style="--l:1800" d="M190 110H1010V176H190Z"/>
+        <path class="ln" style="--l:1000" d="M200 200H450V430H200Z M325 200V430"/>
+        <path class="ln" style="--l:800" d="M470 200H630V430H470Z M600 320H610"/>
+        <path class="ln" style="--l:1300" d="M650 200H1000V430H650Z M767 200V430 M884 200V430"/>
+        <path class="ln" style="--l:200" d="M1060 143a20 20 0 1 0 -40 0a20 20 0 1 0 40 0"/>
+        <path class="ln" style="--l:1300" d="M0 430H1200"/>
+        <path class="ln" style="--l:600" d="M150 30H1050 M150 22V38 M1050 22V38"/>
+      </g>
+    </svg>
+    <div class="tb"><span>Project</span><b>Your next website</b><span>Scale</span><b>1:1, mobile first</b><span>Drawn by</span><b>Beyond Branding</b></div>
+  </div>
+</div></header>
+
+<section class="band proof" id="work"><div class="wrap grid">
+  <div>
+    <h2>We built esperti.uk for ESPERTI&trade;.</h2>
+    <p class="lead" style="margin-top:20px">ESPERTI&trade; is a multi-discipline construction firm working across ROI &middot; UK &middot; EU. They needed four disciplines to read as one brand, and a site that looks as considered as their buildings.</p>
+    <div class="ctas"><a class="btn" href="https://esperti.uk" target="_blank" rel="noopener">Visit esperti.uk</a><a class="btn" href="/work/esperti.html">Read the case study</a></div>
+  </div>
+  <ul class="did">
+    <li><b>Hero</b><span>The building appears as line art, then a render, then the finished photo: drawing to handover in one scroll.</span></li>
+    <li><b>Discipline system</b><span>Each discipline has its own colour and image, so a multi-trade firm reads clearly instead of looking scattered.</span></li>
+    <li><b>Logo reveal</b><span>A construction-grid animation that draws the mark, used on the site preloader, the footer and video intros.</span></li>
+    <li><b>Social kit</b><span>LinkedIn and Instagram templates, highlight covers, email signatures and video intro and outro.</span></li>
+    <li><b>Wide to mobile</b><span>Tuned for wide desktops in the office and phones on site.</span></li>
+  </ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>What a client checks before they call you.</h2>
+  <p class="lead" style="margin-top:16px">Referrals, tender panels and developers all look you up first. In about a minute they decide whether you look like the safe choice.</p>
+  <div class="cols">
+    <div class="card"><span class="n">Projects</span><h3>Your best work, shown as case studies</h3><p>Real jobs with the brief, the sector and the result, not a gallery of stock hard hats.</p></div>
+    <div class="card"><span class="n">Trust</span><h3>Accreditations up front</h3><p>CHAS, Constructionline, SafeContractor, ISO and insurance, where procurement teams look first.</p></div>
+    <div class="card"><span class="n">Phone</span><h3>Fast on site, on 4G</h3><p>Directors and clients open your link on a phone. It has to load quickly and read clearly.</p></div>
+    <div class="card"><span class="n">One brand</span><h3>Every service, one look</h3><p>Website, LinkedIn, vans, hoardings and tender documents that clearly belong together.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="how" style="background:var(--panel)"><div class="wrap split">
+  <div>
+    <h2>We show you first. You decide after.</h2>
+    <p class="lead" style="margin-top:16px">No brief, no deposit, no meetings to start. We build a concept of your new site using your own projects.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="t">Day 1</span><div><h3>We build your concept</h3><p>Send your website link. We use your logo, project photos and services to mock up the new site.</p></div></div>
+    <div class="step"><span class="t">Day 2</span><div><h3>You watch a 90-second walkthrough</h3><p>A short video comparing your current site with the concept, and what we would change and why.</p></div></div>
+    <div class="step"><span class="t">10 days</span><div><h3>It goes live</h3><p>If you like it, we finish, connect your domain and hand it over. If not, you owe nothing.</p></div></div>
+  </div>
+</div></section>
+
+<section class="band" id="packages"><div class="wrap">
+  <h2>Fixed prices. No surprises.</h2>
+  <p class="lead" style="margin-top:16px">Pay 50% to start and 50% at go-live. Prices in GBP, excluding VAT; euro quotes for Ireland on request.</p>
+  <div class="tiers">
+    <div class="tier">
+      <h3>Site Sprint</h3>
+      <div class="price">&pound;1,950</div>
+      <ul><li>Your concept, finished and live</li><li>Projects, services and sectors pages</li><li>Tender and contact form</li><li>Mobile-first, fast hosting, basic SEO</li><li>Live in 10 working days</li></ul>
+      <a class="btn" href="#concept">Start with a concept</a>
+    </div>
+    <div class="tier hot">
+      <span class="tag">Most chosen</span>
+      <h3>Site + Brand Motion</h3>
+      <div class="price">&pound;3,450</div>
+      <ul><li>Everything in Site Sprint</li><li>Logo reveal animation for site and video</li><li>Full project case-study pages</li><li>LinkedIn and Instagram kit</li><li>Email signatures for the team</li></ul>
+      <a class="btn red" href="#concept">Start with a concept</a>
+    </div>
+    <div class="tier">
+      <h3>Full Brand Build</h3>
+      <div class="price">&pound;5,500</div>
+      <ul><li>Everything in Site + Brand Motion</li><li>Logo refresh and colour per discipline</li><li>Brand guidelines</li><li>Capability statement PDF for tenders</li><li>4 to 5 weeks</li></ul>
+      <a class="btn" href="#concept">Start with a concept</a>
+    </div>
+  </div>
+  <div class="monthly"><div><b>Monthly content &middot; &pound;750 / month</b><p style="color:var(--quiet)">8 posts and 4 short reels a month, made from your site footage, plus LinkedIn posts and scheduling. Three-month minimum.</p></div><a class="btn" href="#concept">Ask about content</a></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+  <h2>Who we work with</h2>
+  <div class="chips"><span>Shopfitters</span><span>Retail and F&amp;B fit-out</span><span>Office and commercial interiors</span><span>Multi-discipline contractors</span><span>M&amp;E contractors</span><span>Architects and design practices</span><span>Joinery, glazing and steel</span><span>Developers</span></div>
+</div></section>
+
+<section class="band" id="faq" style="padding-top:0"><div class="wrap split">
+  <h2>Questions directors ask</h2>
+  <div>
+    <details><summary>We get our work from referrals. Why do we need this?</summary><p>Referrals still look you up before they call. A strong site turns a name someone mentioned into a firm they feel safe hiring, and it helps you win tenders against bigger names.</p></details>
+    <details><summary>We are busy on site. How much of our time does it take?</summary><p>About 30 minutes: one call and a folder of project photos. We write the copy and build everything else.</p></details>
+    <details><summary>Can our current web person build it?</summary><p>Yes. We can hand over the design for them to build, or build it ourselves and give them the keys.</p></details>
+    <details><summary>Who owns the site and the domain?</summary><p>You do. The domain stays in your name, and you get the files and logins at handover.</p></details>
+    <details><summary>Do you work outside London?</summary><p>Yes. We work with firms across the UK, Ireland and the EU, with studio presence in London, Dubai and Mumbai.</p></details>
+  </div>
+</div></section>
+
+<section class="band cta" id="concept"><div class="wrap grid">
+  <div>
+    <h2>Get a free concept of your new site.</h2>
+    <p class="lead" style="margin-top:16px">Tell us where your current site is. We'll send a concept and a short walkthrough video within two working days.</p>
+    <p class="lead" style="margin-top:16px">Or contact Ayush directly:<br>ayush@thebeyondbranding.com<br>WhatsApp +1 (910) 830-1588</p>
+  </div>
+  <form id="f" novalidate>
+    <div class="two"><label for="nm">Your name<input id="nm" required autocomplete="name"></label><label for="co">Company<input id="co" required autocomplete="organization"></label></div>
+    <label for="ws">Current website<input id="ws" type="url" placeholder="https://" autocomplete="url"></label>
+    <div class="two"><label for="em">Email<input id="em" type="email" required autocomplete="email"></label>
+    <label for="ty">You are a<select id="ty"><option>Fit-out or shopfitting firm</option><option>Main or multi-discipline contractor</option><option>Specialist trade</option><option>Architect or designer</option><option>Developer</option><option>Other</option></select></label></div>
+    <label for="ms">Anything we should know<textarea id="ms" rows="3" placeholder="Sectors, a project to feature, timing"></textarea></label>
+    <button class="btn red" type="submit">Send by WhatsApp</button>
+    <button class="btn" type="button" id="byMail">Send by email</button>
+    <p class="note" id="err" role="alert"></p>
+    <p class="ok" id="ok">Opening your message. If nothing opened, <a id="okl" href="#">tap here</a> or email ayush@thebeyondbranding.com.</p>
+  </form>
+</div></section>
+
+<footer class="band" style="padding-block:32px"><div class="wrap">
+  <span>&copy; 2026 Beyond Branding &middot; London &middot; Dubai &middot; Mumbai</span>
+  <span><a href="https://thebeyondbranding.com">thebeyondbranding.com</a> &middot; ayush@thebeyondbranding.com</span>
+</div></footer>
+
+<script>
+{
+  const svg = document.getElementById('elev');
+  const chips = [...document.querySelectorAll('#stage span')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const setStage = i => chips.forEach((c, k) => c.classList.toggle('on', k === i));
+  if (reduce) setStage(2); else { setTimeout(() => setStage(1), 2300); setTimeout(() => setStage(2), 3800); }
+  for (const p of svg.querySelectorAll('.ln')) { try { const L = Math.ceil(p.getTotalLength()); p.style.setProperty('--l', L); } catch (e) {} }
+
+  const f = document.getElementById('f');
+  const val = id => document.getElementById(id).value.trim();
+  const msg = () => `Hi Ayush, I'd like a free website concept.\nName: ${val('nm')}\nCompany: ${val('co')}\nWebsite: ${val('ws') || 'none yet'}\nEmail: ${val('em')}\nType: ${val('ty')}\nNotes: ${val('ms') || '-'}`;
+  const check = () => {
+    const err = document.getElementById('err');
+    if (!val('nm') || !val('co') || !/^\S+@\S+\.\S+$/.test(val('em'))) { err.textContent = 'Please add your name, company and a valid email.'; return false; }
+    err.textContent = ''; return true;
+  };
+  const go = url => {
+    const ok = document.getElementById('ok');
+    document.getElementById('okl').href = url;
+    ok.style.display = 'block';
+    try { window.open(url, '_blank', 'noopener'); } catch (e) {}
+  };
+  f.addEventListener('submit', e => { e.preventDefault(); if (check()) go('https://wa.me/19108301588?text=' + encodeURIComponent(msg())); });
+  document.getElementById('byMail').addEventListener('click', () => { if (check()) go('mailto:ayush@thebeyondbranding.com?subject=' + encodeURIComponent('Website concept for ' + val('co')) + '&body=' + encodeURIComponent(msg())); });
+}
+</script>
+</body>
+</html>
