@@ -22,12 +22,12 @@ bag=bag.filter(b=>byId(b.id));wish=wish.filter(byId);
 
 const heartSvg='<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-8.6C1.2 8.2 3 4.8 6.4 4.8c2 0 3.2 1.1 3.9 2.3h3.4c.7-1.2 1.9-2.3 3.9-2.3 3.4 0 5.2 3.4 3.6 6.6C19 15.6 12 20 12 20z"/></svg>';
 function card(p,opts={}){
-  const R=ROOMS[p.r],w=wish.includes(p.id);
+  const R=ROOMS[p.r],w=wish.includes(p.id),x=p.s.split(/(?<=[.!?])\s+/)[0];
   return `<article class="pcard${opts.rv?" rv":""}" data-id="${p.id}">
   <div class="pcard__img"><img class="main" src="assets/img/s/${p.id}.webp" alt="${esc(p.t)}" loading="lazy" width="600" height="600">${p.mk?`<img class="alt" src="assets/mock/${p.id}.webp" alt="" loading="lazy">`:""}
-  <span class="tag">Room ${R.n}</span><span class="tag off">−${off(p)}%</span>
+  <span class="tag">${R.t}</span>
   <button class="heart" data-wish="${p.id}" aria-pressed="${w}" aria-label="Save ${esc(p.t)} to wishlist">${heartSvg}</button></div>
-  <div class="pcard__b"><span class="pcard__room">${R.t}</span><h3 class="pcard__t">${esc(p.t)}</h3><span class="pcard__a">${esc(p.a)}</span><span class="pcard__p">${inr(p.p)} <s>${inr(p.m)}</s></span></div>
+  <div class="pcard__b"><h3 class="pcard__t">${esc(p.t)}</h3><span class="pcard__a">${esc(p.a)}</span>${opts.story?`<p class="pcard__x">${esc(x)}</p>`:""}<span class="pcard__p">${inr(p.p)} <s>${inr(p.m)}</s><em>${off(p)}% off</em></span></div>
   <a class="cover" href="product.html?id=${p.id}" aria-label="View ${esc(p.t)}"></a></article>`;
 }
 
