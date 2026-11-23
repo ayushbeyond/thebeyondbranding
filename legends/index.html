@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Local Legends — A Beyond Branding Initiative</title>
+<meta name="description" content="India's local businesses deserve a bigger identity. Every month, Beyond Branding selects one local business and gives it a studio-grade brand transformation, pro bono.">
+<meta name="theme-color" content="#E3262B">
+<link rel="canonical" href="https://thebeyondbranding.com/legends/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Local Legends — ठेले से ब्रांड तक">
+<meta property="og:description" content="One local business. One big transformation. Every month. A pro-bono initiative by Beyond Branding.">
+<meta property="og:url" content="https://thebeyondbranding.com/legends/">
+<meta property="og:image" content="https://thebeyondbranding.com/legends/assets/ll-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/ll-favicon.png">
+<link rel="apple-touch-icon" href="assets/ll-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Mukta:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/ll-logo-primary.webp">
+<style>
+:root{
+  --red:#E3262B; --red-d:#B9181D; --yellow:#FFC928; --green:#08783E; --green-d:#05592D;
+  --cream:#F4E8CE; --paper:#FAF3E3; --ink:#17130F; --ink-2:#4A4038;
+  --bb-red:#E0202E;
+  --wrap:1240px; --g:clamp(18px,4.5vw,48px);
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace; --deva:'Mukta','Archivo',sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 16px/1.6 var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* paper grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.33;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .33 0 0 0 0 .18 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--g)}
+.mono{font:500 .74rem/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.deva{font-family:var(--deva);font-weight:800;letter-spacing:0}
+.ast{color:var(--red)}
+
+/* perforated stamp edge (mask) */
+.perf{--r:7px;--s:20px;
+  -webkit-mask:radial-gradient(circle var(--r),#0000 97%,#000) calc(var(--s)/-2) calc(var(--s)/-2)/var(--s) var(--s) round,linear-gradient(#000 0 0) calc(var(--s)/2) calc(var(--s)/2)/calc(100% - var(--s)) calc(100% - var(--s)) no-repeat;
+          mask:radial-gradient(circle var(--r),#0000 97%,#000) calc(var(--s)/-2) calc(var(--s)/-2)/var(--s) var(--s) round,linear-gradient(#000 0 0) calc(var(--s)/2) calc(var(--s)/2)/calc(100% - var(--s)) calc(100% - var(--s)) no-repeat}
+
+/* ---------- header ---------- */
+.hd{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--cream) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+.hd .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.bb{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 .98rem/1 var(--display);letter-spacing:.015em;white-space:nowrap}
+.bb img{width:22px;height:22px}
+.bb em{font-style:normal;color:var(--bb-red)}
+.bb .x{font:500 .7rem var(--mono);color:var(--ink-2);letter-spacing:.12em;margin-left:4px}
+.bb .ll{display:none}
+.nav{display:none;margin-left:auto;gap:26px}
+.nav a{text-decoration:none;font:600 .9rem var(--body);position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;border:2px solid var(--ink);border-radius:999px;padding:13px 22px;font:700 .95rem/1 var(--body);background:var(--paper);box-shadow:3px 3px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.red{background:var(--red);color:#fff}
+.btn.green{background:var(--green);color:#fff}
+.btn.yellow{background:var(--yellow)}
+.btn svg{width:16px;height:16px;flex:none}
+.hd .btn{margin-left:auto;padding:10px 16px;font-size:.85rem;box-shadow:2px 2px 0 var(--ink)}
+@media(min-width:900px){.nav{display:flex}.hd .btn{margin-left:10px}.bb .ll{display:inline}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(28px,5vw,64px) 0 0;overflow:hidden}
+.hero-grid{display:grid;gap:36px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.kicker::before{content:"✱";color:var(--red);font-size:1.1rem;letter-spacing:0}
+.hero-logo{width:min(560px,100%);margin:0 0 18px -1.5%;filter:drop-shadow(0 10px 18px rgba(23,19,15,.12))}
+.hero h1{font:900 clamp(2rem,5.2vw,3.55rem)/1.02 var(--display);letter-spacing:-.025em;max-width:15ch}
+.hero h1 mark{background:none;color:var(--red)}
+.hero .lede{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--ink-2);max-width:44ch;margin:16px 0 26px}
+.hero .lede b{color:var(--ink)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+
+.edwrap{position:relative;justify-self:center;width:min(380px,100%)}
+.ed-card{position:relative;display:block;width:100%;background:var(--green);color:var(--cream);padding:30px 28px 26px;text-decoration:none;transform:rotate(1.6deg);transition:transform .45s var(--ease)}
+.ed-card:hover{transform:rotate(0) translateY(-4px)}
+.ed-card .in{border:2px solid var(--yellow);padding:16px 16px 18px;text-align:center;position:relative}
+.ed-card .feat{color:var(--yellow);margin-bottom:10px;display:block}
+.ed-card .pic{background:var(--cream);border-radius:4px;height:250px;display:grid;place-items:end center;overflow:hidden;position:relative}
+.ed-card .pic::before{content:"";position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,201,40,.55) 0 7deg,transparent 7deg 18deg);-webkit-mask:radial-gradient(closest-side,#000 30%,transparent 72%);mask:radial-gradient(closest-side,#000 30%,transparent 72%)}
+.ed-card .pic img{position:relative;height:96%;width:auto;margin-bottom:-4px}
+.ed-card .no{display:block;font:800 1.5rem/1 var(--display);color:var(--yellow);margin-top:16px;letter-spacing:.02em}
+.ed-card .name{display:block;font:900 2rem/1 var(--display);letter-spacing:-.01em;margin-top:4px}
+.ed-card .sub{display:block;margin-top:8px;opacity:.9}
+.edwrap .badge{position:absolute;z-index:2;width:136px;right:-22px;top:-38px;transform:rotate(12deg);pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.22))}
+
+.stage{position:relative;margin-top:clamp(24px,5vw,56px)}
+.stage::before{content:"";position:absolute;left:50%;bottom:0;width:min(1500px,170vw);aspect-ratio:2/1;translate:-50% 0;border-radius:50% 50% 0 0/100% 100% 0 0;
+  background:repeating-conic-gradient(from -90deg at 50% 100%,var(--yellow) 0 5deg,#FFDD72 5deg 10deg);opacity:.75;
+  -webkit-mask:radial-gradient(farthest-side at 50% 100%,#000 55%,transparent);mask:radial-gradient(farthest-side at 50% 100%,#000 55%,transparent)}
+.stage img{position:relative;width:min(1400px,100%);margin:0 auto}
+.ground{height:14px;background:var(--ink)}
+
+@media(max-width:600px){.edwrap .badge{right:-4px;width:118px}}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.25fr .75fr}}
+
+/* ---------- ribbon ---------- */
+.ribbon{background:var(--red);color:var(--cream);border-block:2px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ribbon .track{display:inline-flex;gap:34px;padding:14px 0;animation:mq 38s linear infinite}
+.ribbon span{font:800 1.05rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:34px}
+.ribbon span.deva{font:800 1.3rem/1 var(--deva);text-transform:none;letter-spacing:0;color:var(--yellow)}
+.ribbon i{font-style:normal;color:var(--yellow)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- section scaffolding ---------- */
+section{position:relative}
+.sec{padding:clamp(70px,10vw,130px) 0}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(34px,5vw,56px)}
+.sec-no{display:inline-flex;align-items:center;gap:12px}
+.sec-no b{display:inline-grid;place-items:center;min-width:42px;height:28px;padding:0 8px;background:var(--ink);color:var(--cream);font:600 .78rem var(--mono);border-radius:3px}
+h2{font:900 clamp(2rem,5vw,3.6rem)/1 var(--display);letter-spacing:-.025em;max-width:18ch}
+h2 em{font-style:normal;color:var(--red)}
+.sec-head p{max-width:56ch;color:var(--ink-2);font-size:1.05rem}
+
+/* mission */
+.mission{background:var(--paper);border-top:2px solid var(--ink)}
+.m-grid{display:grid;gap:40px;align-items:center}
+.m-art{position:relative}
+.m-art img{width:100%;filter:drop-shadow(0 18px 24px rgba(23,19,15,.14))}
+.quote{font:800 clamp(1.35rem,2.6vw,1.9rem)/1.22 var(--display);letter-spacing:-.012em;margin-bottom:22px}
+.quote .r{color:var(--red)}
+.m-copy p{color:var(--ink-2);margin-bottom:14px;max-width:52ch}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.pills li{list-style:none;border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font:600 .88rem var(--body);background:var(--cream)}
+.pills li:nth-child(3n+1){background:var(--yellow)}
+@media(min-width:900px){.m-grid{grid-template-columns:1fr 1fr}}
+
+/* legends */
+.l-grid{display:grid;gap:26px}
+.lcard{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.lcard .top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:2px solid var(--ink)}
+.status{display:inline-flex;align-items:center;gap:8px;font:600 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 2px var(--ink)}
+.status.live::before{background:var(--green);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.lcard .art{height:300px;display:grid;place-items:end center;background:var(--cream);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.lcard .art::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 110%,var(--yellow) 0 34%,transparent 34.5%)}
+.lcard .art img{position:relative;height:92%;width:auto}
+.lcard .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.lcard h3{font:900 1.7rem/1.05 var(--display);letter-spacing:-.015em}
+.lcard .meta{color:var(--ink-2);font-size:.95rem}
+.lcard .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:14px}
+.lcard .links a{font:600 .85rem var(--body);text-decoration:none;border-bottom:2px solid var(--red)}
+.lcard.next{background:var(--cream)}
+.lcard.next .art{background:var(--paper)}
+.lcard.next .art::before{display:none}
+.ticket-blank{position:relative;width:86%;align-self:center;margin:auto 0}
+.ticket-blank img{width:100%;height:auto}
+.ticket-blank span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 16%;text-align:center;font:900 clamp(1.6rem,3.4vw,2.3rem)/.95 var(--display);color:var(--ink)}
+.ticket-blank span small{display:block;font:600 .7rem var(--mono);letter-spacing:.14em;color:var(--red);margin-top:8px}
+.lcard.locked{opacity:.75}
+.lcard.locked .art{background:repeating-linear-gradient(-45deg,var(--paper) 0 14px,var(--cream) 14px 28px)}
+.lcard.locked .art::before{display:none}
+.lock{align-self:center;margin:auto;font:900 4.6rem/1 var(--display);color:transparent;-webkit-text-stroke:2px var(--ink)}
+@media(min-width:760px){.l-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.l-grid{grid-template-columns:1.15fr 1fr 1fr}}
+
+/* process */
+.process{background:var(--green);color:var(--cream);border-block:2px solid var(--ink)}
+.process h2 em{color:var(--yellow)}
+.process .sec-head p{color:#D9E8D9}
+.process .sec-no b{background:var(--yellow);color:var(--ink)}
+.steps{display:grid;gap:22px;counter-reset:s}
+.step{background:var(--cream);color:var(--ink);padding:30px 24px 26px;position:relative;transition:transform .35s var(--ease)}
+.step:hover{transform:translateY(-6px) rotate(-.6deg)}
+.step .n{position:absolute;top:22px;right:22px;font:600 .74rem var(--mono);letter-spacing:.12em;color:var(--red)}
+.step svg{width:72px;height:72px;margin-bottom:16px}
+.step h3{font:900 1.5rem/1 var(--display);letter-spacing:.01em;text-transform:uppercase;margin-bottom:8px}
+.step p{color:var(--ink-2);font-size:.95rem}
+.arrow{display:none}
+@media(min-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.steps{grid-template-columns:repeat(4,1fr)}}
+
+/* package */
+.pack{display:grid;gap:14px;margin-top:clamp(40px,6vw,64px);grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.pack div{border:2px dashed rgba(244,232,206,.55);border-radius:6px;padding:16px 18px}
+.pack b{display:block;font:800 1.05rem var(--display);color:var(--yellow);margin-bottom:4px}
+.pack span{font-size:.92rem;color:#D9E8D9}
+
+/* nominate */
+.nom-grid{display:grid;gap:40px;align-items:start}
+.rules{display:grid;gap:14px;margin-top:6px}
+.rule{border-left:4px solid var(--red);padding:4px 0 4px 16px}
+.rule h4{font:800 1rem var(--display);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.rule p,.rule li{color:var(--ink-2);font-size:.95rem}
+.rule ul{padding-left:18px}
+.fine{margin-top:18px;font-size:.85rem;color:var(--ink-2);background:var(--paper);border:2px solid var(--ink);border-radius:6px;padding:12px 14px}
+.fine b{color:var(--red)}
+.form-wrap{position:relative;background:var(--red);padding:30px}
+.form{background:var(--paper);padding:26px 22px;display:grid;gap:14px;border:2px solid var(--yellow);outline:2px solid var(--green);outline-offset:-8px}
+.form .ftitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 4px 4px}
+.form .ftitle h3{font:900 1.6rem/1 var(--display);letter-spacing:-.01em}
+.form .ftitle svg{width:58px;height:58px;flex:none}
+.field{display:grid;gap:6px}
+.field label{font:600 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.field input,.field textarea,.field select{width:100%;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:12px 12px;font-size:1rem;transition:box-shadow .2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;box-shadow:3px 3px 0 var(--red)}
+.field textarea{min-height:104px;resize:vertical}
+.row2{display:grid;gap:14px}
+@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--ink-2)}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--red);flex:none}
+.form .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.form .err{display:none;color:var(--red-d);font:600 .88rem var(--body)}
+.form.invalid .err{display:block}
+@media(min-width:960px){.nom-grid{grid-template-columns:.9fr 1.1fr}}
+
+/* involve */
+.involve{background:var(--paper);border-top:2px solid var(--ink)}
+.inv-grid{display:grid;gap:40px;align-items:center}
+.inv-grid img{width:min(440px,100%);margin:0 auto;filter:drop-shadow(0 16px 22px rgba(23,19,15,.15))}
+.roles{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin:22px 0 28px}
+.roles div{background:var(--cream);border:2px solid var(--ink);border-radius:6px;padding:12px 14px;font:700 .92rem var(--body)}
+.roles small{display:block;font:500 .82rem var(--body);color:var(--ink-2);margin-top:2px}
+@media(min-width:900px){.inv-grid{grid-template-columns:.85fr 1.15fr}}
+
+/* footer */
+.ft{background:var(--ink);color:var(--cream);padding:64px 0 28px;position:relative}
+.ft::before{content:"";position:absolute;left:0;right:0;top:-12px;height:24px;background:radial-gradient(circle 12px at 50% 100%,var(--ink) 98%,transparent) 0 0/24px 24px repeat-x}
+.ft-grid{display:grid;gap:34px}
+.ft-brand{display:flex;gap:20px;align-items:center}
+.ft-brand img{width:118px;flex:none}
+.ft-brand p{font:800 1.4rem/1.15 var(--display);letter-spacing:-.01em}
+.ft-brand p .deva{display:block;color:var(--yellow);font-size:1.25rem;margin-top:6px}
+.ft h5{font:600 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+.ft ul{list-style:none;display:grid;gap:8px}
+.ft ul a{text-decoration:none;opacity:.88}
+.ft ul a:hover{opacity:1;color:var(--yellow)}
+.ft-bot{margin-top:46px;padding-top:20px;border-top:1px solid rgba(244,232,206,.18);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.84rem;opacity:.75}
+.ft-bot .bb{font-size:.9rem;opacity:1}
+@media(min-width:860px){.ft-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+
+/* mobile dock */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;gap:10px;transform:translateY(140%);transition:transform .45s var(--ease)}
+.dock.on{transform:none}
+.dock .btn{flex:1;justify-content:center;padding:14px 10px}
+@media(min-width:900px){.dock{display:none}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="bb" href="../index.html" aria-label="Beyond Branding home"><img src="assets/bb-mark.svg" alt="" width="22" height="22"><span>BEYOND<em>BRANDING</em></span><span class="x ll">× LOCAL LEGENDS</span></a>
+    <nav class="nav" aria-label="Local Legends">
+      <a href="#mission">Mission</a><a href="#legends">The Legends</a><a href="#how">How it works</a><a href="#involve">Get involved</a>
+    </nav>
+    <a class="btn red" href="#nominate"><span>Nominate<span class="hide-s"> a Legend</span></span></a>
+  </div>
+</header>
+
+<main>
+<!-- 01 HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="kicker mono">A Beyond Branding initiative</span>
+      <img class="hero-logo" src="assets/ll-logo-primary.webp" width="1100" height="733" alt="Local Legends — ठेले से ब्रांड तक — thebeyondbranding.com">
+      <h1 id="h1">India's local businesses deserve a <mark>bigger identity.</mark></h1>
+      <p class="lede">Every month, Beyond Branding picks <b>one local business</b> and gives it a studio-grade brand transformation, <b>completely pro bono.</b> One business. One transformation. Every month.</p>
+      <div class="ctas">
+        <a class="btn red" href="#legends">Explore the first Legend <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn" href="#nominate">Nominate a business</a>
+      </div>
+    </div>
+
+    <div class="edwrap rv">
+    <img class="badge" src="assets/ll-badge-001.webp" width="700" height="467" alt="">
+    <a class="ed-card perf" href="#legends" aria-label="Edition Nº 001 — Kamal Kaka, Doctor Nariyal, Indore">
+      <div class="in">
+        <span class="feat mono">Now featuring</span>
+        <div class="pic"><img src="assets/ll-coconut-vendor.webp" width="733" height="1100" alt="" loading="eager"></div>
+        <span class="no">Nº 001</span>
+        <span class="name">KAMAL KAKA</span>
+        <span class="sub mono">Doctor Nariyal · Indore</span>
+      </div>
+    </a>
+    </div>
+  </div>
+
+  <div class="stage" aria-hidden="true">
+    <img src="assets/ll-hero.webp" width="1774" height="887" alt="" fetchpriority="high">
+  </div>
+  <div class="ground" aria-hidden="true"></div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="track">
+    <span>Local Legends <i>✱</i></span><span class="deva">ठेले से ब्रांड तक</span><span><i>✱</i> One business. One transformation. Every month. <i>✱</i></span><span>Pro bono <i>✱</i></span><span>A Beyond Branding initiative <i>✱</i></span>
+    <span>Local Legends <i>✱</i></span><span class="deva">ठेले से ब्रांड तक</span><span><i>✱</i> One business. One transformation. Every month. <i>✱</i></span><span>Pro bono <i>✱</i></span><span>A Beyond Branding initiative <i>✱</i></span>
+  </div>
+</div>
+
+<!-- 02 MISSION -->
+<section class="sec mission" id="mission" aria-labelledby="h-mission">
+  <div class="wrap m-grid">
+    <div class="m-art rv"><img src="assets/ll-shopfront.webp" width="1200" height="800" alt="Illustration of a green and yellow neighbourhood shop with a striped awning, jars and snacks on display" loading="lazy"></div>
+    <div class="m-copy rv">
+      <div class="sec-head" style="margin-bottom:22px">
+        <span class="sec-no mono"><b>02</b> The mission</span>
+        <h2 id="h-mission">Built for the businesses <em>we grew up with.</em></h2>
+      </div>
+      <p class="quote">Some of India's most extraordinary businesses are hiding behind <span class="r">ordinary branding.</span></p>
+      <p>A neighbourhood shop. A street-side food stall. A family-run business. A local maker with a story worth telling. They have the craft, the regulars and the reputation. What they rarely have is an identity that matches.</p>
+      <p>Local Legends gives them one. Designed by the same studio that builds brands for clients in London, Dubai and Mumbai.</p>
+      <ul class="pills" aria-label="What we design">
+        <li>Brand identity</li><li>Signage & stall</li><li>Packaging</li><li>Menus & print</li><li>Instagram launch</li><li>Digital presence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LEGENDS -->
+<section class="sec" id="legends" aria-labelledby="h-legends">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no mono"><b>03</b> Meet the Legends</span>
+      <h2 id="h-legends">Every edition, <em>numbered.</em></h2>
+      <p>Each business we take on becomes a numbered edition. The Local Legends wrapper stays the same; each business gets an identity that is entirely its own.</p>
+    </div>
+
+    <div class="l-grid">
+      <article class="lcard rv">
+        <div class="top"><span class="mono">Nº 001 · Indore</span><span class="status live">In progress</span></div>
+        <div class="art"><img src="assets/ll-coconut-vendor.webp" width="733" height="1100" alt="Illustration of a coconut seller in a white kurta and Gandhi cap beside a red and green coconut cart" loading="lazy"></div>
+        <div class="body">
+          <h3>Kamal Kaka<br><span style="color:var(--red)">Doctor Nariyal</span></h3>
+          <p class="meta">A much-loved coconut crush stall in Indore, getting a full identity, a stall makeover and a digital-first launch.</p>
+          <div class="links">
+            <a href="https://www.instagram.com/doctornariyal/" target="_blank" rel="noopener">Follow @doctornariyal ↗</a>
+            <span class="mono" style="font-size:.66rem;align-self:center;color:var(--ink-2)">Case study soon</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="lcard next rv">
+        <div class="top"><span class="mono">Nº 002 · Your city?</span><span class="status">Nominations open</span></div>
+        <div class="art">
+          <div class="ticket-blank"><img src="assets/ll-ticket.webp" width="1200" height="600" alt=""><span>Nº 002<small>Could be your favourite stall</small></span></div>
+        </div>
+        <div class="body">
+          <h3>The next Legend</h3>
+          <p class="meta">The chai stall you'd cross the city for. The tailor who knows everyone's size. Tell us who deserves it.</p>
+          <div class="links"><a href="#nominate">Nominate a business →</a></div>
+        </div>
+      </article>
+
+      <article class="lcard locked rv" aria-label="Edition Nº 003, coming later">
+        <div class="top"><span class="mono">Nº 003</span><span class="status">Coming soon</span></div>
+        <div class="art"><span class="lock" aria-hidden="true">003</span></div>
+        <div class="body">
+          <h3>Coming soon</h3>
+          <p class="meta">One new edition every month. Follow along to see who's next.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PROCESS -->
+<section class="sec process" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-no mono"><b>04</b> The transformation</span>
+      <h2 id="h-how">From ठेला to <em>brand.</em></h2>
+      <p>Four steps, done with the same care as any paid Beyond Branding project.</p>
+    </div>
+    <div class="steps">
+      <div class="step perf rv"><span class="n">01</span>
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#FFC928" stroke="#17130F" stroke-width="2.5"/><circle cx="26" cy="40" r="10" fill="#F4E8CE" stroke="#17130F" stroke-width="3"/><circle cx="46" cy="40" r="10" fill="#F4E8CE" stroke="#17130F" stroke-width="3"/><path d="M36 37v-6M20 32l4-12h6l2 10M52 32l-4-12h-6l-2 10" fill="none" stroke="#17130F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="26" cy="40" r="4" fill="#08783E"/><circle cx="46" cy="40" r="4" fill="#08783E"/></svg>
+        <h3>Discover</h3><p>We find a local business with real craft, loyal customers and a story worth telling, often through your nominations.</p></div>
+      <div class="step perf rv"><span class="n">02</span>
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#E3262B" stroke="#17130F" stroke-width="2.5"/><path d="M22 52l4-12 22-22 8 8-22 22z" fill="#FFC928" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/><path d="M44 22l8 8" stroke="#17130F" stroke-width="3"/><path d="M22 52l4-12 8 8z" fill="#F4E8CE" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>Rebrand</h3><p>Name, logo, colours and type, built around who they are. Not a template. Their identity, done properly.</p></div>
+      <div class="step perf rv"><span class="n">03</span>
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#08783E" stroke="#17130F" stroke-width="2.5"/><path d="M18 34h36v20H18z" fill="#F4E8CE" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/><path d="M15 26h42l-3 9H18z" fill="#E3262B" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/><path d="M24 26l-2 9M33 26l-1 9M40 26l1 9M48 26l2 9" stroke="#F4E8CE" stroke-width="3"/><path d="M31 54V43h10v11" fill="#FFC928" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>Transform</h3><p>The new identity goes up in the real world: signage, stall, packaging, menus, and a fresh launch on Instagram.</p></div>
+      <div class="step perf rv"><span class="n">04</span>
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#FFC928" stroke="#17130F" stroke-width="2.5"/><path d="M18 32h8l20-10v28L26 40h-8z" fill="#E3262B" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/><path d="M22 40l3 12h6l-3-12" fill="#F4E8CE" stroke="#17130F" stroke-width="3" stroke-linejoin="round"/><path d="M52 30l6-4M53 36h7M52 42l6 4" stroke="#17130F" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Showcase</h3><p>We tell their story to the world, from the before to the after, so more people find their way to the counter.</p></div>
+    </div>
+
+    <div class="pack rv" aria-label="What a featured business receives">
+      <div><b>Brand identity</b><span>Logo, colours, typography and a simple guide they can keep using.</span></div>
+      <div><b>Real-world rollout</b><span>Signboard, stall or shop graphics, menus and packaging where relevant.</span></div>
+      <div><b>Digital launch</b><span>Instagram setup with a launch grid, reels and a story worth sharing.</span></div>
+      <div><b>The feature</b><span>A numbered Local Legends edition and case study on this page.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 NOMINATE -->
+<section class="sec" id="nominate" aria-labelledby="h-nom">
+  <div class="wrap nom-grid">
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:26px">
+        <span class="sec-no mono"><b>05</b> Nominate a Legend</span>
+        <h2 id="h-nom">Know a <em>local legend?</em></h2>
+        <p>Tell us about a business in your city that deserves a bigger identity. It takes two minutes.</p>
+      </div>
+      <div class="rules">
+        <div class="rule"><h4>Who can be nominated</h4><p>Independent, owner-run local businesses in India: stalls, carts, shops, eateries, makers and family businesses. The owner must be happy to take part and be featured.</p></div>
+        <div class="rule"><h4>How we choose</h4><ul><li>A real story and genuine local love</li><li>Great product or service, held back by its branding</li><li>Where good design can make a visible difference</li></ul></div>
+        <div class="rule"><h4>What's included</h4><p>Brand identity, real-world applications, a digital launch and a feature as a numbered edition. All pro bono.</p></div>
+      </div>
+      <p class="fine"><b>Please note:</b> we select one business per edition, so a nomination does not guarantee selection. We'll only contact the business with the owner's consent.</p>
+    </div>
+
+    <div class="form-wrap perf rv">
+      <form class="form" id="nomForm" novalidate>
+        <div class="ftitle">
+          <h3>Nomination ticket</h3>
+          <svg viewBox="0 0 72 72" aria-hidden="true"><path d="M36 4l7 9 11-4 1 11 11 4-6 10 6 10-11 4-1 11-11-4-7 9-7-9-11 4-1-11-11-4 6-10-6-10 11-4 1-11 11 4z" fill="#FFC928" stroke="#17130F" stroke-width="2.5" stroke-linejoin="round"/><text x="36" y="42" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="15" fill="#17130F">Nº ?</text></svg>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="f-biz">Business name *</label><input id="f-biz" name="business" required placeholder="e.g. Sharma Chai Corner"></div>
+          <div class="field"><label for="f-city">City / area *</label><input id="f-city" name="city" required placeholder="e.g. Indore, Rajwada"></div>
+        </div>
+        <div class="field"><label for="f-what">What do they sell or make? *</label><input id="f-what" name="what" required placeholder="Chai, kachori, hand-made pottery…"></div>
+        <div class="field"><label for="f-why">Why are they a legend? *</label><textarea id="f-why" name="why" required placeholder="Their story, why people love them, what their branding looks like today…"></textarea></div>
+        <div class="field"><label for="f-link">Google Maps / Instagram link</label><input id="f-link" name="link" inputmode="url" placeholder="Optional"></div>
+        <div class="row2">
+          <div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="f-rel">You are…</label><select id="f-rel" name="relation"><option>A regular customer</option><option>The owner</option><option>Family / staff</option><option>Just a fan</option></select></div>
+        </div>
+        <label class="check"><input type="checkbox" id="f-ok" required> I understand that nominating doesn't guarantee selection.</label>
+        <p class="err" role="alert">Please fill in the starred fields and tick the box.</p>
+        <div class="actions">
+          <button class="btn red" type="submit" data-via="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Send on WhatsApp</button>
+          <button class="btn" type="submit" data-via="mail">Send by email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 06 GET INVOLVED -->
+<section class="sec involve" id="involve" aria-labelledby="h-inv">
+  <div class="wrap inv-grid">
+    <img class="rv" src="assets/ll-entrepreneurs.webp" width="900" height="900" alt="Illustrated badge of four smiling Indian local business owners: a samosa seller, a shopkeeper, a coconut seller and a chai maker" loading="lazy">
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:10px">
+        <span class="sec-no mono"><b>06</b> Get involved</span>
+        <h2 id="h-inv">Build the next <em>legend</em> with us.</h2>
+        <p>Local Legends gets bigger with good people around it. If you can help a small business look the part, we'd love to hear from you.</p>
+      </div>
+      <div class="roles">
+        <div>Print & signage partners<small>Boards, banners, packaging</small></div>
+        <div>Photographers & filmmakers<small>Telling the before & after</small></div>
+        <div>Local media & creators<small>Spreading each story</small></div>
+        <div>Brands & sponsors<small>Funding real-world rollouts</small></div>
+      </div>
+      <div class="ctas">
+        <a class="btn green" id="partnerWa" href="#" target="_blank" rel="noopener">Partnership enquiry <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn" id="igLink" href="#" target="_blank" rel="noopener">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="assets/ll-roundel.webp" width="640" height="640" alt="Local Legends roundel" loading="lazy">
+        <p>Local Legends<span class="deva">ठेले से ब्रांड तक</span><span class="mono" style="display:block;margin-top:10px;font-size:.68rem;opacity:.8">A Beyond Branding initiative</span></p>
+      </div>
+      <div><h5>Campaign</h5><ul><li><a href="#legends">The Legends</a></li><li><a href="#how">How it works</a></li><li><a href="#nominate">Nominate</a></li><li><a href="#involve">Partner with us</a></li></ul></div>
+      <div><h5>Follow</h5><ul><li><a class="ig" href="#" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.instagram.com/doctornariyal/" target="_blank" rel="noopener">Nº 001 · @doctornariyal</a></li></ul></div>
+      <div><h5>The studio</h5><ul><li><a href="../index.html">thebeyondbranding.com</a></li><li><a href="../portfolio.html">Our work</a></li><li><a class="mail" href="#">Email us</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <a class="bb" href="../index.html"><img src="assets/bb-mark.svg" alt="" width="20" height="20"><span>BEYOND<em>BRANDING</em></span></a>
+      <span>London · Dubai · Mumbai — © <span id="yr">2026</span> Beyond Branding</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><a class="btn red" href="#nominate">Nominate a Legend</a><a class="btn" href="#legends">See Nº 001</a></div>
+
+<script>
+/* ---- edit these ---- */
+const CONFIG = {
+  whatsapp: '19108301588',              // digits only, with country code
+  email: 'ayush@thebeyondbranding.com',
+  instagram: 'locallegends.bybb'        // confirm handle is claimed
+};
+/* -------------------- */
+(() => {
+  const ig = 'https://www.instagram.com/' + CONFIG.instagram + '/';
+  document.querySelectorAll('#igLink,.ig').forEach(a => a.href = ig);
+  document.querySelectorAll('.mail').forEach(a => a.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Local Legends'));
+  document.getElementById('partnerWa').href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent("Hi Beyond Branding, I'd like to partner with / support Local Legends.");
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.hide-s').forEach(s => { const m = matchMedia('(max-width:420px)'); const f = () => s.style.display = m.matches ? 'none' : ''; f(); m.addEventListener('change', f); });
+
+  // nomination -> WhatsApp / email
+  const form = document.getElementById('nomForm'); let via = 'wa';
+  form.querySelectorAll('button[type=submit]').forEach(b => b.addEventListener('click', () => via = b.dataset.via));
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const ok = [...form.querySelectorAll('[required]')].every(i => i.type === 'checkbox' ? i.checked : i.value.trim());
+    form.classList.toggle('invalid', !ok); if (!ok) return;
+    const v = n => (form.elements[n].value || '').trim();
+    const msg = `LOCAL LEGENDS NOMINATION\n\nBusiness: ${v('business')}\nCity: ${v('city')}\nSells/makes: ${v('what')}\nWhy a legend: ${v('why')}\nLink: ${v('link') || '-'}\n\nNominated by: ${v('name')} (${v('relation')})`;
+    const url = via === 'wa'
+      ? 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg)
+      : 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Local Legends nomination: ' + v('business')) + '&body=' + encodeURIComponent(msg);
+    window.open(url, '_blank', 'noopener');
+  });
+
+  // reveal + dock
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  const dock = document.getElementById('dock'), nom = document.getElementById('nominate');
+  let nomVis = false; new IntersectionObserver(([x]) => { nomVis = x.isIntersecting; tick(); }).observe(nom);
+  const tick = () => dock.classList.toggle('on', scrollY > innerHeight * .8 && !nomVis);
+  addEventListener('scroll', tick, { passive: true });
+})();
+</script>
+</body>
+</html>
