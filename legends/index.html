@@ -70,8 +70,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
 .btn.green{background:var(--green);color:#fff}
 .btn.yellow{background:var(--yellow)}
 .btn svg{width:16px;height:16px;flex:none}
-.hd .btn{margin-left:auto;padding:10px 16px;font-size:.85rem;box-shadow:2px 2px 0 var(--ink)}
-@media(min-width:900px){.nav{display:flex}.hd .btn{margin-left:10px}.bb .ll{display:inline}}
+.hd .btn{padding:10px 16px;font-size:.85rem;box-shadow:2px 2px 0 var(--ink)}
+.hd .btn.studio{display:none;margin-left:auto}
+.hd .btn.red{margin-left:auto}
+@media(min-width:1100px){.hd .btn.studio{display:inline-flex}.hd .btn.studio+.btn.red{margin-left:0}}
+@media(min-width:900px){.nav{display:flex}.bb .ll{display:inline}}
 
 /* ---------- hero: framed paper poster ---------- */
 :root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .24 0 0 0 0 .1 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -287,6 +290,28 @@ h2 em{font-style:normal;color:var(--red)}
 .roles small{display:block;font:500 .82rem var(--body);color:var(--ink-2);margin-top:2px}
 @media(min-width:900px){.inv-grid{grid-template-columns:.85fr 1.15fr}}
 
+
+/* got a project -> studio */
+.studio-cta{position:relative;background:var(--red);background-image:var(--grain);background-blend-mode:multiply;color:#FBEFD6;padding:clamp(70px,9vw,120px) 0;overflow:hidden;border-top:2px solid var(--ink)}
+.studio-cta::before{content:"";position:absolute;left:0;right:0;top:-1px;height:22px;background:radial-gradient(circle 11px at 50% 0,var(--cream) 98%,transparent) 0 0/26px 22px repeat-x}
+.sc-grid{display:grid;gap:34px;align-items:center}
+.sc-word{display:block;text-decoration:none;transition:transform .5s var(--ease)}
+.sc-word:hover{transform:translateX(8px)}
+.sc-word{font:900 clamp(2.6rem,9vw,7.4rem)/.86 var(--display);letter-spacing:-.035em;color:#FBEFD6}
+.sc-word em{font-style:normal;color:var(--yellow)}
+.sc-word sup{font-size:.45em;color:var(--yellow);vertical-align:top;margin-left:2px}
+.sc-copy h2{color:#FBEFD6;margin-bottom:14px;max-width:16ch}
+.sc-copy h2 em{color:var(--yellow)}
+.sc-copy p{color:#FFE3D6;max-width:46ch;margin-bottom:22px;font-size:1.05rem}
+.sc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.sc-tags span{border:1.5px solid rgba(251,239,214,.6);border-radius:999px;padding:6px 12px;font:600 .82rem var(--body)}
+.studio-cta .btn{border-color:var(--ink)}
+.studio-cta .btn.light{background:#FBEFD6;color:var(--ink)}
+.studio-cta .btn.yellow{background:var(--yellow);color:var(--ink)}
+.sc-cities{margin-top:18px;font:600 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.sc-ast{position:absolute;right:-60px;top:-60px;width:300px;opacity:.12;animation:spin 40s linear infinite;pointer-events:none}
+@media(min-width:960px){.sc-grid{grid-template-columns:1.1fr .9fr}}
+
 /* footer */
 .ft{background:var(--ink);color:var(--cream);padding:64px 0 28px;position:relative}
 .ft::before{content:"";position:absolute;left:0;right:0;top:-12px;height:24px;background:radial-gradient(circle 12px at 50% 100%,var(--ink) 98%,transparent) 0 0/24px 24px repeat-x}
@@ -319,10 +344,11 @@ h2 em{font-style:normal;color:var(--red)}
 
 <header class="hd">
   <div class="wrap">
-    <a class="bb" href="../index.html" aria-label="Beyond Branding home"><img src="assets/bb-mark.svg" alt="" width="22" height="22"><span>BEYOND<em>BRANDING</em></span><span class="x ll">× LOCAL LEGENDS</span></a>
+    <a class="bb" href="../index.html" aria-label="Beyond Branding, main site"><span>BEYOND<em>BRANDING</em></span><span class="x ll">× LOCAL LEGENDS</span></a>
     <nav class="nav" aria-label="Local Legends">
       <a href="#mission">Mission</a><a href="#legends">The Legends</a><a href="#how">How it works</a><a href="#involve">Get involved</a>
     </nav>
+    <a class="btn studio" href="../index.html">Beyond Branding <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a class="btn red" href="#nominate"><span>Nominate<span class="hide-s"> a Legend</span></span></a>
   </div>
 </header>
@@ -563,6 +589,26 @@ h2 em{font-style:normal;color:var(--red)}
     </div>
   </div>
 </section>
+
+<!-- 07 STUDIO CTA -->
+<section class="studio-cta" id="studio" aria-labelledby="h-studio">
+  <svg class="sc-ast" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#FBEFD6" stroke-width="16" stroke-linecap="round"><path d="M50 8v84M14 29l72 42M86 29 14 71"/></g></svg>
+  <div class="wrap sc-grid">
+    <a class="sc-word rv" href="../index.html" aria-label="Visit Beyond Branding">BEYOND<br><em>BRANDING</em><sup>✱</sup></a>
+    <div class="sc-copy rv">
+      <span class="sec-no mono" style="color:#FBEFD6"><b style="background:#FBEFD6;color:var(--red)">07</b> The studio behind Local Legends</span>
+      <h2 id="h-studio" style="margin-top:14px">Got a project of <em>your own?</em></h2>
+      <p>Local Legends is our pro-bono work. Every day, Beyond Branding builds brands, websites and packaging for businesses that want to be remembered.</p>
+      <div class="sc-tags"><span>Brand identity</span><span>Websites</span><span>Packaging</span><span>Social content</span><span>AI production</span></div>
+      <div class="ctas">
+        <a class="btn yellow" href="../index.html">Visit Beyond Branding <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn light" href="../portfolio.html">See our work</a>
+        <a class="btn light" id="projectWa" href="https://wa.me/19108301588" target="_blank" rel="noopener">Start a project</a>
+      </div>
+      <p class="sc-cities">London · Dubai · Mumbai</p>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="ft">
@@ -574,10 +620,10 @@ h2 em{font-style:normal;color:var(--red)}
       </div>
       <div><h5>Campaign</h5><ul><li><a href="#legends">The Legends</a></li><li><a href="#how">How it works</a></li><li><a href="#nominate">Nominate</a></li><li><a href="#involve">Partner with us</a></li></ul></div>
       <div><h5>Follow</h5><ul><li><a class="ig" href="#" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.instagram.com/doctornariyal/" target="_blank" rel="noopener">Nº 001 · @doctornariyal</a></li></ul></div>
-      <div><h5>The studio</h5><ul><li><a href="../index.html">thebeyondbranding.com</a></li><li><a href="../portfolio.html">Our work</a></li><li><a class="mail" href="#">Email us</a></li></ul></div>
+      <div><h5>The studio</h5><ul><li><a href="../index.html">thebeyondbranding.com ↗</a></li><li><a href="../services/index.html">Services</a></li><li><a href="../portfolio.html">Our work</a></li><li><a class="mail" href="#">Email us</a></li></ul></div>
     </div>
     <div class="ft-bot">
-      <a class="bb" href="../index.html"><img src="assets/bb-mark.svg" alt="" width="20" height="20"><span>BEYOND<em>BRANDING</em></span></a>
+      <a class="bb" href="../index.html"><span>BEYOND<em>BRANDING</em></span></a>
       <span>London · Dubai · Mumbai — © <span id="yr">2026</span> Beyond Branding</span>
     </div>
   </div>
@@ -598,6 +644,7 @@ const CONFIG = {
   document.querySelectorAll('#igLink,.ig').forEach(a => a.href = ig);
   document.querySelectorAll('.mail').forEach(a => a.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Local Legends'));
   document.getElementById('partnerWa').href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent("Hi Beyond Branding, I'd like to partner with / support Local Legends.");
+  document.getElementById('projectWa').href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent('Hi Ayush, I found you through Local Legends and would like to start a project.');
   document.getElementById('yr').textContent = new Date().getFullYear();
   document.querySelectorAll('.hide-s').forEach(s => { const m = matchMedia('(max-width:420px)'); const f = () => s.style.display = m.matches ? 'none' : ''; f(); m.addEventListener('change', f); });
 
