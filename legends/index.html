@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@500;700;800;900&family=Zilla+Slab:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Mukta:wght@700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/ll-coconut-vendor.webp">
+<link rel="preload" as="image" href="assets/ll-logo-primary.webp">
 <style>
 :root{
   --red:#E3262B; --red-d:#B9181D; --yellow:#FFC928; --green:#08783E; --green-d:#05592D;
@@ -91,7 +91,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
 .sheet{position:relative;padding:clamp(22px,4vw,52px) clamp(16px,4vw,52px) clamp(18px,3vw,34px);overflow:hidden}
 .hero-grid{display:grid;gap:26px;align-items:center}
 .kicker{display:block;font:800 .82rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px 6px}
-.sign{position:relative;width:min(520px,100%);aspect-ratio:2/1;display:grid;place-content:center;text-align:center;transform-origin:50% -40%}
+.sign{position:relative;display:block;width:min(540px,100%);height:auto;margin-left:-2%;transform-origin:50% -30%;filter:drop-shadow(0 10px 14px rgba(90,30,10,.18))}
 .sign svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .sign-t{position:relative;font:400 clamp(2.4rem,5.6vw,4.3rem)/.9 'Alfa Slab One',var(--display);color:#FBEFD6;letter-spacing:.01em;text-shadow:0 3px 0 #7d0f12,0 4px 0 #7d0f12;padding-top:4px}
 .sign-h{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;font-size:clamp(1.25rem,2.6vw,1.9rem);line-height:1.1;color:#FBEFD6;margin-top:8px}
@@ -361,16 +361,7 @@ h2 em{font-style:normal;color:var(--red)}
    <div class="hero-grid">
     <div class="h-left">
       <span class="kicker">A Beyond Branding initiative</span>
-      <div class="sign" role="img" aria-label="Local Legends — ठेले से ब्रांड तक">
-        <svg viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M44 14H556Q558 60 592 70L600 150L592 230Q558 240 556 286H44Q42 240 8 230L0 150L8 70Q42 60 44 14Z" fill="#E3262B" stroke="#17130F" stroke-width="5"/>
-          <path d="M44 14H556Q558 60 592 70L600 150L592 230Q558 240 556 286H44Q42 240 8 230L0 150L8 70Q42 60 44 14Z" fill="none" stroke="#FFC928" stroke-width="7" transform="translate(21 10.5) scale(.93)"/>
-          <path d="M44 14H556Q558 60 592 70L600 150L592 230Q558 240 556 286H44Q42 240 8 230L0 150L8 70Q42 60 44 14Z" fill="none" stroke="#FBEFD6" stroke-width="2" transform="translate(36 18) scale(.88)"/>
-          <path d="M58 150l10-10 10 10-10 10z M522 150l10-10 10 10-10 10z" fill="#FFC928"/>
-        </svg>
-        <span class="sign-t">LOCAL<br>LEGENDS</span>
-        <span class="sign-h deva">ठेले से ब्रांड तक</span>
-      </div>
+      <img class="sign logo-img" src="assets/ll-logo-primary.webp" width="1100" height="733" alt="Local Legends — ठेले से ब्रांड तक — thebeyondbranding.com" fetchpriority="high">
       <h1 id="h1">India's local businesses deserve a bigger identity.</h1>
       <p class="lede">Every month, one local business gets a studio-grade brand. Pro bono.</p>
       <div class="ctas">
