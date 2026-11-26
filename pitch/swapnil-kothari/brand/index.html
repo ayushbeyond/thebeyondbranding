@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- google-tag --><script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T6XNBKNC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>CA Swapnil Kothari · Identity system</title>
+<meta name="theme-color" content="#0F1D32">
+<link rel="icon" href="../assets/sk-monogram.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1D32;--navy-2:#13233D;--gold:#B99A62;--gold-soft:#D6BE8E;--ivory:#F3EFE6;--red:#9C2630;--char:#343A42;--muted:#6B7280;
+--serif:'Playfair Display',Georgia,serif;--sans:Inter,system-ui,sans-serif;--pad:clamp(20px,4vw,56px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--navy);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+picture{display:block}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font:600 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.01em}
+.mono{font:700 1em/1 var(--serif);letter-spacing:-.045em;display:inline-flex;align-items:baseline}
+.mono i{display:inline-block;width:.13em;height:.13em;border-radius:50%;background:var(--red);margin-left:.05em}
+.top{background:var(--navy);color:var(--ivory);padding:28px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font:500 13px/1 var(--sans)}
+.top a{text-decoration:none;opacity:.8}
+.cover{background:var(--navy);color:var(--ivory);padding:clamp(60px,9vw,130px) 0 clamp(70px,10vw,140px);position:relative;overflow:hidden}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:60px;align-items:center}
+.cover .big{font-size:clamp(140px,22vw,300px);color:var(--gold)}
+.cover h1{font-size:clamp(2.4rem,4.6vw,4.4rem);line-height:1.04;margin:22px 0 22px}
+.cover p{color:rgba(243,239,230,.75);max-width:32em;font-size:18px;font-weight:300}
+@media(max-width:900px){.cover .wrap{grid-template-columns:1fr}}
+.sec{padding:clamp(72px,9vw,128px) 0;border-bottom:1px solid rgba(15,29,50,.12)}
+.sh{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;margin-bottom:48px;align-items:baseline}
+.sh h2{font-size:clamp(2rem,3.4vw,3.2rem);line-height:1.08}
+.sh p{grid-column:2;margin:12px 0 0;color:var(--char);max-width:40em}
+@media(max-width:800px){.sh{grid-template-columns:1fr;gap:14px}.sh p{grid-column:1}}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){.g3,.g2{grid-template-columns:1fr}}
+.tile{border-radius:4px;min-height:260px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;padding:40px 28px;position:relative}
+.tile .lbl{position:absolute;left:18px;bottom:14px;font:600 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.55}
+.t-navy{background:var(--navy);color:var(--ivory)}
+.t-ivory{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1px rgba(15,29,50,.1)}
+.t-red{background:var(--red);color:#fff}
+.t-mono{background:#fff;color:#111;box-shadow:inset 0 0 0 1px rgba(15,29,50,.1)}
+.t-mono .mono i{background:#111}
+.word{font:600 13px/1 var(--sans);letter-spacing:.32em}
+.desc{font:500 9.5px/1 var(--sans);letter-spacing:.26em;color:var(--gold)}
+.lock-h{display:flex;align-items:center;gap:18px}
+.lock-h .mono{font-size:64px}
+.lock-h .bar{width:1px;height:48px;background:var(--gold);opacity:.6}
+.sw{border-radius:4px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(15,29,50,.1)}
+.sw .c{height:150px}
+.sw .m{padding:16px 18px;background:#fff;font:500 13px/1.5 var(--sans)}
+.sw .m b{display:block;font:500 18px/1.2 var(--serif);margin-bottom:4px}
+.pal{display:grid;grid-template-columns:2fr 2fr 1.2fr 1fr 1.2fr;gap:14px}
+@media(max-width:900px){.pal{grid-template-columns:1fr 1fr}}
+.type{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+@media(max-width:900px){.type{grid-template-columns:1fr}}
+.type .t{background:#fff;border-radius:4px;padding:40px;box-shadow:inset 0 0 0 1px rgba(15,29,50,.1)}
+.type .aa{font-size:120px;line-height:1}
+.type .spec{margin-top:24px;font-size:14px;color:var(--char)}
+/* applications */
+.card{aspect-ratio:3.5/2;border-radius:6px;box-shadow:0 30px 60px -30px rgba(15,29,50,.5);overflow:hidden;position:relative}
+.card.front{background:var(--navy);color:var(--ivory);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px}
+.card.front:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--red)}
+.card.back{background:var(--ivory);color:var(--navy);padding:9% 9%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -30px rgba(15,29,50,.5),inset 0 0 0 1px rgba(15,29,50,.08)}
+.card.back b{font:500 clamp(16px,2vw,22px)/1.2 var(--serif)}
+.card.back span{font-size:clamp(10px,1vw,12px);color:var(--char);line-height:1.7}
+.banner{aspect-ratio:1584/396;border-radius:4px;overflow:hidden;position:relative;background:var(--navy);color:var(--ivory);display:grid;grid-template-columns:1.25fr 1fr}
+.banner .bt{padding:4% 5%;display:flex;flex-direction:column;justify-content:center;gap:2%;position:relative;z-index:2}
+.banner .bt .e{font:600 clamp(7px,.9vw,11px)/1 var(--sans);letter-spacing:.24em;color:var(--gold)}
+.banner .bt h3{font-size:clamp(16px,2.6vw,36px);line-height:1.05;margin:4% 0}
+.banner .bt h3 em{color:var(--gold-soft)}
+.banner .bt .c{font:500 clamp(7px,.85vw,11px)/1.4 var(--sans);letter-spacing:.14em;color:rgba(243,239,230,.65)}
+.banner .bi{position:relative}
+.banner .bi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
+.banner .bi:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--navy) 0%,rgba(15,29,50,0) 45%)}
+.apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media(max-width:900px){.apps{grid-template-columns:1fr}}
+.post{aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:relative;background:var(--navy);color:var(--ivory)}
+.post img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 35%}
+.post:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,29,50,.96) 0%,rgba(15,29,50,.55) 45%,rgba(15,29,50,.1) 70%,rgba(15,29,50,.85) 100%)}
+.post .pt{position:absolute;inset:0;z-index:2;padding:9%;display:flex;flex-direction:column}
+.post .pt .e{font:600 clamp(8px,.9vw,11px)/1 var(--sans);letter-spacing:.24em;color:var(--gold)}
+.post .pt h3{font-size:clamp(22px,2.6vw,34px);line-height:1.05;margin-top:6%}
+.post .pt h3 em{color:var(--gold-soft)}
+.post .pt .f{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font:600 clamp(8px,.8vw,10px)/1.3 var(--sans);letter-spacing:.18em}
+.post .pt .f .mono{font-size:clamp(20px,2.2vw,28px)}
+.reel{aspect-ratio:9/16;border-radius:4px;overflow:hidden;position:relative;background:var(--red);color:#fff;max-width:360px;justify-self:center;width:100%}
+.reel img{position:absolute;left:0;right:0;bottom:0;width:100%;height:58%;object-fit:cover;object-position:60% 30%;filter:grayscale(1) contrast(1.1);mix-blend-mode:luminosity;opacity:.95}
+.reel .rt{position:absolute;inset:0;padding:10%;display:flex;flex-direction:column;z-index:2}
+.reel .rt .e{font:600 10px/1 var(--sans);letter-spacing:.24em;opacity:.85}
+.reel .rt h3{font-size:clamp(34px,3.6vw,48px);line-height:.95;margin-top:10%}
+.reel .rt h3 i{display:inline-block;width:.16em;height:.16em;background:#fff;border-radius:50%;margin-left:.05em}
+.reel .rt p{font:500 clamp(14px,1.4vw,17px)/1.35 var(--serif);margin-top:6%;max-width:12em}
+.cap{margin-top:14px;font:500 12px/1.5 var(--sans);color:var(--muted)}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid rgba(15,29,50,.15)}
+.rules div{padding:28px 24px 28px 0;border-bottom:1px solid rgba(15,29,50,.15)}
+.rules b{display:block;font:500 20px/1.25 var(--serif);margin-bottom:8px}
+.rules span{font-size:14.5px;color:var(--char)}
+@media(max-width:900px){.rules{grid-template-columns:1fr}}
+footer{background:var(--navy);color:rgba(243,239,230,.6);padding:40px 0 110px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span class="mono" style="font-size:28px">SK<i></i></span><a href="../">← Back to website concept</a></div></div>
+
+<section class="cover">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Identity system · v1</span>
+      <h1>CA Swapnil Kothari</h1>
+      <p>A personal identity for an educator on a global stage: authoritative, warm and rooted. Navy and ivory do the work, gold marks the details, and one signature red borrows from the pocket square he wears.</p>
+    </div>
+    <div style="text-align:center"><span class="mono big">SK<i></i></span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">01 · Marks</span><h2>One monogram, five lock-ups.</h2><p>A high-contrast serif “SK” closed by a red full stop, the pocket square as punctuation. The name is set in tracked capitals so the monogram always leads.</p></div>
+    <div class="grid g3">
+      <div class="tile t-navy"><div class="lock-h"><span class="mono">SK<i></i></span><span class="bar"></span><span class="word">CA SWAPNIL<br><span style="display:block;margin-top:8px">KOTHARI</span></span></div><span class="lbl">Primary horizontal</span></div>
+      <div class="tile t-ivory"><span class="mono" style="font-size:96px">SK<i></i></span><span class="word">CA SWAPNIL KOTHARI</span><span class="desc">EDUCATOR · INSTITUTION BUILDER · PUBLIC THINKER</span><span class="lbl">Stacked with descriptor</span></div>
+      <div class="tile t-red"><span class="mono" style="font-size:120px">SK<i style="background:#fff"></i></span><span class="lbl">Monogram on signature red</span></div>
+      <div class="tile t-ivory"><span class="mono" style="font-size:120px;color:var(--navy)">SK<i></i></span><span class="lbl">Monogram</span></div>
+      <div class="tile t-navy"><span class="mono" style="font-size:120px;color:var(--gold)">SK<i></i></span><span class="lbl">Reversed, gold on navy</span></div>
+      <div class="tile t-mono"><div class="lock-h"><span class="mono">SK<i></i></span><span class="bar" style="background:#111"></span><span class="word">CA SWAPNIL<br><span style="display:block;margin-top:8px">KOTHARI</span></span></div><span class="lbl">One colour</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">02 · Colour</span><h2>Navy and ivory lead. Red is rare.</h2><p>Gold is for rules, labels and small highlights, never large fills. Red appears once per layout: the full stop, or one primary button.</p></div>
+    <div class="pal">
+      <div class="sw"><div class="c" style="background:#0F1D32"></div><div class="m"><b>Midnight Navy</b>#0F1D32 · grounds, hero, footer</div></div>
+      <div class="sw"><div class="c" style="background:#F3EFE6"></div><div class="m"><b>Ivory</b>#F3EFE6 · reading surfaces</div></div>
+      <div class="sw"><div class="c" style="background:#B99A62"></div><div class="m"><b>Antique Gold</b>#B99A62 · details</div></div>
+      <div class="sw"><div class="c" style="background:#9C2630"></div><div class="m"><b>Signature Red</b>#9C2630 · one accent</div></div>
+      <div class="sw"><div class="c" style="background:#343A42"></div><div class="m"><b>Charcoal</b>#343A42 · body on ivory</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">03 · Typography</span><h2>An editorial serif, a quiet sans.</h2></div>
+    <div class="type">
+      <div class="t"><div class="aa" style="font-family:var(--serif)">Aa</div><h3 style="font-size:40px;margin-top:18px">Playfair Display</h3><p class="spec">Headlines, pull quotes, names and large numbers. Medium 500 for display, italic for one emphasised phrase per headline.</p><p style="font:italic 500 30px/1.2 var(--serif);margin:26px 0 0">Character builds what marks never can.</p></div>
+      <div class="t"><div class="aa" style="font-family:var(--sans);font-weight:500">Aa</div><h3 style="font-size:40px;margin-top:18px;font-family:var(--sans);font-weight:600;letter-spacing:-.02em">Inter</h3><p class="spec">Navigation, body, captions, forms. Eyebrows in 11px capitals tracked at 0.2em.</p><p style="font:600 11px/1 var(--sans);letter-spacing:.22em;color:var(--red);margin:26px 0 0">EDUCATOR · INSTITUTION BUILDER · PUBLIC THINKER</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">04 · Stationery</span><h2>The card that travels with him.</h2></div>
+    <div class="grid g2">
+      <div><div class="card front"><span class="mono" style="font-size:clamp(60px,7vw,96px);color:var(--gold)">SK<i></i></span><span class="word" style="font-size:clamp(9px,1vw,12px)">CA SWAPNIL KOTHARI</span></div><p class="cap">Front · navy, foil-gold monogram, red edge</p></div>
+      <div><div class="card back"><div><b>CA Swapnil Kothari</b><br><span>Chancellor, Renaissance University<br>Educator · Institution builder</span></div><div style="display:flex;justify-content:space-between;align-items:flex-end"><span>office@[approved-domain]<br>Indore · India</span><span class="mono" style="font-size:clamp(26px,3vw,38px);color:var(--navy)">SK<i></i></span></div></div><p class="cap">Back · ivory, contact details from his office</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">05 · Social</span><h2>The same voice on every feed.</h2><p>A LinkedIn banner that leads with the idea, a “For my students” post frame that keeps his current series but lifts the craft, and an Ask Sir reel cover.</p></div>
+    <div class="banner">
+      <div class="bt"><span class="e">EDUCATOR · INSTITUTION BUILDER · PUBLIC THINKER</span><h3>An Indian educator<br>on a <em>global stage.</em></h3><span class="c">Indore · Vienna · Prague · New York · London</span></div>
+      <div class="bi"><img src="../assets/portrait.jpg" alt="Portrait of CA Swapnil Kothari"></div>
+    </div>
+    <p class="cap">LinkedIn banner, 1584 × 396</p>
+    <div class="apps" style="margin-top:44px">
+      <div><div class="post"><img src="../assets/students.jpg" alt="Swapnil Kothari speaking to students"><div class="pt"><span class="e">FOR MY STUDENTS · 04</span><h3>Character builds what <em>marks never can.</em></h3><div class="f"><span>FROM RENAISSANCE<br>UNIVERSITY'S STAGE</span><span class="mono">SK<i></i></span></div></div></div><p class="cap">“For my students” carousel cover, 1080 × 1350</p></div>
+      <div><div class="post" style="background:var(--ivory);color:var(--navy)"><div class="pt" style="background:var(--ivory)"><span class="e" style="color:var(--red)">FOR MY STUDENTS · 05</span><h3 style="font-size:clamp(26px,3vw,40px)">Pehli salary?<br><em style="color:var(--red)">Pehle khud ko pay karo.</em></h3><div style="margin-top:10%;display:grid;gap:10px;font:500 13px/1 var(--sans)"><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(15,29,50,.15);padding-bottom:10px"><span>Save / SIP</span><b>20%</b></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(15,29,50,.15);padding-bottom:10px"><span>Emergency fund</span><b>10%</b></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(15,29,50,.15);padding-bottom:10px"><span>Skills &amp; courses</span><b>5%</b></div></div><div class="f"><span style="color:var(--muted)">CA SWAPNIL KOTHARI</span><span class="mono" style="color:var(--navy)">SK<i></i></span></div></div></div><p class="cap">Money series, restyled from his existing post</p></div>
+      <div><div class="reel"><img src="../assets/students.jpg" alt=""><div class="rt"><span class="e">FOR THE NEXT GENERATION</span><h3>Ask Sir<i></i></h3><p>What should your first salary teach you?</p></div></div><p class="cap">Ask Sir reel cover, 1080 × 1920</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow">06 · Rules</span><h2>Guardrails that keep it credible.</h2></div>
+    <div class="rules">
+      <div><b>Real photography only</b><span>Original stage, campus and portrait photographs. Never generated or altered faces.</span></div>
+      <div><b>One official fact sheet</b><span>Student numbers, titles and institution roles approved by his office before any number is published.</span></div>
+      <div><b>Exact award wording</b><span>“Bharat Gaurav Award 2023, presented at the House of Commons, London.”</span></div>
+      <div><b>Personal, not partisan</b><span>No party marks in the identity. Public life lives on personal channels, separate from the institutions.</span></div>
+      <div><b>Institutions keep their identities</b><span>Official logos and links only, never recreated or merged into this mark.</span></div>
+      <div><b>Restrained motion</b><span>Slow reveals and image fades. No particles, spinning globes or counters.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>CA Swapnil Kothari · Identity system v1 · Draft for review</span><span>Concept by <a href="https://thebeyondbranding.com" target="_blank" rel="noopener">Beyond Branding</a></span></div></footer>
+<script src="https://thebeyondbranding.com/pitch/bar.js" defer data-client="CA Swapnil Kothari" data-offer="A personal platform worthy of the story. Built in weeks." data-note="Identity system concept · Ayush, Beyond Branding" data-sector="personal-brand"></script>
+</body>
+</html>

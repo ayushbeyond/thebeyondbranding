@@ -10,153 +10,510 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>CA Swapnil Kothari · Personal website concept</title>
-<meta name="description" content="Personal website concept for CA Swapnil Kothari: educator, institution builder, nation builder. Concept by Beyond Branding.">
+<title>CA Swapnil Kothari · An Indian educator on a global stage</title>
+<meta name="description" content="Personal platform concept for CA Swapnil Kothari: educator, institution builder and public thinker. Concept by Beyond Branding.">
+<meta name="theme-color" content="#0F1D32">
+<link rel="icon" href="assets/sk-monogram.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-html{scroll-behavior:smooth}
-body{margin:0;background:#0B1530}
-a{color:#C9A24B;text-decoration:none}a:hover{color:#E2C27A}
+:root{
+  --navy:#0F1D32;--navy-2:#13233D;--navy-3:#1B2D4B;--gold:#B99A62;--gold-soft:#D6BE8E;
+  --ivory:#F3EFE6;--ivory-2:#EAE4D7;--red:#9C2630;--char:#343A42;--muted:#6B7280;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;--sans:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --w:1320px;--pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--navy);color:var(--ivory);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+picture{display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--navy)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.eyebrow.red{color:var(--red)}
+.serif{font-family:var(--serif)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.55;border:0;margin:0}
+.grain:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:50px;padding:0 26px;font:500 14.5px/1 var(--sans);letter-spacing:.02em;border-radius:2px;transition:background .3s,color .3s,box-shadow .3s,transform .3s}
+.btn svg{transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#B02D38}
+.btn-line{box-shadow:inset 0 0 0 1px rgba(243,239,230,.45);color:var(--ivory)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--ivory);background:rgba(243,239,230,.06)}
+.btn-navy{background:var(--navy);color:var(--ivory)}
+.btn-navy:hover{background:var(--navy-3)}
+.lnk{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--sans);letter-spacing:.02em;padding-bottom:6px;background:linear-gradient(currentColor,currentColor) 0 100%/30% 1px no-repeat;transition:background-size .4s}
+.lnk:hover{background-size:100% 1px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(15,29,50,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:rgba(185,154,98,.18)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.mono{font:700 30px/1 var(--serif);letter-spacing:-.04em;color:var(--ivory);display:flex;align-items:baseline}
+.mono i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-left:3px}
+.brand small{font:600 11px/1.2 var(--sans);letter-spacing:.24em;color:var(--ivory);opacity:.9;padding-left:14px;border-left:1px solid rgba(185,154,98,.5)}
+.menu{display:flex;gap:30px;font:500 13.5px/1 var(--sans);letter-spacing:.02em}
+.menu a{opacity:.82;transition:opacity .25s}
+.menu a:hover{opacity:1}
+.nav .btn{min-height:42px;padding:0 18px;font-size:13px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;color:var(--ivory);cursor:pointer}
+@media(max-width:1060px){.menu{display:none}.burger{display:grid;place-items:center}.nav .btn{display:none}}
+.drawer{position:fixed;inset:0;z-index:60;background:var(--navy);display:none;flex-direction:column;padding:96px var(--pad) 40px;gap:22px}
+.drawer.open{display:flex}
+.drawer a{font:500 32px/1.2 var(--serif)}
+.drawer .x{position:absolute;top:18px;right:var(--pad);width:44px;height:44px;border:0;background:none;color:var(--ivory);font-size:28px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg picture,.video picture,.award picture{height:100%}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);transform:scale(1.08);animation:slow 14s ease-out forwards}
+@keyframes slow{to{transform:scale(1)}}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(15,29,50,.97) 0%,rgba(15,29,50,.9) 38%,rgba(15,29,50,.55) 70%,rgba(15,29,50,.78) 100%),
+  linear-gradient(0deg,rgba(15,29,50,1) 0%,rgba(15,29,50,0) 45%)}
+.hero .wrap.main{width:100%;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:56px;align-items:end;padding-top:140px;padding-bottom:64px}
+.hero h1{font-size:clamp(3.1rem,6.6vw,6.6rem);line-height:.98;letter-spacing:-.025em;margin:28px 0 30px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero .sub{font:300 clamp(1.05rem,1.4vw,1.25rem)/1.6 var(--sans);color:rgba(243,239,230,.82);max-width:30em;margin:0 0 40px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.portrait-card{position:relative;justify-self:end;width:100%;max-width:430px}
+.portrait-card figure{margin:0;position:relative;overflow:hidden;border-radius:2px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.portrait-card img{width:100%;aspect-ratio:4/4.3;object-fit:cover;object-position:42% 30%;filter:contrast(1.04) saturate(.95)}
+.portrait-card figure:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,29,50,.85) 0%,rgba(15,29,50,0) 40%)}
+.portrait-card figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.portrait-card figcaption b{font:500 22px/1.1 var(--serif)}
+.portrait-card figcaption span{font:600 10.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);text-align:right}
+.portrait-card:before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(185,154,98,.45);border-radius:2px}
+.hero-meta{position:absolute;left:0;right:0;bottom:0}
+.hero-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0 22px;border-top:1px solid rgba(185,154,98,.22);font:500 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(243,239,230,.6)}
+.hero .wrap.main{padding-bottom:120px}
+@media(max-width:900px){
+  .hero{align-items:flex-start}
+  .hero .wrap.main{grid-template-columns:1fr;gap:40px;padding-top:110px;padding-bottom:110px}
+  .portrait-card{justify-self:start;max-width:340px;order:-1}
+  .hero:before{background:linear-gradient(180deg,rgba(15,29,50,.75) 0%,rgba(15,29,50,.92) 45%,rgba(15,29,50,1) 100%)}
+  .hero-foot span:nth-child(2){display:none}
+}
+
+/* proof strip */
+.proof{background:var(--ivory);color:var(--navy)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.proof div.p{padding:38px 28px 36px;border-left:1px solid rgba(15,29,50,.12)}
+.proof div.p:first-child{border-left:0;padding-left:0}
+.proof b{display:block;font:500 clamp(1.35rem,1.9vw,1.75rem)/1.15 var(--serif);margin-bottom:10px}
+.proof span{font:400 13.5px/1.5 var(--sans);color:var(--char)}
+@media(max-width:900px){.proof .wrap{grid-template-columns:1fr 1fr}.proof div.p{padding:28px 18px}.proof div.p:nth-child(3){border-left:0;padding-left:0}.proof div.p:nth-child(n+3){border-top:1px solid rgba(15,29,50,.12)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(88px,11vw,160px) 0}
+.light{background:var(--ivory);color:var(--navy)}
+.light p{color:var(--char)}
+.dark{background:var(--navy)}
+.dark p{color:rgba(243,239,230,.76)}
+.head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.head .eyebrow{display:block;margin-bottom:24px}
+.head p{font-size:18px;margin:0;max-width:34em}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:22px}}
+
+/* journey */
+.journey{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:start}
+.journey h2{font-size:clamp(2.4rem,4.4vw,4.4rem);line-height:1.04}
+.journey h2 em{font-style:italic;color:var(--red)}
+.chapters{margin-top:56px;display:grid;gap:0}
+.ch{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-top:1px solid rgba(15,29,50,.14)}
+.ch:last-child{border-bottom:1px solid rgba(15,29,50,.14)}
+.ch .n{font:400 15px/1 var(--serif);font-style:italic;color:var(--gold);padding-top:6px}
+.ch h3{font-size:24px;line-height:1.2;margin-bottom:8px}
+.ch p{margin:0;font-size:16px}
+.photo{margin:0;position:relative}
+.photo img{width:100%;object-fit:cover;border-radius:2px}
+.photo figcaption{margin-top:14px;font:500 12px/1.5 var(--sans);letter-spacing:.06em;color:var(--muted);display:flex;gap:12px}
+.photo figcaption:before{content:"";flex:none;width:28px;height:1px;background:var(--gold);margin-top:8px}
+.j-photo{position:sticky;top:110px}
+.j-photo img{aspect-ratio:4/5;object-position:58% 40%}
+.j-photo .tag{position:absolute;left:-1px;top:28px;background:var(--red);color:#fff;font:600 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:10px 14px}
+@media(max-width:900px){.journey{grid-template-columns:1fr}.j-photo{position:relative;top:0}}
+
+/* quote */
+.quote{background:var(--navy-2);text-align:center;overflow:hidden}
+.quote blockquote{margin:0 auto;max-width:15em;font:400 clamp(2.4rem,5.6vw,5.4rem)/1.04 var(--serif);letter-spacing:-.02em}
+.quote blockquote em{color:var(--gold-soft)}
+.quote cite{display:block;margin-top:34px;font:600 11.5px/1 var(--sans);font-style:normal;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,239,230,.6)}
+.quote .mark{font:400 140px/0.6 var(--serif);color:var(--red);display:block;height:60px}
+
+/* stage */
+.video{position:relative;display:block;overflow:hidden;border-radius:2px;aspect-ratio:16/7.2;background:#000}
+.video img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) brightness(.72);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.video:hover img{transform:scale(1.03);filter:grayscale(0) brightness(.8)}
+.video .play{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:rgba(243,239,230,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(243,239,230,.55);display:grid;place-items:center;transition:transform .4s,background .4s}
+.video:hover .play{transform:scale(1.08);background:var(--red);box-shadow:none}
+.video .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 32px;background:linear-gradient(0deg,rgba(15,29,50,.95),transparent);display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.video .cap b{font:500 clamp(1.2rem,2vw,1.6rem)/1.25 var(--serif);max-width:24em}
+.video .cap span{font:600 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);white-space:nowrap}
+@media(max-width:700px){.video{aspect-ratio:4/3.4}.video .cap{flex-direction:column;align-items:flex-start;padding:20px}.video .play{width:72px;height:72px;margin:-56px 0 0 -36px}}
+.stage-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,88px);margin-top:clamp(56px,7vw,96px);align-items:start}
+.events{border-top:1px solid rgba(185,154,98,.3)}
+.ev{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(185,154,98,.18);transition:padding .35s,background .35s}
+.ev:hover{padding-left:12px;background:linear-gradient(90deg,rgba(185,154,98,.08),transparent)}
+.ev .yr{font:400 15px/1 var(--serif);font-style:italic;color:var(--gold-soft)}
+.ev h3{font-size:20px;line-height:1.3}
+.ev p{margin:4px 0 0;font-size:14px}
+.ev .city{font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,230,.55);text-align:right}
+@media(max-width:700px){.ev{grid-template-columns:56px 1fr}.ev .city{grid-column:2;text-align:left}}
+.stage-side{display:grid;gap:28px}
+.stage-side .photo img{aspect-ratio:16/9;object-position:50% 30%}
+.stage-side .photo figcaption{color:rgba(243,239,230,.55)}
+.award{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--navy-3);border-radius:2px;overflow:hidden}
+.award img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;min-height:220px}
+.award div{padding:28px 26px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.award h3{font-size:24px;line-height:1.2}
+.award p{margin:0;font-size:14px}
+@media(max-width:1000px){.stage-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.award{grid-template-columns:1fr}}
+
+/* institutions */
+.inst{border-top:1px solid rgba(15,29,50,.16)}
+.in{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,.9fr) 48px;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(15,29,50,.16);transition:padding .35s}
+.in:hover{padding-left:14px}
+.in h3{font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.15}
+.in .loc{font:600 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.in p{margin:0;font-size:15px}
+.in .go{width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(15,29,50,.3);display:grid;place-items:center;transition:background .3s,color .3s,box-shadow .3s}
+.in:hover .go{background:var(--navy);color:var(--ivory);box-shadow:none}
+@media(max-width:900px){.in{grid-template-columns:1fr 48px;gap:8px 16px}.in .loc,.in p{grid-column:1}.in .go{grid-row:1/span 3;grid-column:2}}
+.note{margin-top:28px;font:400 13px/1.6 var(--sans);color:var(--muted);max-width:52em}
+
+/* ask sir */
+.ask{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(40px,6vw,96px);align-items:start}
+.ask h2{font-size:clamp(3.4rem,7vw,7rem);line-height:.95;margin:22px 0 22px}
+.ask h2 i{display:inline-block;width:.16em;height:.16em;background:var(--red);border-radius:50%;margin-left:.04em}
+.ask .lede{font:300 20px/1.55 var(--sans);color:rgba(243,239,230,.85);margin:0 0 18px}
+.ask .photo{margin-top:40px}
+.ask .photo img{aspect-ratio:16/10.5;object-position:60% 35%}
+.ask .photo figcaption{color:rgba(243,239,230,.55)}
+.qs{display:grid;gap:12px;margin-bottom:40px}
+.q{display:flex;gap:18px;align-items:center;padding:20px 22px;background:var(--navy-2);border:1px solid rgba(185,154,98,.16);border-radius:2px;transition:border-color .3s,transform .3s}
+.q:hover{border-color:rgba(185,154,98,.5);transform:translateX(6px)}
+.q .no{flex:none;font:400 14px/1 var(--serif);font-style:italic;color:var(--gold)}
+.q b{font:500 19px/1.35 var(--serif)}
+.q .len{margin-left:auto;flex:none;font:600 10.5px/1 var(--sans);letter-spacing:.16em;color:rgba(243,239,230,.45)}
+form{display:grid;gap:16px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.f2{grid-template-columns:1fr}}
+label{display:grid;gap:8px;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(243,239,230,.62)}
+.light label{color:var(--muted)}
+input,select,textarea{font:400 16px/1.4 var(--sans);color:inherit;background:transparent;border:0;border-bottom:1px solid rgba(243,239,230,.3);padding:12px 0;border-radius:0;outline:none;transition:border-color .3s}
+.light input,.light select,.light textarea{border-color:rgba(15,29,50,.25)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{resize:vertical;min-height:96px}
+select option{color:#111}
+form .btn{justify-self:start;border:0;cursor:pointer;margin-top:8px}
+@media(max-width:900px){.ask{grid-template-columns:1fr}}
+
+/* media */
+.media{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.clip{margin:0;background:#fff;padding:14px;box-shadow:0 30px 70px -30px rgba(15,29,50,.45);transform:rotate(-1.4deg);transition:transform .6s}
+.clip:hover{transform:rotate(0)}
+.clip img{width:100%}
+.clip figcaption{padding:16px 4px 4px;font:500 12px/1.5 var(--sans);color:var(--muted);letter-spacing:.04em}
+.mcards{display:grid;gap:0;border-top:1px solid rgba(15,29,50,.16)}
+.mc{padding:34px 0;border-bottom:1px solid rgba(15,29,50,.16);display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px}
+.mc .k{font:600 11px/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--red);padding-top:8px}
+.mc h3{font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.1;margin-bottom:12px}
+.mc p{margin:0 0 14px;font-size:16px}
+@media(max-width:900px){.media{grid-template-columns:1fr}.mc{grid-template-columns:1fr;gap:8px}.clip{max-width:520px}}
+
+/* ideas */
+.ideas{background:#0B1628}
+.ideas h2 em{font-style:italic;color:var(--gold-soft)}
+.icards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(185,154,98,.2);border:1px solid rgba(185,154,98,.2)}
+.ic{background:#0B1628;padding:34px 28px 40px;min-height:300px;display:flex;flex-direction:column;gap:16px;transition:background .4s}
+.ic:hover{background:var(--navy-2)}
+.ic .n{font:400 44px/1 var(--serif);color:rgba(185,154,98,.55)}
+.ic h3{font-size:23px;line-height:1.2;margin-top:auto}
+.ic p{margin:0;font-size:14.5px}
+@media(max-width:1000px){.icards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.icards{grid-template-columns:1fr}.ic{min-height:0}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.contact h2{font-size:clamp(2.6rem,4.8vw,4.8rem);line-height:1.02;margin:22px 0 26px}
+.contact h2 em{font-style:italic;color:var(--red)}
+@media(max-width:900px){.contact{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185,154,98,.2)}
+.foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:40px}
+.foot .mono{font-size:56px}
+.foot .mono i{width:11px;height:11px}
+.foot h4{margin:0 0 16px;font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px}
+.foot ul a{opacity:.78}
+.foot ul a:hover{opacity:1}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid rgba(243,239,230,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:rgba(243,239,230,.5)}
+.legal a{color:var(--gold-soft)}
+@media(max-width:800px){.foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.hero .rv{transition-duration:1.3s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-bg img{animation:none;transform:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
 <body>
-<div style="background:#0B1530;color:#F4EEE1;font-family:Inter,system-ui,sans-serif;width:100%">
 
-
-<header style="max-width:1240px;margin:0 auto;padding:24px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-<div style="display:flex;align-items:center;gap:14px">
-<div style="width:44px;height:44px;border:1px solid #C9A24B;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#C9A24B">SK</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.02em">CA Swapnil Kothari</div>
-</div>
-<nav style="display:flex;flex-wrap:wrap;gap:28px;font-size:14px">
-<a href="#stage" style="color:#F4EEE1">Global Stage</a>
-<a href="#institutions" style="color:#F4EEE1">Institutions</a>
-<a href="#public" style="color:#F4EEE1">Public Life</a>
-<a href="#media" style="color:#F4EEE1">Media &amp; Arts</a>
-<a href="#ask" style="color:#F4EEE1">Ask Sir</a>
-</nav>
-<a href="#speak" style="background:#C9A24B;color:#0B1530;padding:12px 22px;font-weight:600;font-size:14px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Invite to speak</a>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="CA Swapnil Kothari, home">
+      <span class="mono">SK<i></i></span><small>CA SWAPNIL KOTHARI</small>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#journey">The Journey</a><a href="#stage">Global Stage</a><a href="#institutions">Institutions</a><a href="#ask">Ask Sir</a><a href="#media">Media &amp; Ideas</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-red" href="#contact">Invite to speak</a>
+    <button class="burger" id="burger" aria-label="Open menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h18M3 16h18"/></svg></button>
+  </div>
 </header>
+<div class="drawer" id="drawer">
+  <button class="x" id="drawerx" aria-label="Close menu">×</button>
+  <a href="#journey">The Journey</a><a href="#stage">Global Stage</a><a href="#institutions">Institutions</a><a href="#ask">Ask Sir</a><a href="#media">Media &amp; Ideas</a><a href="#contact">Contact</a>
+</div>
 
-<section style="max-width:1240px;margin:0 auto;padding:56px 32px 80px;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
-<div style="flex:1 1 520px;min-width:0">
-<div style="font-size:13px;letter-spacing:.22em;color:#C9A24B;margin-bottom:24px">EDUCATOR · INSTITUTION BUILDER · NATION BUILDER</div>
-<h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(48px,6vw,84px);line-height:1.02;margin:0 0 28px">Teacher by heart.<br><span style="font-style:italic;color:#C9A24B">Entrepreneur by choice.</span><br>Leader by destiny.</h1>
-<p style="font-size:18px;line-height:1.65;color:#C9CFDD;max-width:560px;margin:0 0 36px">A Chartered Accountant from Indore who built a modern gurukul, with Indian values and a global classroom. From Renaissance University to the United Nations, his work has one aim: preparing young Indians to lead.</p>
-<div style="display:flex;flex-wrap:wrap;gap:14px">
-<a href="#stage" style="background:#F4EEE1;color:#0B1530;padding:15px 26px;font-weight:600;font-size:15px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#0B1530"/></svg>Watch the UN address</a>
-<a href="#ask" style="border:1px solid #C9A24B;color:#C9A24B;padding:15px 26px;font-weight:600;font-size:15px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Ask Sir a question</a>
-</div>
-</div>
-<div style="flex:1 1 420px;min-width:0;position:relative">
-<div style="aspect-ratio:4/5;background:#16213F;border:1px solid #2A3658;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#8A93AD;font-size:14px;text-align:center;padding:24px;box-sizing:border-box">
-<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8A93AD" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
-<div>Portrait on stage · black bandhgala, red pocket square<br>(from his team's photo archive)</div>
-</div>
-<div style="position:absolute;left:-20px;bottom:32px;background:#B3242B;color:#fff;padding:16px 20px;max-width:240px">
-<div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;line-height:1.2">United Nations, Vienna</div>
-<div style="font-size:12px;opacity:.85;margin-top:4px">World Peace Conference keynote</div>
-</div>
-</div>
+<main id="top">
+
+<section class="hero grain">
+  <div class="hero-bg"><picture><source srcset="assets/un-vienna-hall.webp" type="image/webp"><img src="assets/un-vienna-hall.jpg" alt="Conference hall at the United Nations Vienna International Centre during the World Peace Council conference, 2015" fetchpriority="high"></picture></div>
+  <div class="wrap main">
+    <div>
+      <div class="eyebrow rv">Educator · Institution builder · Public thinker</div>
+      <h1 class="rv d1">An Indian educator<br>on a <em>global stage.</em></h1>
+      <p class="sub rv d2">Building institutions. Empowering minds. Inspiring generations.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-red" href="#journey">Explore the journey <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <a class="btn btn-line" href="#contact">Invite Swapnil to speak</a>
+      </div>
+    </div>
+    <div class="portrait-card rv d2">
+      <figure>
+        <picture><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" alt="Portrait of CA Swapnil Kothari in a black bandhgala with a red pocket square" width="600" height="438"></picture>
+        <figcaption><b>CA Swapnil Kothari</b><span>Chancellor<br>Renaissance University</span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="hero-meta"><div class="wrap"><div class="hero-foot"><span>Indore · India</span><span>World Peace Council conference · UN Vienna International Centre · 2015</span><span>Scroll ↓</span></div></div></div>
 </section>
 
-<section style="background:#F4EEE1;color:#0B1530">
-<div style="max-width:1240px;margin:0 auto;padding:48px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
-<div><div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1">75,000+</div><div style="font-size:14px;color:#4A5270;margin-top:8px">students mentored</div></div>
-<div><div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1">5</div><div style="font-size:14px;color:#4A5270;margin-top:8px">universities and colleges founded or led</div></div>
-<div><div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1">3</div><div style="font-size:14px;color:#4A5270;margin-top:8px">continents: Asia, Europe, North America</div></div>
-<div><div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1">20</div><div style="font-size:14px;color:#4A5270;margin-top:8px">years of Renaissance, 2006–2026</div></div>
+<div class="proof">
+  <div class="wrap">
+    <div class="p rv"><b>Chartered Accountant</b><span>A professional foundation in commerce, by training.</span></div>
+    <div class="p rv d1"><b>Educator</b><span>Teaching and mentoring students, by vocation.</span></div>
+    <div class="p rv d2"><b>Institution builder</b><span>Renaissance University and associated institutions.</span></div>
+    <div class="p rv d3"><b>International dialogue</b><span>Vienna · Prague · Hungary · New York</span></div>
+  </div>
 </div>
-<div style="max-width:1240px;margin:0 auto;padding:0 32px 24px;font-size:12px;color:#6A7290">Figures to be confirmed from one official fact sheet before launch.</div>
+
+<section class="sec light" id="journey">
+  <div class="wrap journey">
+    <div>
+      <span class="eyebrow red rv">The journey</span>
+      <h2 class="rv d1" style="margin-top:24px">Some build careers. Some build institutions. <em>The work is to help people build a future.</em></h2>
+      <div class="chapters">
+        <div class="ch rv"><span class="n">i.</span><div><h3>The professional foundation</h3><p>A Chartered Accountant by training, with a foundation that connects commerce, discipline and the practical decisions that shape a career.</p></div></div>
+        <div class="ch rv"><span class="n">ii.</span><div><h3>The educator</h3><p>Teaching brought him close to the questions students ask about work, ambition, money, confidence and purpose, and to the difference between marks and character.</p></div></div>
+        <div class="ch rv"><span class="n">iii.</span><div><h3>The institution builder</h3><p>His work in education expanded from the classroom into institutional leadership, including Renaissance University in Indore, where he serves as Chancellor.</p></div></div>
+        <div class="ch rv"><span class="n">iv.</span><div><h3>The wider conversation</h3><p>International dialogue forums, media conversations and theatre carry his voice beyond the classroom.</p></div></div>
+      </div>
+      <p class="rv" style="margin-top:36px"><a class="lnk" href="#stage" style="color:var(--navy)">Continue to the global stage →</a></p>
+    </div>
+    <figure class="photo j-photo rv d1">
+      <picture><source srcset="assets/students.webp" type="image/webp"><img src="assets/students.jpg" alt="Swapnil Kothari speaking to students with a microphone at Renaissance University" width="778" height="468"></picture>
+      <span class="tag">For my students</span>
+      <figcaption>On stage at Renaissance University, Indore</figcaption>
+    </figure>
+  </div>
 </section>
 
-<section id="stage" style="max-width:1240px;margin:0 auto;padding:96px 32px">
-<div style="font-size:13px;letter-spacing:.22em;color:#C9A24B;margin-bottom:16px">THE GLOBAL STAGE</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,56px);margin:0 0 48px;max-width:760px;line-height:1.1">Representing Indian thought on the world's most respected platforms.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#2A3658;border:1px solid #2A3658">
-<div style="background:#0B1530;padding:28px"><div style="font-size:12px;color:#C9A24B;letter-spacing:.14em">VIENNA · NEW YORK</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px">United Nations</div><div style="font-size:14px;color:#C9CFDD;line-height:1.6">Keynote addresses on spirituality, non-violence and yoga for world peace.</div></div>
-<div style="background:#0B1530;padding:28px"><div style="font-size:12px;color:#C9A24B;letter-spacing:.14em">HUNGARY · PRAGUE</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px">World Peace Council</div><div style="font-size:14px;color:#C9CFDD;line-height:1.6">Invited speaker at the Council's international conferences.</div></div>
-<div style="background:#0B1530;padding:28px"><div style="font-size:12px;color:#C9A24B;letter-spacing:.14em">LONDON</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px">Bharat Gaurav Award</div><div style="font-size:14px;color:#C9CFDD;line-height:1.6">Presented at the House of Commons, British Parliament.</div></div>
-<div style="background:#0B1530;padding:28px"><div style="font-size:12px;color:#C9A24B;letter-spacing:.14em">INDORE · KASHIPUR</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px">IIM, ICAI &amp; ICSI</div><div style="font-size:14px;color:#C9CFDD;line-height:1.6">Speaker at IIM Indore, IIM Kashipur and national ICAI and ICSI conferences.</div></div>
-<div style="background:#0B1530;padding:28px"><div style="font-size:12px;color:#C9A24B;letter-spacing:.14em">AMSTERDAM</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px">Knowmads Business School</div><div style="font-size:14px;color:#C9CFDD;line-height:1.6">Guest speaker on Indian perspectives in business education.</div></div>
-<div style="background:#B3242B;padding:28px"><div style="font-size:12px;color:#fff;letter-spacing:.14em;opacity:.85">NEXT</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:10px 0 8px;color:#fff">Dubai</div><div style="font-size:14px;color:#fff;line-height:1.6;opacity:.9">The next chapter of the Renaissance story. [Launch details to come.]</div></div>
-</div>
+<section class="sec quote grain">
+  <div class="wrap">
+    <span class="mark" aria-hidden="true">“</span>
+    <blockquote class="rv">Character builds what <em>marks never can.</em></blockquote>
+    <cite class="rv d1">CA Swapnil Kothari · For my students</cite>
+  </div>
 </section>
 
-<section id="institutions" style="background:#111D3D">
-<div style="max-width:1240px;margin:0 auto;padding:96px 32px">
-<div style="font-size:13px;letter-spacing:.22em;color:#C9A24B;margin-bottom:16px">INSTITUTIONS</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,56px);margin:0 0 48px;line-height:1.1">Building institutions that build people.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">Chancellor · Indore</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Renaissance University</div><div style="font-size:14px;color:#C9CFDD">7,000 students across management, law, engineering and sciences.</div></div>
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">Chancellor · Khargone</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Abhyuday University</div><div style="font-size:14px;color:#C9CFDD">3,000 students in a holistic university for the region.</div></div>
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">Founder · Indore, since 2006</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Renaissance College of Commerce &amp; Management</div><div style="font-size:14px;color:#C9CFDD">3,500 students.</div></div>
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">President · California, USA</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Western State University</div><div style="font-size:14px;color:#C9CFDD">Fully online UG, PG and doctoral programmes for global learners.</div></div>
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">President · Florida, USA</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Western University</div><div style="font-size:14px;color:#C9CFDD">Online programmes for working learners worldwide.</div></div>
-<div style="border:1px solid #2A3658;padding:28px"><div style="font-size:12px;color:#8A93AD">Chairman · Indore</div><div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:8px 0">Indore Indira Group</div><div style="font-size:14px;color:#C9CFDD">Indore Indira Business School, Renaissance Law College and more.</div></div>
-</div>
-</div>
+<section class="sec dark" id="stage">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">The global stage</span><h2 class="rv d1" style="margin-top:24px">A wider conversation about peace, values and the future.</h2></div>
+      <p class="rv d2">From educational forums to international dialogue, his public engagements have explored the role of values, learning and human connection in a changing world, including World Peace Council programmes in Vienna and other European settings.</p>
+    </div>
+    <a class="video rv" href="https://www.youtube.com/results?search_query=Swapnil+Kothari+World+Peace+Conference+United+Nations" target="_blank" rel="noopener" aria-label="Watch: addressing the World Peace Conference at the UN Vienna International Centre">
+      <picture><source srcset="assets/un-vienna-hall.webp" type="image/webp"><img src="assets/un-vienna-hall.jpg" alt="" loading="lazy"></picture>
+      <span class="play"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#F3EFE6"/></svg></span>
+      <span class="cap"><b>Addressing the World Peace Conference: “Yoga – A Path to Non-Violence and World Peace”</b><span>UN Vienna International Centre · 2015 · 17:59</span></span>
+    </a>
+    <div class="stage-grid">
+      <div class="events">
+        <div class="ev rv"><span class="yr">2015</span><div><h3>World Peace Council conference</h3><p>“Yoga – A Path to Non-Violence and World Peace”, held at the UN Vienna International Centre</p></div><span class="city">Vienna</span></div>
+        <div class="ev rv"><span class="yr">2016</span><div><h3>World Peace Council conference</h3><p>International programme on peace and dialogue</p></div><span class="city">Prague</span></div>
+        <div class="ev rv"><span class="yr">2018</span><div><h3>Yoga for World Peace conference</h3><p>Covered in a full-page profile by The South Asian Times, New York</p></div><span class="city">New York</span></div>
+        <div class="ev rv"><span class="yr">2019</span><div><h3>World Peace Council programme</h3><p>Peace and dialogue forum in Europe</p></div><span class="city">Hungary</span></div>
+        <div class="ev rv"><span class="yr">India</span><div><h3>IIM Indore · IIM Kashipur · ICAI · ICSI</h3><p>Talks and conference sessions for students and professionals</p></div><span class="city">India</span></div>
+      </div>
+      <div class="stage-side">
+        <figure class="photo rv d1">
+          <picture><source srcset="assets/podium.webp" type="image/webp"><img src="assets/podium.jpg" alt="Swapnil Kothari speaking at a podium during an international conference" loading="lazy" width="810" height="434"></picture>
+          <figcaption>Speaking on spirituality, non-violence and world peace</figcaption>
+        </figure>
+        <div class="award rv d2">
+          <picture><source srcset="assets/bharat-gaurav.webp" type="image/webp"><img src="assets/bharat-gaurav.jpg" alt="Swapnil Kothari receiving the Bharat Gaurav Award certificate in London" loading="lazy" width="1179" height="784"></picture>
+          <div><span class="eyebrow">Recognition</span><h3>Bharat Gaurav Award 2023</h3><p>Presented at the House of Commons, London, alongside Indians recognised for contributions in their fields.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="public" style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
-<div style="flex:1 1 440px;min-width:0">
-<div style="font-size:13px;letter-spacing:.22em;color:#C9A24B;margin-bottom:16px">PUBLIC LIFE</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,56px);margin:0 0 24px;line-height:1.1">Education is nation-building.</h2>
-<p style="font-size:17px;line-height:1.7;color:#C9CFDD;margin:0 0 32px">Working with government, institutions and communities so that India's young people are skilled, values-led and ready to lead.</p>
-<div style="display:flex;flex-direction:column;gap:1px;background:#2A3658">
-<div style="background:#0B1530;padding:18px 0;display:flex;gap:18px"><div style="color:#C9A24B;font-family:'Cormorant Garamond',serif;font-size:22px;width:36px">01</div><div><div style="font-weight:600">NEP 2020 in practice</div><div style="font-size:14px;color:#8A93AD;margin-top:4px">Multidisciplinary, employability-first universities.</div></div></div>
-<div style="background:#0B1530;padding:18px 0;display:flex;gap:18px"><div style="color:#C9A24B;font-family:'Cormorant Garamond',serif;font-size:22px;width:36px">02</div><div><div style="font-weight:600">Indian values, global classroom</div><div style="font-size:14px;color:#8A93AD;margin-top:4px">The modern gurukul: character before marks.</div></div></div>
-<div style="background:#0B1530;padding:18px 0;display:flex;gap:18px"><div style="color:#C9A24B;font-family:'Cormorant Garamond',serif;font-size:22px;width:36px">03</div><div><div style="font-weight:600">Youth for Viksit Bharat 2047</div><div style="font-size:14px;color:#8A93AD;margin-top:4px">Skills, entrepreneurship and sport, as President of the MP Pickleball Association.</div></div></div>
-</div>
-</div>
-<div style="flex:1 1 420px;min-width:0;aspect-ratio:3/2;background:#16213F;border:1px solid #2A3658;display:flex;align-items:center;justify-content:center;color:#8A93AD;font-size:14px;text-align:center;padding:24px;box-sizing:border-box">Photo with state leadership at a public event<br>(from his archive; caption with names and date)</div>
+<section class="sec light" id="institutions">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow red rv">Building institutions</span><h2 class="rv d1" style="margin-top:24px">Building institutions that build people.</h2></div>
+      <p class="rv d2">An institution is more than its buildings, programmes or numbers. It is the learning environment it creates, the people it brings together and the opportunities it makes possible. Explore the educational institutions connected with his work.</p>
+    </div>
+    <div class="inst">
+      <a class="in rv" href="https://renaissance.ac.in/" target="_blank" rel="noopener"><h3>Renaissance University</h3><span class="loc">Indore · Chancellor</span><p>A multidisciplinary university across management, law, engineering, sciences and more.</p><span class="go" aria-hidden="true">↗</span></a>
+      <a class="in rv" href="http://www.rccmindore.com" target="_blank" rel="noopener"><h3>Renaissance College of Commerce &amp; Management</h3><span class="loc">Indore · Since 2006</span><p>Commerce and management education in the heart of the city.</p><span class="go" aria-hidden="true">↗</span></a>
+      <a class="in rv" href="https://renaissancelawcollege.com/" target="_blank" rel="noopener"><h3>Renaissance Law College</h3><span class="loc">Indore</span><p>Legal education with a focus on practice and perspective.</p><span class="go" aria-hidden="true">↗</span></a>
+      <a class="in rv" href="http://www.indoreindira.com" target="_blank" rel="noopener"><h3>Indore Indira Business School</h3><span class="loc">Indore</span><p>Postgraduate management education.</p><span class="go" aria-hidden="true">↗</span></a>
+      <a class="in rv" href="https://abhyudayuniversity.edu.in/" target="_blank" rel="noopener"><h3>Abhyuday University</h3><span class="loc">Khargone</span><p>A university serving the Nimar region of Madhya Pradesh.</p><span class="go" aria-hidden="true">↗</span></a>
+      <a class="in rv" href="https://wsu.university/" target="_blank" rel="noopener"><h3>Western State University</h3><span class="loc">California · Online</span><p>Online programmes for working learners worldwide.</p><span class="go" aria-hidden="true">↗</span></a>
+    </div>
+    <p class="note">Each institution keeps its own identity and official channels. Titles and relationships shown here are for review with his office.</p>
+  </div>
 </section>
 
-<section id="media" style="background:#F4EEE1;color:#0B1530">
-<div style="max-width:1240px;margin:0 auto;padding:96px 32px">
-<div style="font-size:13px;letter-spacing:.22em;color:#B3242B;margin-bottom:16px">MEDIA &amp; ARTS</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,56px);margin:0 0 48px;line-height:1.1">A voice beyond the podium.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px">
-<div style="border-top:2px solid #0B1530;padding-top:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700">World Matters</div><div style="font-size:14px;color:#4A5270;margin-top:8px;line-height:1.6">Host of a talk show featuring heads of state, ambassadors and ministers.</div></div>
-<div style="border-top:2px solid #0B1530;padding-top:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700">Life Coach · BIG FM</div><div style="font-size:14px;color:#4A5270;margin-top:8px;line-height:1.6">Six seasons as host of the radio series.</div></div>
-<div style="border-top:2px solid #0B1530;padding-top:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700">Playwright</div><div style="font-size:14px;color:#4A5270;margin-top:8px;line-height:1.6"><i>Mahasamar</i>, <i>Mukhtalif</i> and <i>SheherYar</i>.</div></div>
-<div style="border-top:2px solid #0B1530;padding-top:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700">Columnist · Patrika</div><div style="font-size:14px;color:#4A5270;margin-top:8px;line-height:1.6">Writing on life, leadership and learning.</div></div>
-</div>
-<div style="margin-top:56px;border:1px solid #C8BFA8;padding:32px;display:flex;flex-wrap:wrap;gap:28px;align-items:center">
-<div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;flex:1 1 420px;line-height:1.3">"A teacher by heart, entrepreneur by destiny."</div>
-<div style="font-size:13px;color:#4A5270;flex:0 1 260px">Full-page profile, <b>The South Asian Times</b>, New York, March 2018</div>
-</div>
-<div style="margin-top:40px;font-size:13px;color:#4A5270;line-height:1.8">Also recognised with: Youth Icon Award · 50 Influential People of Indore · 50 Stars of Indore · Big Guru Award</div>
-</div>
+<section class="sec dark grain" id="ask">
+  <div class="wrap ask">
+    <div>
+      <span class="eyebrow rv">For the next generation</span>
+      <h2 class="rv d1">Ask Sir<i></i></h2>
+      <p class="lede rv d2">Real questions. Practical perspective. Lessons that stay with you.</p>
+      <p class="rv d2">Students rarely need another lecture. They need a thoughtful answer to the decision in front of them. Ask Sir is a space for questions about careers, money, confidence, setbacks, learning and the choices that shape a life.</p>
+      <figure class="photo rv">
+        <picture><source srcset="assets/students.webp" type="image/webp"><img src="assets/students.jpg" alt="" loading="lazy"></picture>
+        <figcaption>Short answers, in his own voice, every week</figcaption>
+      </figure>
+    </div>
+    <div>
+      <div class="qs">
+        <a class="q rv" href="#askform"><span class="no">01</span><b>What should your first salary teach you?</b><span class="len">60 SEC</span></a>
+        <a class="q rv" href="#askform"><span class="no">02</span><b>Marks are a result. What is your real advantage?</b><span class="len">60 SEC</span></a>
+        <a class="q rv" href="#askform"><span class="no">03</span><b>How do you move before you feel fully ready?</b><span class="len">60 SEC</span></a>
+        <a class="q rv" href="#askform"><span class="no">04</span><b>What is the difference between ambition and direction?</b><span class="len">60 SEC</span></a>
+        <a class="q rv" href="#askform"><span class="no">05</span><b>“Sir, mujhe kya karna chahiye?”</b><span class="len">60 SEC</span></a>
+      </div>
+      <form id="askform" class="rv" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you. Your question is in.'">
+        <div class="f2"><label>Your name<input type="text" autocomplete="name" required></label><label>City<input type="text"></label></div>
+        <label>Your question<textarea required></textarea></label>
+        <button class="btn btn-red" type="submit">Submit your question</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<section id="ask" style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px">
-<div style="flex:1 1 420px;min-width:0">
-<div style="font-size:13px;letter-spacing:.22em;color:#C9A24B;margin-bottom:16px">ASK SIR</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4vw,56px);margin:0 0 20px;line-height:1.1">"Sir, mujhe kya karna chahiye?"</h2>
-<p style="font-size:17px;line-height:1.7;color:#C9CFDD;margin:0">The question students ask him most. Send yours. Selected questions are answered in 60-second videos every week.</p>
-</div>
-<form style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
-<label style="font-size:13px;color:#C9CFDD;display:flex;flex-direction:column;gap:8px">Your name<input type="text" style="background:#16213F;border:1px solid #2A3658;color:#F4EEE1;padding:14px;font-size:15px;font-family:Inter,sans-serif"></label>
-<label style="font-size:13px;color:#C9CFDD;display:flex;flex-direction:column;gap:8px">Your question<textarea rows="4" style="background:#16213F;border:1px solid #2A3658;color:#F4EEE1;padding:14px;font-size:15px;font-family:Inter,sans-serif;resize:vertical"></textarea></label>
-<button type="button" style="background:#C9A24B;color:#0B1530;border:0;padding:16px;font-weight:600;font-size:15px;min-height:48px;font-family:Inter,sans-serif">Send to Sir</button>
-</form>
+<section class="sec light" id="media">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow red rv">Media · Theatre · Press</span><h2 class="rv d1" style="margin-top:24px">Beyond the podium.</h2></div>
+      <p class="rv d2">Conversations, stories and creative work that reach beyond education, from a talk show on world affairs to the stage.</p>
+    </div>
+    <div class="media">
+      <figure class="clip rv">
+        <picture><source srcset="assets/south-asian-times.webp" type="image/webp"><img src="assets/south-asian-times.jpg" alt="The South Asian Times newspaper page: Swapnil Kothari, a teacher by heart, entrepreneur by destiny" loading="lazy" width="847" height="1170"></picture>
+        <figcaption>The South Asian Times, New York · Personality · March 10–16, 2018</figcaption>
+      </figure>
+      <div class="mcards">
+        <div class="mc rv"><span class="k">In the press</span><div><h3>“A teacher by heart, entrepreneur by destiny.”</h3><p>A full-page profile in The South Asian Times, New York, following his address at the Yoga for World Peace conference.</p></div></div>
+        <div class="mc rv"><span class="k">Conversation</span><div><h3>World Matters</h3><p>The world is changing. The conversation should go deeper. A show that brings leaders, experts and differing perspectives into conversations about geopolitics and the ideas shaping nations.</p><a class="lnk" href="https://www.linkedin.com/in/swapnil-kothari/" target="_blank" rel="noopener" style="color:var(--navy)">Watch World Matters ↗</a></div></div>
+        <div class="mc rv"><span class="k">Theatre</span><div><h3><em>Mahasamar</em></h3><p>Beyond the podium, into the human story. Education, leadership and society are also stories about people: their choices, conflicts, hopes and contradictions. He is credited as the playwright of <em>Mahasamar</em>.</p></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="speak" style="background:#B3242B">
-<div style="max-width:1240px;margin:0 auto;padding:72px 32px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between">
-<div style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.6vw,48px);font-weight:600;color:#fff;line-height:1.15;flex:1 1 520px">Invite CA Swapnil Kothari to speak at your conference, campus or summit.</div>
-<a href="#speak" style="background:#fff;color:#B3242B;padding:16px 28px;font-weight:600;font-size:15px;min-height:48px;box-sizing:border-box;display:inline-flex;align-items:center">Send an invitation</a>
-</div>
+<section class="sec ideas grain">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Ideas &amp; public life</span><h2 class="rv d1" style="margin-top:24px">Education is <em>nation-building.</em></h2></div>
+      <p class="rv d2">Reflections on education, Indian knowledge traditions, youth, leadership and the future of the country.</p>
+    </div>
+    <div class="icards">
+      <div class="ic rv"><span class="n">01</span><h3>NEP 2020 in practice</h3><p>What multidisciplinary, employability-first learning looks like inside a working university.</p></div>
+      <div class="ic rv d1"><span class="n">02</span><h3>Indian roots, global classroom</h3><p>Values-led education that prepares students for a world without borders.</p></div>
+      <div class="ic rv d2"><span class="n">03</span><h3>Youth and Viksit Bharat 2047</h3><p>Skills, enterprise and the confidence young Indians need to lead.</p></div>
+      <div class="ic rv d3"><span class="n">04</span><h3>Yoga, values and dialogue</h3><p>Why peace begins with the individual, a theme carried from Indore to Vienna.</p></div>
+    </div>
+  </div>
 </section>
 
-<footer style="max-width:1240px;margin:0 auto;padding:40px 32px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:13px;color:#8A93AD">
-<div>CA Swapnil Kothari · Indore, India</div>
-<div style="display:flex;gap:20px"><a href="#stage">LinkedIn</a><a href="#stage">Instagram</a><a href="#stage">YouTube</a></div>
-<div>Concept by Beyond Branding</div>
+<section class="sec light" id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow red rv">Speaking &amp; collaboration</span>
+      <h2 class="rv d1">The future is something we prepare for, <em>and build together.</em></h2>
+      <p class="rv d2">For speaking invitations, institutional collaborations, interviews and meaningful conversations. Enquiries are handled by his office.</p>
+    </div>
+    <form class="rv d1" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you. The office will be in touch.'">
+      <div class="f2"><label>Name<input type="text" autocomplete="name" required></label><label>Organisation<input type="text" autocomplete="organization"></label></div>
+      <div class="f2"><label>Email<input type="email" autocomplete="email" required></label>
+        <label>Enquiry type<select><option>Speaking invitation</option><option>Media interview</option><option>Institutional collaboration</option><option>Student / mentorship</option><option>Other</option></select></label></div>
+      <label>Event or collaboration details<textarea></textarea></label>
+      <button class="btn btn-navy" type="submit">Send enquiry <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><span class="mono">SK<i></i></span><p style="margin:18px 0 0;font:500 11.5px/1.8 var(--sans);letter-spacing:.22em;color:var(--gold-soft)">CA SWAPNIL KOTHARI<br><span style="color:rgba(243,239,230,.55)">EDUCATOR · INSTITUTION BUILDER · PUBLIC THINKER</span></p></div>
+      <div><h4>Explore</h4><ul><li><a href="#journey">The Journey</a></li><li><a href="#stage">Global Stage</a></li><li><a href="#institutions">Institutions</a></li><li><a href="#ask">Ask Sir</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.linkedin.com/in/swapnil-kothari/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/swapnilkothari1902/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/swapnilkothari.inc/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div><h4>Brand</h4><ul><li><a href="brand/">Identity system</a></li><li><a href="#contact">Invite to speak</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© CA Swapnil Kothari · Indore, India</span><span>Website concept by <a href="https://thebeyondbranding.com" target="_blank" rel="noopener">Beyond Branding</a> · Draft for review, facts pending approval</span></div>
+  </div>
 </footer>
 
-</div>
-<script src="https://thebeyondbranding.com/pitch/bar.js" defer data-client="CA Swapnil Kothari" data-offer="Your story deserves its own home. We can build it in weeks." data-note="Concept for discussion · photos are placeholders · Ayush, Beyond Branding" data-sector="personal-brand"></script>
-</body></html>
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var onS=function(){nav.classList.toggle('solid',window.scrollY>40)};onS();window.addEventListener('scroll',onS,{passive:true});
+  var d=document.getElementById('drawer');
+  document.getElementById('burger').onclick=function(){d.classList.add('open')};
+  document.getElementById('drawerx').onclick=function(){d.classList.remove('open')};
+  d.querySelectorAll('a').forEach(function(a){a.onclick=function(){d.classList.remove('open')}});
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="https://thebeyondbranding.com/pitch/bar.js" defer data-client="CA Swapnil Kothari" data-offer="A personal platform worthy of the story. Built in weeks." data-note="Website and identity concept · photos from public profiles, to be replaced with originals · Ayush, Beyond Branding" data-sector="personal-brand"></script>
+</body>
+</html>
