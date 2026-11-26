@@ -80,35 +80,33 @@ h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
 .hero h1 em{font-style:italic;color:var(--gold-soft)}
 .hero .sub{font:300 clamp(1.05rem,1.4vw,1.25rem)/1.6 var(--sans);color:rgba(243,239,230,.82);max-width:30em;margin:0 0 40px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.cut{position:relative;align-self:end;justify-self:end;width:min(108%,700px);margin-right:-4%;margin-bottom:-90px}
-.cut .orbit{position:absolute;left:14%;top:-10%;width:84%;opacity:.8;height:auto;overflow:visible;z-index:0}
-.cut .globe{transform-origin:300px 300px;animation:tilt 40s ease-in-out infinite alternate}
-.cut .mer{transform-origin:300px 300px;transform-box:view-box;animation:spin3d 16s linear infinite}
-.cut .m2{animation-delay:-4s}.cut .m3{animation-delay:-8s}.cut .m4{animation-delay:-12s}
-.cut .ring-spin{transform-origin:300px 300px;animation:rot 60s linear infinite}
-.cut .ring-spin2{transform-origin:300px 300px;animation:rot 36s linear infinite reverse}
-@keyframes spin3d{0%{transform:scaleX(1)}25%{transform:scaleX(0)}50%{transform:scaleX(-1)}75%{transform:scaleX(0)}100%{transform:scaleX(1)}}
-@keyframes rot{to{transform:rotate(360deg)}}
-@keyframes tilt{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
-.hero:before{content:"";position:absolute;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(28% 38% at 74% 42%,rgba(46,74,118,.55),transparent 70%),radial-gradient(22% 26% at 80% 30%,rgba(185,154,98,.10),transparent 70%);animation:drift 24s ease-in-out infinite alternate}
-@keyframes drift{from{transform:translate3d(-1.5%,-1%,0) scale(1)}to{transform:translate3d(1.5%,1.5%,0) scale(1.05)}}
-@media(max-width:560px){.cut .chip{display:none}.cut{margin-bottom:-24px}}
-@media(prefers-reduced-motion:reduce){.cut .globe,.cut .mer,.cut .ring-spin,.cut .ring-spin2,.hero:before{animation:none}}
-.cut picture{position:relative;z-index:1}
-.cut img{width:100%;height:auto}
-.cut .chip{position:absolute;z-index:2;left:-6%;bottom:22%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:260px}
-.cut .chip b{display:block;font:500 18px/1.25 var(--serif)}
-.cut .chip span{display:block;margin-top:6px;font:600 10px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.hero-photo{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero-photo picture,.hero-photo img{display:block;width:100%;height:100%}
+.hero-photo img{object-fit:cover;object-position:22% 30%;transform-origin:35% 30%;animation:kb 30s ease-in-out infinite alternate}
+.hero-photo:after{content:"";position:absolute;inset:0;background:
+ linear-gradient(90deg,rgba(15,29,50,0) 28%,rgba(15,29,50,.55) 48%,rgba(15,29,50,.92) 62%,#0F1D32 78%),
+ linear-gradient(0deg,#0F1D32 0%,rgba(15,29,50,0) 30%),
+ linear-gradient(180deg,rgba(11,22,40,.75) 0%,rgba(11,22,40,0) 22%)}
+.hero-light{position:absolute;z-index:-1;left:8%;top:-10%;width:45%;height:120%;pointer-events:none;
+ background:radial-gradient(closest-side,rgba(201,174,124,.16),rgba(201,174,124,0));mix-blend-mode:screen;animation:sweep 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.09) translate3d(-1%,0,0)}}
+@keyframes sweep{from{transform:translate3d(-6%,0,0);opacity:.6}to{transform:translate3d(8%,3%,0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero-photo img,.hero-light{animation:none}}
+.hero .wrap.main{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+.hero-copy{grid-column:2}
+.hero h1{font-size:clamp(3rem,5.4vw,5.6rem)}
 .hero-meta{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(0deg,#0F1D32 40%,rgba(15,29,50,0))}
 .hero-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0 22px;border-top:1px solid rgba(185,154,98,.22);font:500 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(243,239,230,.6)}
 @media(max-width:900px){
-  .hero .wrap.main{grid-template-columns:1fr;gap:0;padding-top:76px;padding-bottom:80px;align-items:start;align-content:center}
-  .cut{order:-1;justify-self:center;width:min(112%,620px);margin:0 -6% -40px}
-  .cut .chip{left:6%;bottom:16%;max-width:220px;padding:10px 14px}
-  .cut .chip b{font-size:14px}
-  .cut .sig{display:none}
-  .hero:before{background:radial-gradient(45% 30% at 52% 24%,rgba(46,74,118,.6),transparent 70%)}
-  .hero .wm{top:22%;font-size:70vw}
+  .hero .wrap.main{grid-template-columns:1fr;gap:0;padding-top:76px;padding-bottom:80px;align-items:start;align-content:start}
+  .hero-copy{grid-column:1}
+  .hero-photo{bottom:auto;height:62svh}
+  .hero-photo img{object-position:30% 20%}
+  .hero-photo:after{background:linear-gradient(0deg,#0F1D32 0%,rgba(15,29,50,0) 45%),linear-gradient(180deg,rgba(11,22,40,.7) 0%,rgba(11,22,40,0) 25%)}
+  .hero,.hero .wrap.main{min-height:0}
+  .hero{background:#0F1D32}
+  .hero .wrap.main{padding-top:max(54svh,330px);padding-bottom:110px}
+    .hero .wm{top:22%;font-size:70vw}
   .hero-foot span:nth-child(2){display:none}
 }
 
@@ -313,9 +311,11 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
 <main id="top">
 
 <section class="hero grain">
+  <div class="hero-photo" aria-hidden="false"><picture><source srcset="/pitch/swapnil-kothari/assets/hero-stage.webp" type="image/webp"><img src="/pitch/swapnil-kothari/assets/hero-stage.jpg" alt="CA Swapnil Kothari speaking at a podium" width="1672" height="941" fetchpriority="high"></picture></div>
+  <span class="hero-light" aria-hidden="true"></span>
   
   <div class="wrap main">
-    <div>
+    <div class="hero-copy">
       <div class="eyebrow rv">Educator · Institution builder · Public thinker</div>
       <h1 class="rv d1">An Indian educator<br>on a <em>global stage.</em></h1>
       <p class="sub rv d2">Building institutions. Empowering minds. Inspiring generations.</p>
@@ -323,26 +323,6 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
         <a class="btn btn-red" href="#journey">Explore the journey <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
         <a class="btn btn-line" href="#contact">Invite Swapnil to speak</a>
       </div>
-    </div>
-    <div class="cut rv d2">
-      <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true">
-        <defs><radialGradient id="og" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#B99A62" stop-opacity=".22"/><stop offset="1" stop-color="#B99A62" stop-opacity="0"/></radialGradient></defs>
-        <circle cx="300" cy="300" r="300" fill="url(#og)"/>
-        <g class="globe" fill="none" stroke="#B99A62">
-          <circle cx="300" cy="300" r="230" stroke-opacity=".45"/>
-          <ellipse class="mer m1" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
-          <ellipse class="mer m2" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
-          <ellipse class="mer m3" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
-          <ellipse class="mer m4" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
-          <ellipse cx="300" cy="300" rx="230" ry="70" stroke-opacity=".18"/>
-          <ellipse cx="300" cy="300" rx="230" ry="150" stroke-opacity=".14"/>
-          <line x1="70" y1="300" x2="530" y2="300" stroke-opacity=".2"/>
-        </g>
-        <g class="ring-spin"><circle cx="300" cy="300" r="282" fill="none" stroke="#B99A62" stroke-opacity=".3" stroke-dasharray="2 9"/><circle cx="300" cy="18" r="4" fill="#C9AE7C"/></g>
-        <g class="ring-spin2"><circle cx="300" cy="300" r="258" fill="none" stroke="#9C2630" stroke-opacity=".0"/><circle cx="558" cy="300" r="3" fill="#9C2630"/></g>
-      </svg>
-      <picture><source srcset="/pitch/swapnil-kothari/assets/hero-speaker.webp" type="image/webp"><img src="/pitch/swapnil-kothari/assets/hero-speaker.png" alt="CA Swapnil Kothari speaking into a microphone" width="1291" height="1199" fetchpriority="high"></picture>
-      <div class="chip"><b>CA Swapnil Kothari</b><span>Chancellor · Renaissance University</span></div>
     </div>
   </div>
   <div class="hero-meta"><div class="wrap"><div class="hero-foot"><span>Indore · India</span><span>Vienna · Prague · Hungary · New York · London · Dubai</span><span>Scroll ↓</span></div></div></div>
