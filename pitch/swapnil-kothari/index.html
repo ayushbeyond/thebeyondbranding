@@ -80,23 +80,30 @@ h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
 .hero h1 em{font-style:italic;color:var(--gold-soft)}
 .hero .sub{font:300 clamp(1.05rem,1.4vw,1.25rem)/1.6 var(--sans);color:rgba(243,239,230,.82);max-width:30em;margin:0 0 40px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.cut{position:relative;align-self:end;justify-self:end;width:min(100%,640px);margin-bottom:-90px}
-.cut .ring{position:absolute;left:8%;right:2%;top:2%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(185,154,98,.45)}
-.cut .ring:after{content:"";position:absolute;inset:7%;border-radius:50%;border:1px solid rgba(185,154,98,.18)}
-.cut .glow{position:absolute;left:12%;right:8%;top:8%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(185,154,98,.26),rgba(185,154,98,0) 66%)}
+.cut{position:relative;align-self:end;justify-self:end;width:min(108%,700px);margin-right:-4%;margin-bottom:-90px}
+.cut .orbit{position:absolute;left:6%;top:-6%;width:88%;height:auto;overflow:visible;z-index:0}
+.cut .globe{transform-origin:300px 300px;animation:tilt 40s ease-in-out infinite alternate}
+.cut .mer{transform-origin:300px 300px;transform-box:view-box;animation:spin3d 16s linear infinite}
+.cut .m2{animation-delay:-4s}.cut .m3{animation-delay:-8s}.cut .m4{animation-delay:-12s}
+.cut .ring-spin{transform-origin:300px 300px;animation:rot 60s linear infinite}
+.cut .ring-spin2{transform-origin:300px 300px;animation:rot 36s linear infinite reverse}
+@keyframes spin3d{0%{transform:scaleX(1)}25%{transform:scaleX(0)}50%{transform:scaleX(-1)}75%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes tilt{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+.hero:before{content:"";position:absolute;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(30% 30% at 70% 40%,rgba(156,38,48,.16),transparent 70%),radial-gradient(35% 35% at 85% 75%,rgba(185,154,98,.12),transparent 70%);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(-3%,-2%,0)}to{transform:translate3d(3%,3%,0)}}
+@media(prefers-reduced-motion:reduce){.cut .globe,.cut .mer,.cut .ring-spin,.cut .ring-spin2,.hero:before{animation:none}}
 .cut picture{position:relative;z-index:1}
-.cut img{width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 62% 78% at 50% 34%,#000 68%,transparent 100%);mask-image:radial-gradient(ellipse 62% 78% at 50% 34%,#000 68%,transparent 100%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
-.cut .chip{position:absolute;z-index:2;left:-4%;top:58%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:250px}
-.cut .chip b{display:block;font:500 17px/1.25 var(--serif)}
+.cut img{width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 99%);mask-image:linear-gradient(180deg,#000 78%,transparent 99%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
+.cut .chip{position:absolute;z-index:2;left:2%;bottom:24%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:260px}
+.cut .chip b{display:block;font:500 18px/1.25 var(--serif)}
 .cut .chip span{display:block;margin-top:6px;font:600 10px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
-.cut .sig{position:absolute;z-index:2;right:4%;top:16%;text-align:right;font:600 10.5px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,239,230,.7)}
-.cut .sig b{display:block;font:500 22px/1.1 var(--serif);letter-spacing:0;text-transform:none;color:var(--ivory);margin-bottom:6px}
 .hero-meta{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(0deg,#0F1D32 40%,rgba(15,29,50,0))}
 .hero-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0 22px;border-top:1px solid rgba(185,154,98,.22);font:500 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(243,239,230,.6)}
 @media(max-width:900px){
   .hero .wrap.main{grid-template-columns:1fr;gap:10px;padding-top:96px;padding-bottom:80px;align-items:start}
-  .cut{order:-1;justify-self:center;width:min(92%,420px);margin-bottom:0}
-  .cut .chip{left:0;top:auto;bottom:6%;max-width:200px;padding:10px 14px}
+  .cut{order:-1;justify-self:center;width:min(100%,440px);margin:0}
+  .cut .chip{left:0;bottom:8%;max-width:210px;padding:10px 14px}
   .cut .chip b{font-size:14px}
   .cut .sig{display:none}
   .hero .wm{top:22%;font-size:70vw}
@@ -304,7 +311,7 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
 <main id="top">
 
 <section class="hero grain">
-  <span class="wm" aria-hidden="true">SK.</span>
+  
   <div class="wrap main">
     <div>
       <div class="eyebrow rv">Educator · Institution builder · Public thinker</div>
@@ -316,9 +323,24 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
       </div>
     </div>
     <div class="cut rv d2">
-      <span class="glow" aria-hidden="true"></span><span class="ring" aria-hidden="true"></span>
-      <picture><source srcset="/pitch/swapnil-kothari/assets/hero-cutout.webp" type="image/webp"><img src="/pitch/swapnil-kothari/assets/hero-cutout.png" alt="CA Swapnil Kothari in a black bandhgala with a red pocket square, speaking at the UN Vienna International Centre" width="656" height="702" fetchpriority="high"></picture>
-            <div class="chip"><b>UN Vienna International Centre</b><span>World Peace Council conference</span></div>
+      <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true">
+        <defs><radialGradient id="og" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#B99A62" stop-opacity=".22"/><stop offset="1" stop-color="#B99A62" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="300" cy="300" r="300" fill="url(#og)"/>
+        <g class="globe" fill="none" stroke="#B99A62">
+          <circle cx="300" cy="300" r="230" stroke-opacity=".45"/>
+          <ellipse class="mer m1" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
+          <ellipse class="mer m2" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
+          <ellipse class="mer m3" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
+          <ellipse class="mer m4" cx="300" cy="300" rx="230" ry="230" stroke-opacity=".22"/>
+          <ellipse cx="300" cy="300" rx="230" ry="70" stroke-opacity=".18"/>
+          <ellipse cx="300" cy="300" rx="230" ry="150" stroke-opacity=".14"/>
+          <line x1="70" y1="300" x2="530" y2="300" stroke-opacity=".2"/>
+        </g>
+        <g class="ring-spin"><circle cx="300" cy="300" r="282" fill="none" stroke="#B99A62" stroke-opacity=".3" stroke-dasharray="2 9"/><circle cx="300" cy="18" r="4" fill="#C9AE7C"/></g>
+        <g class="ring-spin2"><circle cx="300" cy="300" r="258" fill="none" stroke="#9C2630" stroke-opacity=".0"/><circle cx="558" cy="300" r="3" fill="#9C2630"/></g>
+      </svg>
+      <picture><source srcset="/pitch/swapnil-kothari/assets/hero-speaker.webp" type="image/webp"><img src="/pitch/swapnil-kothari/assets/hero-speaker.png" alt="CA Swapnil Kothari speaking into a microphone" width="1291" height="1199" fetchpriority="high"></picture>
+      <div class="chip"><b>CA Swapnil Kothari</b><span>Chancellor · Renaissance University</span></div>
     </div>
   </div>
   <div class="hero-meta"><div class="wrap"><div class="hero-foot"><span>Indore · India</span><span>Vienna · Prague · Hungary · New York · London · Dubai</span><span>Scroll ↓</span></div></div></div>
