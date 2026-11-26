@@ -81,7 +81,7 @@ h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
 .hero .sub{font:300 clamp(1.05rem,1.4vw,1.25rem)/1.6 var(--sans);color:rgba(243,239,230,.82);max-width:30em;margin:0 0 40px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px}
 .cut{position:relative;align-self:end;justify-self:end;width:min(108%,700px);margin-right:-4%;margin-bottom:-90px}
-.cut .orbit{position:absolute;left:6%;top:-6%;width:88%;height:auto;overflow:visible;z-index:0}
+.cut .orbit{position:absolute;left:14%;top:-10%;width:84%;opacity:.8;height:auto;overflow:visible;z-index:0}
 .cut .globe{transform-origin:300px 300px;animation:tilt 40s ease-in-out infinite alternate}
 .cut .mer{transform-origin:300px 300px;transform-box:view-box;animation:spin3d 16s linear infinite}
 .cut .m2{animation-delay:-4s}.cut .m3{animation-delay:-8s}.cut .m4{animation-delay:-12s}
@@ -90,22 +90,24 @@ h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
 @keyframes spin3d{0%{transform:scaleX(1)}25%{transform:scaleX(0)}50%{transform:scaleX(-1)}75%{transform:scaleX(0)}100%{transform:scaleX(1)}}
 @keyframes rot{to{transform:rotate(360deg)}}
 @keyframes tilt{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
-.hero:before{content:"";position:absolute;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(30% 30% at 70% 40%,rgba(156,38,48,.16),transparent 70%),radial-gradient(35% 35% at 85% 75%,rgba(185,154,98,.12),transparent 70%);animation:drift 22s ease-in-out infinite alternate}
-@keyframes drift{from{transform:translate3d(-3%,-2%,0)}to{transform:translate3d(3%,3%,0)}}
+.hero:before{content:"";position:absolute;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(28% 38% at 74% 42%,rgba(46,74,118,.55),transparent 70%),radial-gradient(22% 26% at 80% 30%,rgba(185,154,98,.10),transparent 70%);animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(-1.5%,-1%,0) scale(1)}to{transform:translate3d(1.5%,1.5%,0) scale(1.05)}}
+@media(max-width:560px){.cut .chip{display:none}.cut{margin-bottom:-24px}}
 @media(prefers-reduced-motion:reduce){.cut .globe,.cut .mer,.cut .ring-spin,.cut .ring-spin2,.hero:before{animation:none}}
 .cut picture{position:relative;z-index:1}
-.cut img{width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 99%);mask-image:linear-gradient(180deg,#000 78%,transparent 99%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
-.cut .chip{position:absolute;z-index:2;left:2%;bottom:24%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:260px}
+.cut img{width:100%;height:auto}
+.cut .chip{position:absolute;z-index:2;left:-6%;bottom:22%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:260px}
 .cut .chip b{display:block;font:500 18px/1.25 var(--serif)}
 .cut .chip span{display:block;margin-top:6px;font:600 10px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
 .hero-meta{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(0deg,#0F1D32 40%,rgba(15,29,50,0))}
 .hero-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0 22px;border-top:1px solid rgba(185,154,98,.22);font:500 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(243,239,230,.6)}
 @media(max-width:900px){
-  .hero .wrap.main{grid-template-columns:1fr;gap:10px;padding-top:96px;padding-bottom:80px;align-items:start}
-  .cut{order:-1;justify-self:center;width:min(100%,440px);margin:0}
-  .cut .chip{left:0;bottom:8%;max-width:210px;padding:10px 14px}
+  .hero .wrap.main{grid-template-columns:1fr;gap:0;padding-top:76px;padding-bottom:80px;align-items:start;align-content:center}
+  .cut{order:-1;justify-self:center;width:min(112%,620px);margin:0 -6% -40px}
+  .cut .chip{left:6%;bottom:16%;max-width:220px;padding:10px 14px}
   .cut .chip b{font-size:14px}
   .cut .sig{display:none}
+  .hero:before{background:radial-gradient(45% 30% at 52% 24%,rgba(46,74,118,.6),transparent 70%)}
   .hero .wm{top:22%;font-size:70vw}
   .hero-foot span:nth-child(2){display:none}
 }
