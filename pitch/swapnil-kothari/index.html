@@ -72,35 +72,34 @@ h2{font-size:clamp(2.3rem,4.2vw,4.1rem);line-height:1.06}
 .drawer .x{position:absolute;top:18px;right:var(--pad);width:44px;height:44px;border:0;background:none;color:var(--ivory);font-size:28px;cursor:pointer}
 
 /* hero */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg picture,.video picture,.award picture{height:100%}
-.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);transform:scale(1.08);animation:slow 14s ease-out forwards}
-@keyframes slow{to{transform:scale(1)}}
-.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(90deg,rgba(15,29,50,.97) 0%,rgba(15,29,50,.9) 38%,rgba(15,29,50,.55) 70%,rgba(15,29,50,.78) 100%),
-  linear-gradient(0deg,rgba(15,29,50,1) 0%,rgba(15,29,50,0) 45%)}
-.hero .wrap.main{width:100%;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:56px;align-items:end;padding-top:140px;padding-bottom:64px}
-.hero h1{font-size:clamp(3.1rem,6.6vw,6.6rem);line-height:.98;letter-spacing:-.025em;margin:28px 0 30px}
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;
+  background:radial-gradient(60% 70% at 72% 58%,#1F3558 0%,rgba(15,29,50,0) 62%),linear-gradient(180deg,#0B1628 0%,#0F1D32 55%,#0F1D32 100%)}
+.hero .wm{position:absolute;right:-2vw;top:50%;transform:translateY(-52%);font:700 clamp(260px,38vw,620px)/.8 var(--serif);letter-spacing:-.06em;color:rgba(185,154,98,.055);z-index:-1;pointer-events:none;user-select:none}
+.hero .wrap.main{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px;align-items:center;padding-top:110px;padding-bottom:90px}
+.hero h1{font-size:clamp(3.1rem,6.2vw,6.4rem);line-height:.98;letter-spacing:-.025em;margin:28px 0 30px}
 .hero h1 em{font-style:italic;color:var(--gold-soft)}
 .hero .sub{font:300 clamp(1.05rem,1.4vw,1.25rem)/1.6 var(--sans);color:rgba(243,239,230,.82);max-width:30em;margin:0 0 40px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.portrait-card{position:relative;justify-self:end;width:100%;max-width:430px}
-.portrait-card figure{margin:0;position:relative;overflow:hidden;border-radius:2px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
-.portrait-card img{width:100%;aspect-ratio:4/4.3;object-fit:cover;object-position:42% 30%;filter:contrast(1.04) saturate(.95)}
-.portrait-card figure:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,29,50,.85) 0%,rgba(15,29,50,0) 40%)}
-.portrait-card figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
-.portrait-card figcaption b{font:500 22px/1.1 var(--serif)}
-.portrait-card figcaption span{font:600 10.5px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);text-align:right}
-.portrait-card:before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(185,154,98,.45);border-radius:2px}
-.hero-meta{position:absolute;left:0;right:0;bottom:0}
+.cut{position:relative;align-self:end;justify-self:end;width:min(100%,640px);margin-bottom:-90px}
+.cut .ring{position:absolute;left:8%;right:2%;top:2%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(185,154,98,.45)}
+.cut .ring:after{content:"";position:absolute;inset:7%;border-radius:50%;border:1px solid rgba(185,154,98,.18)}
+.cut .glow{position:absolute;left:12%;right:8%;top:8%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(185,154,98,.26),rgba(185,154,98,0) 66%)}
+.cut picture{position:relative;z-index:1}
+.cut img{width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 62% 78% at 50% 34%,#000 68%,transparent 100%);mask-image:radial-gradient(ellipse 62% 78% at 50% 34%,#000 68%,transparent 100%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
+.cut .chip{position:absolute;z-index:2;left:-4%;top:58%;background:rgba(15,29,50,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(185,154,98,.35);padding:14px 18px;max-width:250px}
+.cut .chip b{display:block;font:500 17px/1.25 var(--serif)}
+.cut .chip span{display:block;margin-top:6px;font:600 10px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.cut .sig{position:absolute;z-index:2;right:4%;top:16%;text-align:right;font:600 10.5px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,239,230,.7)}
+.cut .sig b{display:block;font:500 22px/1.1 var(--serif);letter-spacing:0;text-transform:none;color:var(--ivory);margin-bottom:6px}
+.hero-meta{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(0deg,#0F1D32 40%,rgba(15,29,50,0))}
 .hero-foot{display:flex;justify-content:space-between;gap:20px;padding:18px 0 22px;border-top:1px solid rgba(185,154,98,.22);font:500 11.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(243,239,230,.6)}
-.hero .wrap.main{padding-bottom:120px}
 @media(max-width:900px){
-  .hero{align-items:flex-start}
-  .hero .wrap.main{grid-template-columns:1fr;gap:40px;padding-top:110px;padding-bottom:110px}
-  .portrait-card{justify-self:start;max-width:340px;order:-1}
-  .hero:before{background:linear-gradient(180deg,rgba(15,29,50,.75) 0%,rgba(15,29,50,.92) 45%,rgba(15,29,50,1) 100%)}
+  .hero .wrap.main{grid-template-columns:1fr;gap:10px;padding-top:96px;padding-bottom:80px;align-items:start}
+  .cut{order:-1;justify-self:center;width:min(92%,420px);margin-bottom:0}
+  .cut .chip{left:0;top:auto;bottom:6%;max-width:200px;padding:10px 14px}
+  .cut .chip b{font-size:14px}
+  .cut .sig{display:none}
+  .hero .wm{top:22%;font-size:70vw}
   .hero-foot span:nth-child(2){display:none}
 }
 
@@ -140,7 +139,7 @@ section{position:relative}
 .photo figcaption{margin-top:14px;font:500 12px/1.5 var(--sans);letter-spacing:.06em;color:var(--muted);display:flex;gap:12px}
 .photo figcaption:before{content:"";flex:none;width:28px;height:1px;background:var(--gold);margin-top:8px}
 .j-photo{position:sticky;top:110px}
-.j-photo img{aspect-ratio:4/5;object-position:58% 40%}
+.j-photo img{aspect-ratio:4/4.4;object-position:45% 40%}
 .j-photo .tag{position:absolute;left:-1px;top:28px;background:var(--red);color:#fff;font:600 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:10px 14px}
 @media(max-width:900px){.journey{grid-template-columns:1fr}.j-photo{position:relative;top:0}}
 
@@ -153,8 +152,8 @@ section{position:relative}
 
 /* stage */
 .video{position:relative;display:block;overflow:hidden;border-radius:2px;aspect-ratio:16/7.2;background:#000}
-.video img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) brightness(.72);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
-.video:hover img{transform:scale(1.03);filter:grayscale(0) brightness(.8)}
+.video img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:brightness(.78);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.video:hover img{transform:scale(1.03);filter:brightness(.86)}
 .video .play{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:rgba(243,239,230,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(243,239,230,.55);display:grid;place-items:center;transition:transform .4s,background .4s}
 .video:hover .play{transform:scale(1.08);background:var(--red);box-shadow:none}
 .video .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 32px;background:linear-gradient(0deg,rgba(15,29,50,.95),transparent);display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
@@ -170,6 +169,16 @@ section{position:relative}
 .ev p{margin:4px 0 0;font-size:14px}
 .ev .city{font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,230,.55);text-align:right}
 @media(max-width:700px){.ev{grid-template-columns:56px 1fr}.ev .city{grid-column:2;text-align:left}}
+.video .vtag{position:absolute;left:32px;top:26px;font:600 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ivory);background:var(--red);padding:9px 12px}
+.moments{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;margin-top:72px;padding-top:56px;border-top:1px solid rgba(185,154,98,.22)}
+.moments .m{margin:0;position:relative;overflow:hidden;border-radius:2px;background:#000}
+.moments img{width:100%;height:100%;aspect-ratio:4/3.3;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.moments .m:first-child img{object-position:50% 22%}
+.moments .m:hover img{transform:scale(1.03)}
+.moments figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 24px;background:linear-gradient(0deg,rgba(11,22,40,.94),rgba(11,22,40,0))}
+.moments figcaption span{display:block;font:600 10.5px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.moments figcaption b{font:500 clamp(1.05rem,1.5vw,1.3rem)/1.35 var(--serif);color:var(--ivory)}
+@media(max-width:800px){.moments{grid-template-columns:1fr;margin-top:48px;padding-top:40px}.video .vtag{left:16px;top:16px}}
 .stage-side{display:grid;gap:28px}
 .stage-side .photo img{aspect-ratio:16/9;object-position:50% 30%}
 .stage-side .photo figcaption{color:rgba(243,239,230,.55)}
@@ -199,7 +208,7 @@ section{position:relative}
 .ask h2 i{display:inline-block;width:.16em;height:.16em;background:var(--red);border-radius:50%;margin-left:.04em}
 .ask .lede{font:300 20px/1.55 var(--sans);color:rgba(243,239,230,.85);margin:0 0 18px}
 .ask .photo{margin-top:40px}
-.ask .photo img{aspect-ratio:16/10.5;object-position:60% 35%}
+.ask .photo img{aspect-ratio:4/3.6;object-position:50% 52%}
 .ask .photo figcaption{color:rgba(243,239,230,.55)}
 .qs{display:grid;gap:12px;margin-bottom:40px}
 .q{display:flex;gap:18px;align-items:center;padding:20px 22px;background:var(--navy-2);border:1px solid rgba(185,154,98,.16);border-radius:2px;transition:border-color .3s,transform .3s}
@@ -295,7 +304,7 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
 <main id="top">
 
 <section class="hero grain">
-  <div class="hero-bg"><picture><source srcset="assets/un-vienna-hall.webp" type="image/webp"><img src="assets/un-vienna-hall.jpg" alt="Conference hall at the United Nations Vienna International Centre during the World Peace Council conference, 2015" fetchpriority="high"></picture></div>
+  <span class="wm" aria-hidden="true">SK.</span>
   <div class="wrap main">
     <div>
       <div class="eyebrow rv">Educator · Institution builder · Public thinker</div>
@@ -306,14 +315,13 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
         <a class="btn btn-line" href="#contact">Invite Swapnil to speak</a>
       </div>
     </div>
-    <div class="portrait-card rv d2">
-      <figure>
-        <picture><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" alt="Portrait of CA Swapnil Kothari in a black bandhgala with a red pocket square" width="600" height="438"></picture>
-        <figcaption><b>CA Swapnil Kothari</b><span>Chancellor<br>Renaissance University</span></figcaption>
-      </figure>
+    <div class="cut rv d2">
+      <span class="glow" aria-hidden="true"></span><span class="ring" aria-hidden="true"></span>
+      <picture><source srcset="assets/hero-cutout.webp" type="image/webp"><img src="assets/hero-cutout.png" alt="CA Swapnil Kothari in a black bandhgala with a red pocket square, speaking at the UN Vienna International Centre" width="656" height="702" fetchpriority="high"></picture>
+            <div class="chip"><b>UN Vienna International Centre</b><span>World Peace Council conference</span></div>
     </div>
   </div>
-  <div class="hero-meta"><div class="wrap"><div class="hero-foot"><span>Indore · India</span><span>World Peace Council conference · UN Vienna International Centre · 2015</span><span>Scroll ↓</span></div></div></div>
+  <div class="hero-meta"><div class="wrap"><div class="hero-foot"><span>Indore · India</span><span>Vienna · Prague · Hungary · New York · London · Dubai</span><span>Scroll ↓</span></div></div></div>
 </section>
 
 <div class="proof">
@@ -339,9 +347,9 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
       <p class="rv" style="margin-top:36px"><a class="lnk" href="#stage" style="color:var(--navy)">Continue to the global stage →</a></p>
     </div>
     <figure class="photo j-photo rv d1">
-      <picture><source srcset="assets/students.webp" type="image/webp"><img src="assets/students.jpg" alt="Swapnil Kothari speaking to students with a microphone at Renaissance University" width="778" height="468"></picture>
-      <span class="tag">For my students</span>
-      <figcaption>On stage at Renaissance University, Indore</figcaption>
+      <picture><source srcset="assets/teaching.webp" type="image/webp"><img src="assets/teaching.jpg" alt="Swapnil Kothari in conversation with postgraduate students in a seminar room" width="1169" height="1066"></picture>
+      <span class="tag">In the classroom</span>
+      <figcaption>In conversation with students of the IIDL postgraduate programme in leadership, politics and governance</figcaption>
     </figure>
   </div>
 </section>
@@ -360,10 +368,11 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
       <div><span class="eyebrow rv">The global stage</span><h2 class="rv d1" style="margin-top:24px">A wider conversation about peace, values and the future.</h2></div>
       <p class="rv d2">From educational forums to international dialogue, his public engagements have explored the role of values, learning and human connection in a changing world, including World Peace Council programmes in Vienna and other European settings.</p>
     </div>
-    <a class="video rv" href="https://www.youtube.com/results?search_query=Swapnil+Kothari+World+Peace+Conference+United+Nations" target="_blank" rel="noopener" aria-label="Watch: addressing the World Peace Conference at the UN Vienna International Centre">
-      <picture><source srcset="assets/un-vienna-hall.webp" type="image/webp"><img src="assets/un-vienna-hall.jpg" alt="" loading="lazy"></picture>
+    <a class="video rv" href="https://www.youtube.com/results?search_query=Swapnil+Kothari+World+Peace+Conference+United+Nations" target="_blank" rel="noopener" aria-label="Watch his World Peace Conference address at the UN Vienna International Centre (opens YouTube)">
+      <picture><source srcset="assets/hungary.webp" type="image/webp"><img src="assets/hungary.jpg" alt="Swapnil Kothari addressing an audience in Hungary" loading="lazy" width="960" height="460"></picture>
       <span class="play"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#F3EFE6"/></svg></span>
-      <span class="cap"><b>Addressing the World Peace Conference: “Yoga – A Path to Non-Violence and World Peace”</b><span>UN Vienna International Centre · 2015 · 17:59</span></span>
+      <span class="vtag">Watch the UN Vienna address ↗</span>
+      <span class="cap"><b>Speaking at “40 Years of Yoga in Daily Life”, a peace and values programme in Hungary</b><span>Hungary · Europe</span></span>
     </a>
     <div class="stage-grid">
       <div class="events">
@@ -375,14 +384,24 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
       </div>
       <div class="stage-side">
         <figure class="photo rv d1">
-          <picture><source srcset="assets/podium.webp" type="image/webp"><img src="assets/podium.jpg" alt="Swapnil Kothari speaking at a podium during an international conference" loading="lazy" width="810" height="434"></picture>
-          <figcaption>Speaking on spirituality, non-violence and world peace</figcaption>
+          <picture><source srcset="assets/genz-festival.webp" type="image/webp"><img src="assets/genz-festival.jpg" alt="Swapnil Kothari holding the Guest of Honour plaque at the Indian Journalism Festival 2026" loading="lazy" width="1280" height="854"></picture>
+          <figcaption>Guest of Honour, Gen-Z Dialogue · Indian Journalism Festival 2026, Indore</figcaption>
         </figure>
         <div class="award rv d2">
-          <picture><source srcset="assets/bharat-gaurav.webp" type="image/webp"><img src="assets/bharat-gaurav.jpg" alt="Swapnil Kothari receiving the Bharat Gaurav Award certificate in London" loading="lazy" width="1179" height="784"></picture>
+          <picture><source srcset="assets/bharat-gaurav.webp" type="image/webp"><img src="assets/bharat-gaurav.jpg" alt="Swapnil Kothari receiving the Bharat Gaurav Award certificate in London" loading="lazy" width="1024" height="683"></picture>
           <div><span class="eyebrow">Recognition</span><h3>Bharat Gaurav Award 2023</h3><p>Presented at the House of Commons, London, alongside Indians recognised for contributions in their fields.</p></div>
         </div>
       </div>
+    </div>
+    <div class="moments">
+      <figure class="m rv">
+        <picture><source srcset="assets/dubai.webp" type="image/webp"><img src="assets/dubai.jpg" alt="Swapnil Kothari with Mohamed Al Banna in Dubai" loading="lazy" width="1086" height="1198"></picture>
+        <figcaption><span>Dubai · November 2026</span><b>Conversations in Dubai with Mohamed Al Banna, as Renaissance looks to the Gulf.</b></figcaption>
+      </figure>
+      <figure class="m rv d1">
+        <picture><source srcset="assets/public-life.webp" type="image/webp"><img src="assets/public-life.jpg" alt="Lighting the ceremonial lamp at the Patrika Jazbaa Police Awards in Indore" loading="lazy" width="1280" height="853"></picture>
+        <figcaption><span>Indore · October 2026</span><b>Lighting the lamp at the Patrika Jazbaa Police Awards, honouring service to the city.</b></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -413,7 +432,7 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
       <p class="lede rv d2">Real questions. Practical perspective. Lessons that stay with you.</p>
       <p class="rv d2">Students rarely need another lecture. They need a thoughtful answer to the decision in front of them. Ask Sir is a space for questions about careers, money, confidence, setbacks, learning and the choices that shape a life.</p>
       <figure class="photo rv">
-        <picture><source srcset="assets/students.webp" type="image/webp"><img src="assets/students.jpg" alt="" loading="lazy"></picture>
+        <picture><source srcset="assets/podium-stage.webp" type="image/webp"><img src="assets/podium-stage.jpg" alt="Swapnil Kothari speaking at a flower-decked podium" loading="lazy" width="1066" height="1600"></picture>
         <figcaption>Short answers, in his own voice, every week</figcaption>
       </figure>
     </div>
@@ -442,7 +461,7 @@ footer{background:var(--navy);padding:72px 0 120px;border-top:1px solid rgba(185
     </div>
     <div class="media">
       <figure class="clip rv">
-        <picture><source srcset="assets/south-asian-times.webp" type="image/webp"><img src="assets/south-asian-times.jpg" alt="The South Asian Times newspaper page: Swapnil Kothari, a teacher by heart, entrepreneur by destiny" loading="lazy" width="847" height="1170"></picture>
+        <picture><source srcset="assets/south-asian-times.webp" type="image/webp"><img src="assets/south-asian-times.jpg" alt="The South Asian Times newspaper page: Swapnil Kothari, a teacher by heart, entrepreneur by destiny" loading="lazy" width="692" height="960"></picture>
         <figcaption>The South Asian Times, New York · Personality · March 10–16, 2018</figcaption>
       </figure>
       <div class="mcards">
